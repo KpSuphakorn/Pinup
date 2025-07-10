@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "id": 1, "name": "Residential Zone" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[100.5, 13.7], [100.51, 13.7], [100.51, 13.71], [100.5, 13.71], [100.5, 13.7]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": 2, "name": "Commercial Zone" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[100.52, 13.72], [100.53, 13.72], [100.53, 13.73], [100.52, 13.73], [100.52, 13.72]]]
+      }
+    }
+  ]
+}
