@@ -5,13 +5,10 @@ import { MapLoading } from './MapLoading';
 import { MapLayers } from './MapLayers';
 import { fixLeafletIcons } from '@/utils/leafletFix';
 import { useMapData } from '@/hooks/useMapData';
+import { MapProps } from '@/types/map';
 
 const MapContainer = dynamic(() => import('react-leaflet').then(m => m.MapContainer), { ssr: false });
 const LayerControlWrapper = dynamic(() => import('./LayerControlWrapper'), { ssr: false });
-
-interface MapProps {
-  landId: number;
-}
 
 export default function Map({ landId }: MapProps) {
   const [isClient, setIsClient] = useState(false);

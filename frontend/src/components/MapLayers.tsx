@@ -1,18 +1,10 @@
 import dynamic from 'next/dynamic';
-import { FeatureCollection, Geometry } from 'geojson';
-import { ZoningData } from '@/types';
 import { createOsmPopup, createZoningPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
+import { MapLayersProps } from '@/types/map';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
-
-interface MapLayersProps {
-  osmData: FeatureCollection<Geometry, any> | null;
-  zoningData: ZoningData | null;
-  landId: number;
-  isLoading: boolean;
-}
 
 export function MapLayers({ osmData, zoningData, landId, isLoading }: MapLayersProps) {
   if (isLoading) return null;
