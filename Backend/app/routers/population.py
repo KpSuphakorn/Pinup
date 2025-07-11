@@ -1,19 +1,9 @@
 from fastapi import APIRouter
 import json
-from pyproj import Transformer
+import os
+from ..utils.convert_coor import convert_coordinates
 
 router = APIRouter()
-
-transformer = Transformer.from_crs("EPSG:32647", "EPSG:4326", always_xy=True)
-
-def convert_coordinates(coordinates):
-    """แปลงพิกัดจาก UTM เป็น WGS84"""
-    if isinstance(coordinates[0], list):
-        return [convert_coordinates(coord) for coord in coordinates]
-    else:
-        x, y = coordinates
-        lng, lat = transformer.transform(x, y)
-        return [lng, lat]
 
 @router.get("/population/map-data")
 async def get_map_data():
