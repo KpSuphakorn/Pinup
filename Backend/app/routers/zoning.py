@@ -6,7 +6,7 @@ router = APIRouter()
 
 @router.get("/zoning/{land_id}")
 async def get_zoning(land_id: int):
-    with open("data/zoning_data.geojson", "r") as file:
+    with open("data/zoning_data.geojson", "r", encoding='utf-8') as file:
         zoning_data = json.load(file)
     for feature in zoning_data["features"]:
         if feature["properties"]["id"] == land_id:
@@ -19,6 +19,6 @@ async def get_zoning(land_id: int):
 
 @router.get("/osm-data")
 async def get_osm_data():
-    with open("data/osm_data.geojson", "r") as file:
+    with open("data/osm_data.geojson", "r", encoding='utf-8') as file:
         osm_data = json.load(file)
     return osm_data["features"]
