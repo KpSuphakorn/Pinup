@@ -20,10 +20,10 @@ export interface OsmFeature {
 }
 
 export interface MapLayersProps {
-  osmData?: FeatureCollection;
-  zoningData?: ZoningData;
-  populationData?: PopulationGeoJSON;
-  populationRangeData?: PopulationRangeData;
+  osmData?: FeatureCollection<Geometry, any> | null;
+  zoningData?: ZoningData | null;
+  populationData?: PopulationGeoJSON | null;
+  populationRangeData?: PopulationRangeData | null;
   landId?: string;
   isLoading: boolean;
 }
