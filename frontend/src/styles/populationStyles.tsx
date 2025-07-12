@@ -1,5 +1,5 @@
+import { PopulationRange, PopulationRangeData } from '@/types';
 import { Feature, Geometry } from 'geojson';
-import { PopulationRangeData, PopulationRange } from '@/libs/population';
 
 // สีสำหรับแต่ละช่วง (10 ช่วง - จากสีอ่อนมากไปสีเข้มมาก)
 const POPULATION_COLORS = [

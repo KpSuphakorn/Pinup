@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import { FeatureCollection, Geometry } from 'geojson';
 import { getZoning } from '@/libs/zoning';
 import { getOsmData } from '@/libs/osm';
-import { getPopulationMapData, getPopulationRange, PopulationGeoJSON, PopulationRangeData } from '@/libs/population';
-import { ZoningData } from '@/types';
+import { getPopulationMapData} from '@/libs/getPopulationData';
+import { PopulationGeoJSON, PopulationRangeData, ZoningData } from '@/types';
+import { getPopulationRange } from '@/libs/getPopulationRange';
 
 export function useMapData(landId: number, isClient: boolean) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
