@@ -9,7 +9,7 @@ router = APIRouter()
 async def get_map_data():
     """ดึงข้อมูลสําหรับแสดงบนแผนที่ - มี geometry และ population"""
     try:
-        with open("data/population.geojson", "r", encoding='utf-8') as file:
+        with open("data/bkk_shp.geojson", "r", encoding='utf-8') as file:
             data = json.load(file)
         
         for feature in data["features"]:
@@ -22,7 +22,7 @@ async def get_map_data():
             feature["properties"] = {
                 "id": props["OBJECTID"],
                 "population": props["T_2024"],
-                "label": f"{props['TAM_NAMT']}\n{props['T_2024']:,} คน",
+                "label": f" {props['DimPOP']:,} คน/ตร.กม.",
                 "province": props["PROV_NAMT"],
                 "district": props["AMP_NAMT"], 
                 "subdistrict": props["TAM_NAMT"]
@@ -39,7 +39,7 @@ async def get_map_data():
 async def get_population_range():
     """ดึงช่วงของจํานวนประชากรสําหรับกําหนดสี - แบ่งเป็น 10 ช่วง"""
     try:
-        with open("data/population.geojson", "r", encoding='utf-8') as file:
+        with open("data/bkk_shp.geojson", "r", encoding='utf-8') as file:
             data = json.load(file)
         
         populations = [f["properties"]["T_2024"] for f in data["features"]]

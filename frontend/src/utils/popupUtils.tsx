@@ -141,7 +141,7 @@ export function createPopulationPopup(feature: Feature<Geometry, any>) {
         <p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: #2563eb;">
           <strong>จำนวนประชากร:</strong> ${population ? formatNumber(population) : 'ไม่ระบุ'} คน
         </p>
-        ${validLabel ? `<p style="margin: 5px 0; font-size: 14px; color: #059669; font-weight: 500;"><strong>ป้ายกำกับ:</strong> ${validLabel}</p>` : ''}
+        ${validLabel ? `<p style="margin: 5px 0; font-size: 14px; color: #059669; font-weight: 500;"><strong>ความหนาแน่นประชากร:</strong> ${validLabel}</p>` : ''}
       </div>
       <div style="margin: 10px 0; padding-top: 8px; border-top: 1px solid #eee;">
         <h5 style="margin: 0 0 5px 0; font-size: 14px; color: #555;">ที่อยู่:</h5>
