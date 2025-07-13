@@ -32,14 +32,17 @@ export default function Map({ landId }: MapProps) {
 
   return (
     <div className="relative">
-      <LayerSelector
-        selectedLayers={selectedLayers}
-        setSelectedLayers={(layers) => {
-          setSelectedLayers(layers);
-          setIsLoadingLayers(true);
-          setTimeout(() => setIsLoadingLayers(false), 1000);
-        }}
-      />
+      {/* Header bar */}
+      <div className="w-full h-[20px] bg-white border-b border-gray-200 px-4 flex items-center justify-end">
+        <LayerSelector
+          selectedLayers={selectedLayers}
+          setSelectedLayers={(layers) => {
+            setSelectedLayers(layers);
+            setIsLoadingLayers(true);
+            setTimeout(() => setIsLoadingLayers(false), 1000);
+          }}
+        />
+      </div>
       <MapContainer center={[13.7563, 100.5018]} zoom={16} className="map-container">
         <LayerControlWrapper />
         <MapLayers
