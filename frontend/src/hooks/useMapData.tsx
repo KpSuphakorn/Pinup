@@ -76,7 +76,7 @@ export function useMapData(landId: number, isClient: boolean) {
         if (landpricesubdResponse.status === 'fulfilled') {
           const data = landpricesubdResponse.value;
           setLandPriceSubdData(data);
-          console.log('landpricesubdData:', data); // เช็คข้อมูลที่ได้
+          console.log('landpricesubdData in useMapData:', data); // เช็คข้อมูลที่ได้
         } else {
           console.error('Failed to fetch land price subdistrict map data:', landpricesubdResponse.reason);
         }
@@ -85,7 +85,7 @@ export function useMapData(landId: number, isClient: boolean) {
         if (landpricesubdRangeResponse.status === 'fulfilled') {
           const data = landpricesubdRangeResponse.value;
           setLandPriceSubdRangeData(data);
-          console.log('landpricesubdRangeData:', data); // เช็คข้อมูลที่ได้
+          console.log('landpricesubdRangeData in useMapData:', data); // เช็คข้อมูลที่ได้
         } else {
           console.error('Failed to fetch land price subdistrict range data:', landpricesubdRangeResponse.reason);
         }

@@ -22,7 +22,7 @@ async def get_map_data():
             feature["properties"] = {
                 "id": props["OBJECTID"],
                 "land_price": props["price_AVG"],
-                "label": f"{props['price_AVG']:,} บาท/[หน่วยของพื้นที่]",
+                "label": f"{props['Shape_Area']:.2f} ตร.กม.",
                 "province": props["PROV_NAMT"],
                 "district": props["AMP_NAMT"], 
                 "subdistrict": props["TAM_NAMT"]

@@ -38,7 +38,7 @@ function getLandPriceRangeIndex(landPrice: number, ranges: LandPriceSubdRange[])
 // ฟังก์ชันสำหรับสร้าง style ตามราคาที่ดิน
 function getStyle(feature?: Feature, rangeData?: LandPriceSubdRangeData) {
   const landPrice = feature?.properties?.land_price || 0;
-  console.log('rangeData:', rangeData);
+//   console.log('rangeData in LandPriceSubd getStyle:', rangeData);
 //   console.log('land_price:', feature?.properties?.land_price);
   console.log('ranges in LandPriceSubd getStyle:', rangeData?.ranges);
   
