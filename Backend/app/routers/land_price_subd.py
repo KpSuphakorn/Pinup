@@ -5,9 +5,9 @@ from ..utils.convert_coor import convert_coordinates
 
 router = APIRouter()
 
-@router.get("/population/map-data")
+@router.get("/land-price-subd/map-data")
 async def get_map_data():
-    """ดึงข้อมูลสําหรับแสดงบนแผนที่ - มี geometry และ population"""
+    """ดึงข้อมูลสําหรับแสดงบนแผนที่ - มี geometry และ land price per district"""
     try:
         with open("data/bkk_shp.geojson", "r", encoding='utf-8') as file:
             data = json.load(file)
@@ -21,41 +21,41 @@ async def get_map_data():
             props = feature["properties"]
             feature["properties"] = {
                 "id": props["OBJECTID"],
-                "population": props["T_2024"],
-                "label": f" {props['DimPOP']:,} คน/ตร.กม.",
+                "land_price": props["price_AVG"],
+                "label": f"{props['Shape_Area']:.2f} ตร.กม.",
                 "province": props["PROV_NAMT"],
                 "district": props["AMP_NAMT"], 
                 "subdistrict": props["TAM_NAMT"]
             }
         
-        print(f"Population data processed: {len(data['features'])} features")
+        print(f"Land price data processed: {len(data['features'])} features")
         return data
         
     except Exception as e:
-        print(f"Error processing population data: {str(e)}")
+        print(f"Error processing land price data: {str(e)}")
         raise
-
-@router.get("/population/range")
-async def get_population_range():
-    """ดึงช่วงของจํานวนประชากรสําหรับกําหนดสี - แบ่งเป็น 10 ช่วง"""
+    
+@router.get("/land-price-subd/range")
+async def get_land_price_range():
+    """ดึงช่วงของราคาที่ดินสําหรับกําหนดสี - แบ่งเป็น 10 ช่วง"""
     try:
         with open("data/bkk_shp.geojson", "r", encoding='utf-8') as file:
             data = json.load(file)
         
-        populations = [f["properties"]["T_2024"] for f in data["features"]]
+        land_prices = [f["properties"]["price_AVG"] for f in data["features"]]
         
-        min_pop = min(populations)
-        max_pop = max(populations)
+        min_price = min(land_prices)
+        max_price = max(land_prices)
         
-        range_size = (max_pop - min_pop) / 10
+        range_size = (max_price - min_price) / 10
         
         ranges = []
         for i in range(10):
-            start = int(min_pop + (i * range_size))
-            end = int(min_pop + ((i + 1) * range_size))
+            start = int(min_price + (i * range_size))
+            end = int(min_price + ((i + 1) * range_size))
             
             if i == 9:
-                end = int(max_pop)
+                end = int(max_price)
             
             ranges.append({
                 "range": i + 1,
@@ -64,15 +64,15 @@ async def get_population_range():
                 "label": f"{start:,} - {end:,} คน"
             })
         
-        print(f"Population ranges: {len(ranges)} ranges created")
+        print(f"Land price ranges calculated: {len(ranges)} ranges")
         return {
-            "min": int(min_pop),
-            "max": int(max_pop),
-            "avg": int(sum(populations) / len(populations)),
+            "min": int(min_price),
+            "max": int(max_price),
+            "avg": int(sum(land_prices) / len(land_prices)),
             "ranges": ranges,
             "total_ranges": 10
         }
         
     except Exception as e:
-        print(f"Error creating population ranges: {str(e)}")
+        print(f"Error processing land price range data: {str(e)}")
         raise

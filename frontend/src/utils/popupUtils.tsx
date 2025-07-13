@@ -141,7 +141,7 @@ export function createPopulationPopup(feature: Feature<Geometry, any>) {
         <p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: #2563eb;">
           <strong>จำนวนประชากร:</strong> ${population ? formatNumber(population) : 'ไม่ระบุ'} คน
         </p>
-        ${validLabel ? `<p style="margin: 5px 0; font-size: 14px; color: #059669; font-weight: 500;"><strong>ป้ายกำกับ:</strong> ${validLabel}</p>` : ''}
+        ${validLabel ? `<p style="margin: 5px 0; font-size: 14px; color: #059669; font-weight: 500;"><strong>ความหนาแน่นประชากร:</strong> ${validLabel}</p>` : ''}
       </div>
       <div style="margin: 10px 0; padding-top: 8px; border-top: 1px solid #eee;">
         <h5 style="margin: 0 0 5px 0; font-size: 14px; color: #555;">ที่อยู่:</h5>
@@ -149,7 +149,37 @@ export function createPopulationPopup(feature: Feature<Geometry, any>) {
         ${district ? `<p style="margin: 2px 0; font-size: 13px;"><strong>อำเภอ:</strong> ${district}</p>` : ''}
         ${subdistrict ? `<p style="margin: 2px 0; font-size: 13px;"><strong>ตำบล:</strong> ${subdistrict}</p>` : ''}
       </div>
-      ${id ? `<p style="margin: 5px 0; font-size: 11px; color: #666; border-top: 1px solid #eee; padding-top: 5px;"><strong>ID:</strong> ${id}</p>` : ''}
+    </div>
+  `;
+}
+
+export function createLandPriceSubdPopup(feature: Feature<Geometry, any>) {
+  const props = feature.properties || {};
+  const { id, land_price, label, province, district, subdistrict } = props;
+  
+  // ตรวจสอบและสร้าง label จากหลายฟิลด์
+  const displayLabel = label || district || subdistrict || 'ไม่ระบุชื่อพื้นที่';
+  
+  // ตรวจสอบว่าข้อมูลเป็น string หรือไม่ และไม่ว่าง
+  const validLabel = displayLabel && displayLabel.toString().trim() !== '' ? displayLabel.toString().trim() : null;
+  
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 250px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        ข้อมูลราคาที่ดิน
+      </h4>
+      <div style="margin: 10px 0;">
+        <p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: #2563eb;">
+          <strong>ราคาที่ดิน:</strong> ${land_price ? formatNumber(land_price) : 'ไม่ระบุ'} บาท/ตร.กม.
+        </p>
+        ${validLabel ? `<p style="margin: 5px 0; font-size: 14px; color: #059669; font-weight: 500;"><strong>พื้นที่:</strong> ${validLabel}</p>` : ''}
+      </div>
+      <div style="margin: 10px 0; padding-top: 8px; border-top: 1px solid #eee;">
+        <h5 style="margin: 0 0 5px 0; font-size: 14px; color: #555;">ที่อยู่:</h5>
+        ${province ? `<p style="margin: 2px 0; font-size: 13px;"><strong>จังหวัด:</strong> ${province}</p>` : ''}
+        ${district ? `<p style="margin: 2px 0; font-size: 13px;"><strong>อำเภอ:</strong> ${district}</p>` : ''}
+        ${subdistrict ? `<p style="margin: 2px 0; font-size: 13px;"><strong>ตำบล:</strong> ${subdistrict}</p>` : ''}
+      </div>
     </div>
   `;
 }
