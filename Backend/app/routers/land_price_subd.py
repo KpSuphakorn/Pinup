@@ -58,12 +58,20 @@ async def get_land_price_range():
                 end = int(max_price)
             
             ranges.append({
-                "start": start,
-                "end": end
+                "range": i + 1,
+                "min": start,
+                "max": end,
+                "label": f"{start:,} - {end:,} คน"
             })
         
         print(f"Land price ranges calculated: {len(ranges)} ranges")
-        return ranges
+        return {
+            "min": int(min_price),
+            "max": int(max_price),
+            "avg": int(sum(land_prices) / len(land_prices)),
+            "ranges": ranges,
+            "total_ranges": 10
+        }
         
     except Exception as e:
         print(f"Error processing land price range data: {str(e)}")

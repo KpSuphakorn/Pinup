@@ -25,10 +25,10 @@ export default function Map({ landId }: MapProps) {
     <MapContainer center={[13.7563, 100.5018]} zoom={16} className="map-container">
       <LayerControlWrapper />
       <MapLayers
-        // osmData={osmData}
-        // zoningData={zoningData}
-        // populationData={populationData}
-        // populationRangeData={populationRangeData}
+        osmData={osmData}
+        zoningData={zoningData}
+        populationData={populationData}
+        populationRangeData={populationRangeData}
         landpricesubdData={landpricesubdData}
         landpricesubdRangeData={landpricesubdRangeData}
         landId={landId.toString()}
