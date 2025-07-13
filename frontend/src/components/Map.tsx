@@ -12,7 +12,7 @@ const LayerControlWrapper = dynamic(() => import('./LayerControlWrapper'), { ssr
 
 export default function Map({ landId }: MapProps) {
   const [isClient, setIsClient] = useState(false);
-  const { zoningData, osmData, populationData, populationRangeData, isLoading } = useMapData(landId, isClient);
+  const { zoningData, osmData, populationData, populationRangeData, landpricesubdData, landpricesubdRangeData, isLoading } = useMapData(landId, isClient);
 
   useEffect(() => {
     setIsClient(true);
@@ -27,8 +27,10 @@ export default function Map({ landId }: MapProps) {
       <MapLayers
         // osmData={osmData}
         // zoningData={zoningData}
-        populationData={populationData}
-        populationRangeData={populationRangeData}
+        // populationData={populationData}
+        // populationRangeData={populationRangeData}
+        landpricesubdData={landpricesubdData}
+        landpricesubdRangeData={landpricesubdRangeData}
         landId={landId.toString()}
         isLoading={isLoading}
       />

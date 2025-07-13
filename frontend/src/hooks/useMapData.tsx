@@ -1,16 +1,20 @@
 import { useState, useEffect } from 'react';
 import { FeatureCollection, Geometry } from 'geojson';
+import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData } from '@/types';
 import { getZoning } from '@/libs/zoning';
 import { getOsmData } from '@/libs/osm';
-import { getPopulationMapData} from '@/libs/getPopulationData';
-import { PopulationGeoJSON, PopulationRangeData, ZoningData } from '@/types';
+import { getPopulationMapData } from '@/libs/getPopulationData';
 import { getPopulationRange } from '@/libs/getPopulationRange';
+import { getLandPriceMapData } from '@/libs/getLandPriceSubdData';
+import { getLandPriceRange } from '@/libs/getLandPriceSubdRange';
 
 export function useMapData(landId: number, isClient: boolean) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
   const [osmData, setOsmData] = useState<FeatureCollection<Geometry, any> | null>(null);
   const [populationData, setPopulationData] = useState<PopulationGeoJSON | null>(null);
   const [populationRangeData, setPopulationRangeData] = useState<PopulationRangeData | null>(null);
+  const [landpricesubdData, setLandPriceSubdData] = useState<LandPriceSubdGeoJSON | null>(null);
+  const [landpricesubdRangeData, setLandPriceSubdRangeData] = useState<LandPriceSubdRangeData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -20,11 +24,13 @@ export function useMapData(landId: number, isClient: boolean) {
       setIsLoading(true);
 
       try {
-        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse] = await Promise.allSettled([
+        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse] = await Promise.allSettled([
           getZoning(landId),
           getOsmData(),
           getPopulationMapData(),
-          getPopulationRange()
+          getPopulationRange(),
+          getLandPriceMapData(),
+          getLandPriceRange()
         ]);
 
         // Handle zoning data
@@ -66,6 +72,24 @@ export function useMapData(landId: number, isClient: boolean) {
           console.error('Failed to fetch population range data:', populationRangeResponse.reason);
         }
 
+        // Handle land price map data
+        if (landpricesubdResponse.status === 'fulfilled') {
+          const data = landpricesubdResponse.value;
+          setLandPriceSubdData(data);
+          console.log('landpricesubdData:', data); // เช็คข้อมูลที่ได้
+        } else {
+          console.error('Failed to fetch land price subdistrict map data:', landpricesubdResponse.reason);
+        }
+
+        // Handle land price range data
+        if (landpricesubdRangeResponse.status === 'fulfilled') {
+          const data = landpricesubdRangeResponse.value;
+          setLandPriceSubdRangeData(data);
+          console.log('landpricesubdRangeData:', data); // เช็คข้อมูลที่ได้
+        } else {
+          console.error('Failed to fetch land price subdistrict range data:', landpricesubdRangeResponse.reason);
+        }
+
       } catch (error) {
         console.error('Error fetching map data:', error);
       } finally {
@@ -81,6 +105,8 @@ export function useMapData(landId: number, isClient: boolean) {
     osmData,
     populationData,
     populationRangeData,
+    landpricesubdData,
+    landpricesubdRangeData,
     isLoading
   };
 }

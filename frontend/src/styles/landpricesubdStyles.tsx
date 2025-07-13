@@ -1,44 +1,46 @@
-import { PopulationRange, PopulationRangeData } from '@/types';
+import { LandPriceSubdRange, LandPriceSubdRangeData } from '@/types';
 import { Feature, Geometry } from 'geojson';
 
-// สีสำหรับแต่ละช่วง (10 ช่วง - จากสีอ่อนมากไปสีเข้มมาก)
-const POPULATION_COLORS = [
-    { fill: '#F3E5F5', stroke: '#8E24AA' },  // ช่วง 1 (มากที่สุด) - สีม่วงอ่อนมาก
-    { fill: '#E1BEE7', stroke: '#8E24AA' },  // ช่วง 2
-    { fill: '#CE93D8', stroke: '#8E24AA' },  // ช่วง 3
-    { fill: '#BA68C8', stroke: '#7B1FA2' },  // ช่วง 4
-    { fill: '#AB47BC', stroke: '#7B1FA2' },  // ช่วง 5
-    { fill: '#9C27B0', stroke: '#6A1B9A' },  // ช่วง 6
-    { fill: '#8E24AA', stroke: '#6A1B9A' },  // ช่วง 7
-    { fill: '#7B1FA2', stroke: '#4A148C' },  // ช่วง 8
-    { fill: '#6A1B9A', stroke: '#4A148C' },  // ช่วง 9
-    { fill: '#4A148C', stroke: '#311B92' },  // ช่วง 10 (น้อยที่สุด) - สีม่วงเข้มมาก
+// สีสำหรับแต่ละช่วงราคาที่ดิน (10 ช่วง - จากสีอ่อนมากไปสีเข้มมาก)
+const LANDPRICE_COLORS = [
+    { fill: '#FFF3E0', stroke: '#FF9800' },  // ช่วง 1 (มากที่สุด) - สีส้มอ่อนมาก
+    { fill: '#FFE0B2', stroke: '#FF9800' },  // ช่วง 2
+    { fill: '#FFCC80', stroke: '#FF9800' },  // ช่วง 3
+    { fill: '#FFB74D', stroke: '#F57C00' },  // ช่วง 4
+    { fill: '#FFA726', stroke: '#F57C00' },  // ช่วง 5
+    { fill: '#FF9800', stroke: '#E65100' },  // ช่วง 6
+    { fill: '#FB8C00', stroke: '#E65100' },  // ช่วง 7
+    { fill: '#F57C00', stroke: '#BF360C' },  // ช่วง 8
+    { fill: '#EF6C00', stroke: '#BF360C' },  // ช่วง 9
+    { fill: '#E65100', stroke: '#BF360C' },  // ช่วง 10 (น้อยที่สุด) - สีส้มเข้มมาก
 ];
 
 const DEFAULT_COLOR = { fill: '#F5F5F5', stroke: '#9E9E9E' };
 
-// ฟังก์ชันสำหรับหาช่วงประชากรที่ถูกต้อง
-function getPopulationRangeIndex(population: number, ranges: PopulationRange[]): number {
+// ฟังก์ชันสำหรับหาช่วงราคาที่ดินที่ถูกต้อง
+function getLandPriceRangeIndex(landPrice: number, ranges: LandPriceSubdRange[]): number {
   if (!ranges || ranges.length === 0) return -1;
   
   for (let i = 0; i < ranges.length; i++) {
     const range = ranges[i];
-    if (population >= range.min && population <= range.max) {
+    if (landPrice >= range.min && landPrice <= range.max) {
       return i;
     }
   }
   
   // หากไม่พบช่วงที่ตรงกัน ให้ใช้ช่วงที่ใกล้เคียงที่สุด
-  if (population < ranges[0].min) return 0;
-  if (population > ranges[ranges.length - 1].max) return ranges.length - 1;
+  if (landPrice < ranges[0].min) return 0;
+  if (landPrice > ranges[ranges.length - 1].max) return ranges.length - 1;
   
   return -1;
 }
 
-// ฟังก์ชันสำหรับสร้าง style ตามจำนวนประชากร
-function getStyle(feature?: Feature, rangeData?: PopulationRangeData) {
-  const population = feature?.properties?.population || 0;
-  console.log('ranges in Population getStyle:', rangeData?.ranges);
+// ฟังก์ชันสำหรับสร้าง style ตามราคาที่ดิน
+function getStyle(feature?: Feature, rangeData?: LandPriceSubdRangeData) {
+  const landPrice = feature?.properties?.land_price || 0;
+  console.log('rangeData:', rangeData);
+//   console.log('land_price:', feature?.properties?.land_price);
+  console.log('ranges in LandPriceSubd getStyle:', rangeData?.ranges);
   
   if (!rangeData || !rangeData.ranges || rangeData.ranges.length === 0) {
     return {
@@ -51,9 +53,9 @@ function getStyle(feature?: Feature, rangeData?: PopulationRangeData) {
     };
   }
   
-  const rangeIndex = getPopulationRangeIndex(Number(population), rangeData.ranges);
-  const colors = rangeIndex >= 0 && rangeIndex < POPULATION_COLORS.length 
-    ? POPULATION_COLORS[rangeIndex] 
+  const rangeIndex = getLandPriceRangeIndex(Number(landPrice), rangeData.ranges);
+  const colors = rangeIndex >= 0 && rangeIndex < LANDPRICE_COLORS.length 
+    ? LANDPRICE_COLORS[rangeIndex] 
     : DEFAULT_COLOR;
   
   return {
@@ -67,14 +69,14 @@ function getStyle(feature?: Feature, rangeData?: PopulationRangeData) {
 }
 
 // ฟังก์ชันสำหรับสร้าง style function ที่ใช้กับ GeoJSON
-function createStyleFunction(rangeData: PopulationRangeData) {
+function createStyleFunction(rangeData: LandPriceSubdRangeData) {
   return (feature?: Feature) => getStyle(feature, rangeData);
 }
 
 // ฟังก์ชันสำหรับสร้าง tooltip หรือ popup - แก้ไขให้ดูแลเรื่อง label
-function getPopulationInfo(feature?: Feature) {
+function getLandPriceInfo(feature?: Feature) {
   const properties = feature?.properties || {};
-  const population = properties.population || 0;
+  const landPrice = properties.land_price || 0;
   
   // ตรวจสอบ label จากหลายฟิลด์ที่เป็นไปได้
   const label = properties.label || properties.name || properties.district || properties.subdistrict || '';
@@ -87,8 +89,8 @@ function getPopulationInfo(feature?: Feature) {
   const fullAddress = addressParts.length > 0 ? addressParts.join(', ') : 'ไม่ระบุที่อยู่';
   
   return {
-    population: Number(population),
-    formattedPopulation: Number(population).toLocaleString('th-TH'),
+    landPrice: Number(landPrice),
+    formattedLandPrice: Number(landPrice).toLocaleString('th-TH'),
     label: label.trim(),
     province: province.trim(),
     district: district.trim(),
@@ -98,7 +100,7 @@ function getPopulationInfo(feature?: Feature) {
 }
 
 // ฟังก์ชันสำหรับสร้าง legend items
-function getLegendItems(rangeData: PopulationRangeData) {
+function getLegendItems(rangeData: LandPriceSubdRangeData) {
   if (!rangeData || !rangeData.ranges) {
     return [];
   }
@@ -107,18 +109,18 @@ function getLegendItems(rangeData: PopulationRangeData) {
   return rangeData.ranges.map((range, index) => ({
     range: range.range,
     label: range.label,
-    color: POPULATION_COLORS[index]?.fill || DEFAULT_COLOR.fill,
-    stroke: POPULATION_COLORS[index]?.stroke || DEFAULT_COLOR.stroke,
+    color: LANDPRICE_COLORS[index]?.fill || DEFAULT_COLOR.fill,
+    stroke: LANDPRICE_COLORS[index]?.stroke || DEFAULT_COLOR.stroke,
     min: range.min,
     max: range.max
   }));
 }
 
-export const populationStyles = {
+export const landpricesubdStyles = {
   getStyle,
-  getPopulationInfo,
+  getLandPriceInfo,
   getLegendItems,
   createStyleFunction,
-  POPULATION_COLORS,
+  LANDPRICE_COLORS,
   DEFAULT_COLOR
 };
