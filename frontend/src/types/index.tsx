@@ -67,7 +67,6 @@ export interface PopulationRangeData {
   total_ranges: number;
 }
 
-// Interface สำหรับ Properties ของแต่ละพื้นที่ - เหมือน PopulationData
 export interface LandPriceSubdData {
   id: number;
   land_price: number;
@@ -77,7 +76,6 @@ export interface LandPriceSubdData {
   subdistrict: string;
 }
 
-// Interface สำหรับ Feature ใน GeoJSON - เหมือน PopulationFeature
 export interface LandPriceSubdFeature {
   type: 'Feature';
   geometry: {
@@ -87,13 +85,11 @@ export interface LandPriceSubdFeature {
   properties: LandPriceSubdData;
 }
 
-// Interface สำหรับ GeoJSON ที่ส่งมาจาก API - เหมือน PopulationGeoJSON
 export interface LandPriceSubdGeoJSON {
   type: 'FeatureCollection';
   features: LandPriceSubdFeature[];
 }
 
-// Interface สำหรับช่วงราคา - เหมือน PopulationRange
 export interface LandPriceSubdRange {
   range: number;
   min: number;
@@ -101,7 +97,6 @@ export interface LandPriceSubdRange {
   label: string;
 }
 
-// Interface สำหรับ Response จาก API - เหมือน PopulationRangeData
 export interface LandPriceSubdRangeData {
   min: number;
   max: number;

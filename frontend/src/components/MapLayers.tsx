@@ -48,7 +48,6 @@ export function MapLayers({
         />
       )}
 
-      {console.log('landpricesubdRangeData in MapLayers:', landpricesubdRangeData)}
       {/* LandPriceSubd Layer */}
       {landpricesubdData?.features.length && landpricesubdRangeData && (
         <GeoJSON
