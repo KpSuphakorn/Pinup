@@ -61,7 +61,7 @@ async def get_land_price_range():
                 "range": i + 1,
                 "min": start,
                 "max": end,
-                "label": f"{start:,} - {end:,} คน"
+                "label": f"{start:,} - {end:,} บาท"
             })
         
         print(f"Land price ranges calculated: {len(ranges)} ranges")
