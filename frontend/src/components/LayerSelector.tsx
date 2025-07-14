@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { LayerOption, layerOptions } from '@/utils/layerUtils';
-import './LayerSelector.css';
+import './style.css';
 
 interface Props {
   selectedLayers: LayerOption[];

@@ -104,3 +104,31 @@ export interface LandPriceSubdRangeData {
   ranges: LandPriceSubdRange[];
   total_ranges: number;
 }
+
+export interface LegendItem {
+  color: string;
+  label: string;
+  min: number | string;
+  max: number | string;
+}
+
+export interface LayerStyle {
+  getLegendItems: (data: any) => LegendItem[];
+}
+
+export interface LayerConfig {
+  key: string;
+  displayName: string;
+  style: LayerStyle;
+  rangeData?: any;
+}
+
+export interface RangeLegendProps {
+  selectedLayerKeys?: string[];
+  populationRangeData?: any;
+  landpricesubdRangeData?: any;
+  // สำหรับเพิ่ม layer ใหม่ในอนาคต
+  [key: string]: any;
+}
+
+export type LegendLayerKey = string;
