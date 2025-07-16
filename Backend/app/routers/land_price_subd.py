@@ -22,7 +22,7 @@ async def get_map_data():
             feature["properties"] = {
                 "id": props["OBJECTID"],
                 "land_price": props["price_AVG"],
-                "label": f"{props['Shape_Area']:.2f} ตร.กม.",
+                "label": f"{props['Shape_Area']:.2f} ตร.ว.",
                 "province": props["PROV_NAMT"],
                 "district": props["AMP_NAMT"], 
                 "subdistrict": props["TAM_NAMT"]
@@ -61,7 +61,7 @@ async def get_land_price_range():
                 "range": i + 1,
                 "min": start,
                 "max": end,
-                "label": f"{start:,} - {end:,} บาท"
+                "label": f"{start:,} - {end:,}",
             })
         
         print(f"Land price ranges calculated: {len(ranges)} ranges")

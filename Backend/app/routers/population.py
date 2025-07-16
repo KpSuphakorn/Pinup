@@ -21,8 +21,8 @@ async def get_map_data():
             props = feature["properties"]
             feature["properties"] = {
                 "id": props["OBJECTID"],
-                "population": props["T_2024"],
-                "label": f" {props['DimPOP']:,} คน/ตร.กม.",
+                "population": props["DimPOP"],
+                "label": f" {props['T_2024']:,} คน/ตร.กม.",
                 "province": props["PROV_NAMT"],
                 "district": props["AMP_NAMT"], 
                 "subdistrict": props["TAM_NAMT"]
@@ -42,7 +42,7 @@ async def get_population_range():
         with open("data/bkk_shp.geojson", "r", encoding='utf-8') as file:
             data = json.load(file)
         
-        populations = [f["properties"]["T_2024"] for f in data["features"]]
+        populations = [f["properties"]["DimPOP"] for f in data["features"]]
         
         min_pop = min(populations)
         max_pop = max(populations)
@@ -61,7 +61,7 @@ async def get_population_range():
                 "range": i + 1,
                 "min": start,
                 "max": end,
-                "label": f"{start:,} - {end:,} คน"
+                "label": f"{start:,} - {end:,}"
             })
         
         print(f"Population ranges: {len(ranges)} ranges created")

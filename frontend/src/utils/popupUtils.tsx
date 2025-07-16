@@ -139,9 +139,9 @@ export function createPopulationPopup(feature: Feature<Geometry, any>) {
       </h4>
       <div style="margin: 10px 0;">
         <p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: #2563eb;">
-          <strong>จำนวนประชากร:</strong> ${population ? formatNumber(population) : 'ไม่ระบุ'} คน
+          <strong>ความหนาแน่นประชากร:</strong> ${population ? formatNumber(population) : 'ไม่ระบุ'} คน
         </p>
-        ${validLabel ? `<p style="margin: 5px 0; font-size: 14px; color: #059669; font-weight: 500;"><strong>ความหนาแน่นประชากร:</strong> ${validLabel}</p>` : ''}
+        ${validLabel ? `<p style="margin: 5px 0; font-size: 14px; color: #059669; font-weight: 500;"><strong>จำนวนประชากร:</strong> ${validLabel}</p>` : ''}
       </div>
       <div style="margin: 10px 0; padding-top: 8px; border-top: 1px solid #eee;">
         <h5 style="margin: 0 0 5px 0; font-size: 14px; color: #555;">ที่อยู่:</h5>
@@ -166,11 +166,11 @@ export function createLandPriceSubdPopup(feature: Feature<Geometry, any>) {
   return `
     <div style="font-family: Arial, sans-serif; min-width: 250px;">
       <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
-        ข้อมูลราคาที่ดิน
+        ข้อมูลราคาที่ดินตามแขวง
       </h4>
       <div style="margin: 10px 0;">
         <p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: #2563eb;">
-          <strong>ราคาที่ดิน:</strong> ${land_price ? formatNumber(land_price) : 'ไม่ระบุ'} บาท/ตร.กม.
+          <strong>ราคาที่ดิน:</strong> ${land_price ? formatNumber(land_price) : 'ไม่ระบุ'} บาท/ตร.ว.
         </p>
         ${validLabel ? `<p style="margin: 5px 0; font-size: 14px; color: #059669; font-weight: 500;"><strong>พื้นที่:</strong> ${validLabel}</p>` : ''}
       </div>

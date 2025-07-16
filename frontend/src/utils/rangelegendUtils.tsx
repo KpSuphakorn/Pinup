@@ -15,7 +15,7 @@ export function createLayerConfigs(rangeData: RangeDataCollection): LayerConfig[
   if (rangeData.populationRangeData) {
     configs.push({
       key: 'population',
-      displayName: 'ความหนาแน่นประชากร',
+      displayName: 'ความหนาแน่นประชากร (คน/ตร.กม.)',
       style: populationStyles,
       rangeData: rangeData.populationRangeData
     });
@@ -24,7 +24,7 @@ export function createLayerConfigs(rangeData: RangeDataCollection): LayerConfig[
   if (rangeData.landpricesubdRangeData) {
     configs.push({
       key: 'landprice',
-      displayName: 'ราคาที่ดิน',
+      displayName: 'ราคาที่ดินตามแขวง (บาท/ตร.ว.)',
       style: landpricesubdStyles,
       rangeData: rangeData.landpricesubdRangeData
     });
