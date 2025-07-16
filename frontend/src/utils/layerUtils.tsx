@@ -1,4 +1,4 @@
-export type LayerOption = 'none' | 'osm' | 'zoning' | 'population' | 'landprice';
+export type LayerOption = 'none' | 'osm' | 'zoning' | 'population' | 'landprice' | 'boundmun';
 
 export interface LayerOptionData {
   value: LayerOption;
@@ -11,5 +11,6 @@ export const layerOptions: LayerOptionData[] = [
   { value: 'osm', label: 'ข้อมูล OSM', description: 'แสดงข้อมูลจาก OpenStreetMap' },
   { value: 'zoning', label: 'ข้อมูล Zoning', description: 'แสดงข้อมูลการแบ่งเขต' },
   { value: 'population', label: 'ข้อมูลประชากร', description: 'แสดงข้อมูลความหนาแน่นประชากร' },
-  { value: 'landprice', label: 'ข้อมูลราคาที่ดิน', description: 'แสดงข้อมูลราคาที่ดิน' }
+  { value: 'landprice', label: 'ข้อมูลราคาที่ดิน', description: 'แสดงข้อมูลราคาที่ดิน' },
+  { value: 'boundmun', label: 'ขอบเขตเทศบาล', description: 'แสดงขอบเขตเขตเทศบาล', },
 ];

@@ -183,3 +183,26 @@ export function createLandPriceSubdPopup(feature: Feature<Geometry, any>) {
     </div>
   `;
 }
+
+export function createBoundMunPopup(feature: Feature<Geometry, any>) {
+  const props = feature.properties || {};
+  const { name_th, name_en, display_name } = props;
+
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 250px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        เขตเทศบาล
+      </h4>
+      <div style="margin: 10px 0;">
+        ${display_name ? `<p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: #2563eb;"> ${display_name}
+        </p>` : ''}
+        ${name_th ? `<p style="margin: 5px 0; font-size: 14px; color: #059669;">
+          <strong>ชื่อ (ไทย):</strong> ${name_th}
+        </p>` : ''}
+        ${name_en ? `<p style="margin: 5px 0; font-size: 14px; color: #059669;">
+          <strong>ชื่อ (อังกฤษ):</strong> ${name_en}
+        </p>` : ''}
+      </div>
+    </div>
+  `;
+}

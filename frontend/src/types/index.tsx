@@ -6,12 +6,12 @@ export interface ZoningData {
 
 export interface OsmFeature {
   type: 'Feature';
-  properties: { 
-    id: string; 
-    highway?: string; 
-    landuse?: string; 
-    name?: string; 
-    boundary?: string; 
+  properties: {
+    id: string;
+    highway?: string;
+    landuse?: string;
+    name?: string;
+    boundary?: string;
     building?: string;
     amenity?: string;
   };
@@ -25,6 +25,7 @@ export interface MapLayersProps {
   populationRangeData?: PopulationRangeData | null;
   landpricesubdData?: LandPriceSubdGeoJSON | null;
   landpricesubdRangeData?: LandPriceSubdRangeData | null;
+  boundmunData?: BoundMunGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }
@@ -132,3 +133,24 @@ export interface RangeLegendProps {
 }
 
 export type LegendLayerKey = string;
+
+export interface BoundMunData {
+  id: number;
+  name_th: string;
+  name_en: string;
+  display_name: string;
+}
+
+export interface BoundMunFeature {
+  type: 'Feature';
+  geometry: {
+    type: 'Polygon';
+    coordinates: number[][][];
+  };
+  properties: BoundMunData;
+}
+
+export interface BoundMunGeoJSON {
+  type: 'FeatureCollection';
+  features: BoundMunFeature[];
+}

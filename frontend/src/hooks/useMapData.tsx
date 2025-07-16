@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { FeatureCollection, Geometry } from 'geojson';
-import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData } from '@/types';
+import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON } from '@/types';
 import { getZoning } from '@/libs/zoning';
 import { getOsmData } from '@/libs/osm';
 import { getPopulationMapData } from '@/libs/getPopulationData';
 import { getPopulationRange } from '@/libs/getPopulationRange';
 import { getLandPriceMapData } from '@/libs/getLandPriceSubdData';
 import { getLandPriceRange } from '@/libs/getLandPriceSubdRange';
+import { getBoundMunData } from '@/libs/CNX/getBoundMunData';
 
 export function useMapData(landId: number, isClient: boolean) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
@@ -15,6 +16,7 @@ export function useMapData(landId: number, isClient: boolean) {
   const [populationRangeData, setPopulationRangeData] = useState<PopulationRangeData | null>(null);
   const [landpricesubdData, setLandPriceSubdData] = useState<LandPriceSubdGeoJSON | null>(null);
   const [landpricesubdRangeData, setLandPriceSubdRangeData] = useState<LandPriceSubdRangeData | null>(null);
+  const [boundmunData, setBoundMunData] = useState<BoundMunGeoJSON | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -24,13 +26,14 @@ export function useMapData(landId: number, isClient: boolean) {
       setIsLoading(true);
 
       try {
-        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse] = await Promise.allSettled([
+        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse] = await Promise.allSettled([
           getZoning(landId),
           getOsmData(),
           getPopulationMapData(),
           getPopulationRange(),
           getLandPriceMapData(),
-          getLandPriceRange()
+          getLandPriceRange(),
+          getBoundMunData()
         ]);
 
         // Handle zoning data
@@ -90,6 +93,15 @@ export function useMapData(landId: number, isClient: boolean) {
           console.error('Failed to fetch land price subdistrict range data:', landpricesubdRangeResponse.reason);
         }
 
+        // Handle bound municipality data
+        if (boundmunResponse.status === 'fulfilled') {
+          const data = boundmunResponse.value;
+          setBoundMunData(data);
+          console.log('boundMunData in useMapData:', data); // เช็คข้อมูลที่ได้
+        } else {
+          console.error('Failed to fetch bound municipality data:', boundmunResponse.reason);
+        }
+
       } catch (error) {
         console.error('Error fetching map data:', error);
       } finally {
@@ -107,6 +119,7 @@ export function useMapData(landId: number, isClient: boolean) {
     populationRangeData,
     landpricesubdData,
     landpricesubdRangeData,
+    boundmunData,
     isLoading
   };
 }

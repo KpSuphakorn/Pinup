@@ -21,7 +21,9 @@ export default function Map({ landId }: MapProps) {
   const shouldFetchData = selectedLayers.some(layer => layer !== 'none');
   const {
     zoningData, osmData, populationData, populationRangeData,
-    landpricesubdData, landpricesubdRangeData, isLoading
+    landpricesubdData, landpricesubdRangeData,
+    boundmunData,
+    isLoading
   } = useMapData(landId, isClient && shouldFetchData);
 
   useEffect(() => {
@@ -38,42 +40,42 @@ export default function Map({ landId }: MapProps) {
 
   return (
     <div className="relative w-full h-full">
-  {/* Floating Components */}
-  <div className="absolute top-12 right-4 z-[1000] space-y-2">
-    <LayerSelector
-      selectedLayers={selectedLayers}
-      setSelectedLayers={(layers) => {
-        setSelectedLayers(layers);
-        setIsLoadingLayers(true);
-        setTimeout(() => setIsLoadingLayers(false), 1000);
-      }}
-    />
-    <RangeLegend
-      selectedLayerKeys={selectedLayerKeys}
-      populationRangeData={selectedLayers.includes('population') ? populationRangeData : undefined}
-      landpricesubdRangeData={selectedLayers.includes('landprice') ? landpricesubdRangeData : undefined}
-    />
-  </div>
+      {/* Floating Components */}
+      <div className="absolute top-12 right-4 z-[1000] space-y-2">
+        <LayerSelector
+          selectedLayers={selectedLayers}
+          setSelectedLayers={(layers) => {
+            setSelectedLayers(layers);
+            setIsLoadingLayers(true);
+            setTimeout(() => setIsLoadingLayers(false), 1000);
+          }}
+        />
+        <RangeLegend
+          selectedLayerKeys={selectedLayerKeys}
+          populationRangeData={selectedLayers.includes('population') ? populationRangeData : undefined}
+          landpricesubdRangeData={selectedLayers.includes('landprice') ? landpricesubdRangeData : undefined}
+        />
+      </div>
 
-  {/* แผนที่ */}
-  <MapContainer
-    center={[13.7563, 100.5018]}
-    zoom={16}
-    className="map-container z-0"
-  >
-    <LayerControlWrapper />
-    <MapLayers
-      osmData={selectedLayers.includes('osm') ? osmData : null}
-      zoningData={selectedLayers.includes('zoning') ? zoningData : null}
-      populationData={selectedLayers.includes('population') ? populationData : null}
-      populationRangeData={selectedLayers.includes('population') ? populationRangeData : null}
-      landpricesubdData={selectedLayers.includes('landprice') ? landpricesubdData : null}
-      landpricesubdRangeData={selectedLayers.includes('landprice') ? landpricesubdRangeData : null}
-      landId={landId.toString()}
-      isLoading={false}
-    />
-  </MapContainer>
-</div>
-
+      {/* แผนที่ */}
+      <MapContainer
+        center={[13.7563, 100.5018]}
+        zoom={16}
+        className="map-container z-0"
+      >
+        <LayerControlWrapper />
+        <MapLayers
+          osmData={selectedLayers.includes('osm') ? osmData : null}
+          zoningData={selectedLayers.includes('zoning') ? zoningData : null}
+          populationData={selectedLayers.includes('population') ? populationData : null}
+          populationRangeData={selectedLayers.includes('population') ? populationRangeData : null}
+          landpricesubdData={selectedLayers.includes('landprice') ? landpricesubdData : null}
+          landpricesubdRangeData={selectedLayers.includes('landprice') ? landpricesubdRangeData : null}
+          boundmunData={selectedLayers.includes('boundmun') ? boundmunData : null} 
+          landId={landId.toString()}
+          isLoading={false}
+        />
+      </MapContainer>
+    </div>
   );
 }

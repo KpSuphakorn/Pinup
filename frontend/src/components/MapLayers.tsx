@@ -1,9 +1,10 @@
 import dynamic from 'next/dynamic';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
 import { landpricesubdStyles } from '@/styles/landpricesubdStyles';
+import { boundmunStyles } from '@/styles/CNX/boundmunStyles';
 import { MapLayersProps } from '@/types/index';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
@@ -15,6 +16,7 @@ export function MapLayers({
   populationRangeData,
   landpricesubdData,
   landpricesubdRangeData,
+  boundmunData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -73,6 +75,18 @@ export function MapLayers({
           }}
         />
       )}
+      {/* BoundMun Layer */}
+      {boundmunData?.features.length && (
+        <GeoJSON
+          data={boundmunData}
+          style={boundmunStyles.getStyle}
+          onEachFeature={(feature, layer) => {
+            const popupContent = createBoundMunPopup(feature);
+            layer.bindPopup(popupContent);
+          }}
+        />
+      )}
+
     </>
   );
 }
