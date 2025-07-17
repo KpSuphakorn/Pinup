@@ -206,3 +206,37 @@ export function createBoundMunPopup(feature: Feature<Geometry, any>) {
     </div>
   `;
 }
+
+export function createBoundTambonPopup(feature: Feature<Geometry, any>) {
+  const props = feature.properties || {};
+  const { display_multiline = [] } = props;
+
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 260px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        ข้อมูลตำบล
+      </h4>
+      <div style="margin: 10px 0;">
+        ${display_multiline
+          .map((item: any) => {
+            const { label, th, en, highlight } = item;
+            const baseStyle = `
+              margin: 6px 0;
+              font-size: ${highlight ? '15px' : '13px'};
+              font-weight: ${highlight ? 'bold' : 'normal'};
+              padding: ${highlight ? '6px 8px' : '0'};
+              background-color: ${highlight ? '#f0f9ff' : 'transparent'};
+              border-radius: ${highlight ? '6px' : '0'};
+              color: ${highlight ? '#1d4ed8' : '#333'};
+            `;
+            return `
+              <div style="${baseStyle}">
+                <strong>${label}:</strong> ${th} (${en})
+              </div>
+            `;
+          })
+          .join('')}
+      </div>
+    </div>
+  `;
+}

@@ -24,7 +24,7 @@ export default function Map({ landId }: MapProps) {
   const {
     zoningData, osmData, populationData, populationRangeData,
     landpricesubdData, landpricesubdRangeData,
-    boundmunData,
+    boundmunData, boundtambonData,
     isLoading
   } = useMapData(landId, isClient && shouldFetchData);
 
@@ -83,9 +83,11 @@ export default function Map({ landId }: MapProps) {
           landpricesubdData={selectedLayers.includes('landprice') ? landpricesubdData : null}
           landpricesubdRangeData={selectedLayers.includes('landprice') ? landpricesubdRangeData : null}
           boundmunData={selectedLayers.includes('boundmun') ? boundmunData : null}
+          boundtambonData={selectedLayers.includes('boundtambon') ? boundtambonData : null}
           landId={landId.toString()}
           isLoading={false}
         />
+
       </MapContainer>
     </div>
   );

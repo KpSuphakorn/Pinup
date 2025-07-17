@@ -1,29 +1,6 @@
 import { Feature, Geometry } from 'geojson';
 import { PathOptions } from 'leaflet';
-
-// สร้างสีจากชื่อ (display_name)
-function stringToColor(str: string): string {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  const c = (hash & 0x00ffffff).toString(16).toUpperCase();
-  return `#${'00000'.substring(0, 6 - c.length) + c}`;
-}
-
-// ฟังก์ชันสร้างสี fill ที่อ่อนลงจาก stroke
-function lightenColor(hexColor: string, percent: number): string {
-  const num = parseInt(hexColor.replace('#', ''), 16);
-  let r = (num >> 16) & 0xff;
-  let g = (num >> 8) & 0xff;
-  let b = num & 0xff;
-
-  r = Math.min(255, Math.floor(r + (255 - r) * percent));
-  g = Math.min(255, Math.floor(g + (255 - g) * percent));
-  b = Math.min(255, Math.floor(b + (255 - b) * percent));
-
-  return `rgb(${r}, ${g}, ${b})`;
-}
+import { stringToColor, lightenColor } from '@/utils/labelColorUtils';
 
 // ฟังก์ชันคืน style สำหรับแต่ละ feature
 function getStyle(feature?: Feature<Geometry, any>): PathOptions {
