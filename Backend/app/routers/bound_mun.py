@@ -5,7 +5,7 @@ from ..utils.convert_coor import convert_coordinates
 
 router = APIRouter()
 
-@router.get("/bound-mun")
+@router.get("/cnx/bound-mun")
 async def get_bound_mun():
     """ดึงข้อมูลขอบเขตของเขตการปกครอง - มี geometry และชื่อเทศบาล"""
     try:

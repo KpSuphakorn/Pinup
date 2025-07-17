@@ -5,7 +5,7 @@ from ..utils.convert_coor import convert_coordinates
 
 router = APIRouter()
 
-@router.get("/population/map-data")
+@router.get("/bkk/population/map-data")
 async def get_map_data():
     """ดึงข้อมูลสําหรับแสดงบนแผนที่ - มี geometry และ population"""
     try:
@@ -35,7 +35,7 @@ async def get_map_data():
         print(f"Error processing population data: {str(e)}")
         raise
 
-@router.get("/population/range")
+@router.get("/bkk/population/range")
 async def get_population_range():
     """ดึงช่วงของจํานวนประชากรสําหรับกําหนดสี - แบ่งเป็น 10 ช่วง"""
     try:

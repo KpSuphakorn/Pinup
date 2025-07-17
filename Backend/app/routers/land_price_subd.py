@@ -5,7 +5,7 @@ from ..utils.convert_coor import convert_coordinates
 
 router = APIRouter()
 
-@router.get("/land-price-subd/map-data")
+@router.get("/bkk/land-price-subd/map-data")
 async def get_map_data():
     """ดึงข้อมูลสําหรับแสดงบนแผนที่ - มี geometry และ land price per district"""
     try:
@@ -35,7 +35,7 @@ async def get_map_data():
         print(f"Error processing land price data: {str(e)}")
         raise
     
-@router.get("/land-price-subd/range")
+@router.get("/bkk/land-price-subd/range")
 async def get_land_price_range():
     """ดึงช่วงของราคาที่ดินสําหรับกําหนดสี - แบ่งเป็น 10 ช่วง"""
     try:

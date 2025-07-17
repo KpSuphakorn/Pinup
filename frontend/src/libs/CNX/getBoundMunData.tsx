@@ -5,7 +5,7 @@ import { BoundMunGeoJSON } from '@/types/index';
 export async function getBoundMunData(): Promise<BoundMunGeoJSON> {
   const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-  const response = await fetch(`${BACKEND_URL}/api/bound-mun`, {
+  const response = await fetch(`${BACKEND_URL}/api/cnx/bound-mun`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

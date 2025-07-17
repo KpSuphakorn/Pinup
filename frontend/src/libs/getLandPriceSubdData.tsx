@@ -5,7 +5,7 @@ import { LandPriceSubdGeoJSON } from '@/types/index';
 export async function getLandPriceMapData(): Promise<LandPriceSubdGeoJSON> {
   const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-  const response = await fetch(`${BACKEND_URL}/api/land-price-subd/map-data`, {
+  const response = await fetch(`${BACKEND_URL}/api/bkk/land-price-subd/map-data`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
