@@ -1,10 +1,11 @@
 'use client';
+
 import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { fixLeafletIcons } from '@/utils/leafletFix';
 import { useMapData } from '@/hooks/useMapData';
 import { MapProps } from '@/types/map';
-import { LayerOption } from '@/utils/layerUtils';
+import { LayerOption, getMapCenterByLayers } from '@/utils/layerUtils';
 import LayerSelector from './LayerSelector';
 import { MapLoading } from './MapLoading';
 import { MapLayers } from './MapLayers';
@@ -12,6 +13,7 @@ import RangeLegend from './RangeLegend';
 
 const MapContainer = dynamic(() => import('react-leaflet').then(m => m.MapContainer), { ssr: false });
 const LayerControlWrapper = dynamic(() => import('./LayerControlWrapper'), { ssr: false });
+const FlyToCoordinates = dynamic(() => import('./FlyToCoordinates'), { ssr: false });
 
 export default function Map({ landId }: MapProps) {
   const [isClient, setIsClient] = useState(false);
@@ -31,16 +33,21 @@ export default function Map({ landId }: MapProps) {
     fixLeafletIcons();
   }, []);
 
-  // แปลง selectedLayers เป็น keys ที่ RangeLegend เข้าใจ
   const selectedLayerKeys = selectedLayers
     .filter(layer => layer === 'population' || layer === 'landprice')
     .map(layer => layer as string);
+
+  // ตำแหน่ง center ตามชั้นข้อมูล
+  const flyTo = useMemo(() => {
+    if (!shouldFetchData) return null;
+    return getMapCenterByLayers(selectedLayers);
+  }, [selectedLayers, shouldFetchData]);
 
   if (!isClient || isLoadingLayers || (shouldFetchData && isLoading)) return <MapLoading />;
 
   return (
     <div className="relative w-full h-full">
-      {/* Floating Components */}
+      {/* Floating UI */}
       <div className="absolute top-12 right-4 z-[1000] space-y-2">
         <LayerSelector
           selectedLayers={selectedLayers}
@@ -57,12 +64,16 @@ export default function Map({ landId }: MapProps) {
         />
       </div>
 
-      {/* แผนที่ */}
-      <MapContainer
-        center={[13.7563, 100.5018]}
-        zoom={16}
-        className="map-container z-0"
-      >
+      {/* Map */}
+      <MapContainer center={[13.7563, 100.5018]} zoom={16} className="map-container z-0">
+        {flyTo && (
+          <FlyToCoordinates
+            center={flyTo}
+            zoom={13}
+            shouldFly={true}
+          />
+        )}
+
         <LayerControlWrapper />
         <MapLayers
           osmData={selectedLayers.includes('osm') ? osmData : null}
@@ -71,7 +82,7 @@ export default function Map({ landId }: MapProps) {
           populationRangeData={selectedLayers.includes('population') ? populationRangeData : null}
           landpricesubdData={selectedLayers.includes('landprice') ? landpricesubdData : null}
           landpricesubdRangeData={selectedLayers.includes('landprice') ? landpricesubdRangeData : null}
-          boundmunData={selectedLayers.includes('boundmun') ? boundmunData : null} 
+          boundmunData={selectedLayers.includes('boundmun') ? boundmunData : null}
           landId={landId.toString()}
           isLoading={false}
         />

@@ -331,3 +331,24 @@
   font-size: 0.75rem;
   color: #374151; /* text-gray-700 */
 }
+
+.layer-selector-warning {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #b00020; /* แดงเข้ม */
+  background-color: #fddede; /* แดงอ่อนใส */
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  user-select: none;
+  font-size: 0.95rem;
+  box-shadow: 0 0 4px rgba(176, 0, 32, 0.3);
+}
+
+.warning-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  display: inline-block;
+}

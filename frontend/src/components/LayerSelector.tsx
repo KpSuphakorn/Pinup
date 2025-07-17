@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { LayerOption, layerOptions } from '@/utils/layerUtils';
+import { LayerOption, layerOptions, globalLayers } from '@/utils/layerUtils';
 import './style.css';
 
 interface Props {
@@ -12,13 +12,56 @@ interface Props {
 export default function LayerSelector({ selectedLayers, setSelectedLayers }: Props) {
   const [tempSelectedLayers, setTempSelectedLayers] = useState<LayerOption[]>(selectedLayers);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [warning, setWarning] = useState<string | null>(null);
+
+  // หาค่า center ('bangkok' | 'chiangmai') ของ layer
+  const getCenterOfLayer = (layer: LayerOption): string | null => {
+    return layerOptions.find(l => l.value === layer)?.center || null;
+  };
 
   const handleTempLayerChange = (option: LayerOption) => {
-    if (option === 'none') return setTempSelectedLayers(['none']);
+    setWarning(null);
+
+    // กรณีเลือก 'none'
+    if (option === 'none') {
+      setTempSelectedLayers(['none']);
+      return;
+    }
+
     setTempSelectedLayers(prev => {
       const withoutNone = prev.filter(l => l !== 'none');
-      return prev.includes(option)
-        ? withoutNone.filter(l => l !== option) || ['none']
+      const alreadySelected = withoutNone.includes(option);
+
+      // หา center ของ layers ที่ไม่ใช่ global
+      const currentCenters = [...new Set(
+        withoutNone
+          .filter(l => !globalLayers.includes(l))
+          .map(getCenterOfLayer)
+      )];
+
+      const optionCenter = getCenterOfLayer(option);
+
+      // ถ้า option เป็น global layer (osm, zoning) เลือกได้เลย
+      if (globalLayers.includes(option)) {
+        return alreadySelected
+          ? withoutNone.filter(l => l !== option)
+          : [...withoutNone, option];
+      }
+
+      // เช็ค center สำหรับ non-global layer
+      if (
+        !alreadySelected &&
+        currentCenters.length > 0 &&
+        optionCenter &&
+        !currentCenters.includes(optionCenter)
+      ) {
+        setWarning('ไม่สามารถเลือกข้อมูลจากคนละพื้นที่พร้อมกันได้');
+        return withoutNone; // ไม่เพิ่มตัวใหม่
+      }
+
+      // toggle เลือก/ยกเลิก
+      return alreadySelected
+        ? withoutNone.filter(l => l !== option)
         : [...withoutNone, option];
     });
   };
@@ -26,11 +69,13 @@ export default function LayerSelector({ selectedLayers, setSelectedLayers }: Pro
   const handleConfirm = () => {
     setSelectedLayers(tempSelectedLayers.length ? tempSelectedLayers : ['none']);
     setShowDropdown(false);
+    setWarning(null);
   };
 
   const handleCancel = () => {
     setTempSelectedLayers(selectedLayers);
     setShowDropdown(false);
+    setWarning(null);
   };
 
   const hasChanges = () =>
@@ -41,7 +86,10 @@ export default function LayerSelector({ selectedLayers, setSelectedLayers }: Pro
       <button
         onClick={() => {
           setShowDropdown(!showDropdown);
-          if (!showDropdown) setTempSelectedLayers(selectedLayers);
+          if (!showDropdown) {
+            setTempSelectedLayers(selectedLayers);
+            setWarning(null);
+          }
         }}
         className="layer-selector-button"
       >
@@ -67,6 +115,14 @@ export default function LayerSelector({ selectedLayers, setSelectedLayers }: Pro
               <h3 className="layer-selector-title">เลือกข้อมูลที่ต้องการแสดง</h3>
               <p className="layer-selector-subtitle">เลือกได้หลายรายการ กดยืนยันเพื่อดึงข้อมูล</p>
             </div>
+
+            {warning && (
+              <p className="layer-selector-warning">
+                <span className="warning-icon" aria-hidden="true">⚠️</span>
+                {warning}
+              </p>
+            )}
+
             {layerOptions.map(option => (
               <label
                 key={option.value}
@@ -90,16 +146,14 @@ export default function LayerSelector({ selectedLayers, setSelectedLayers }: Pro
               </label>
             ))}
           </div>
+
           <div className="layer-selector-footer">
             <div className="layer-selector-status">
               <span>เลือกไว้: {tempSelectedLayers.includes('none') ? 0 : tempSelectedLayers.length}</span>
               {hasChanges() && <span className="layer-selector-status-changed">มีการเปลี่ยนแปลง</span>}
             </div>
             <div className="layer-selector-actions">
-              <button
-                onClick={handleCancel}
-                className="layer-selector-button-cancel"
-              >
+              <button onClick={handleCancel} className="layer-selector-button-cancel">
                 ยกเลิก
               </button>
               <button
