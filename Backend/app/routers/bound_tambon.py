@@ -7,7 +7,7 @@ router = APIRouter()
 
 @router.get("/cnx/bound-tambon")
 async def get_bound_tambon():
-    """ดึงข้อมูลขอบเขตของตำบล - มี geometry และชื่อตำบล"""
+    """ดึงข้อมูลขอบเขตของตำบล - มี geometry และรายละเอียดของตำบล"""
     try:
         with open("data/CNX/bound_tambon.geojson", "r", encoding='utf-8') as file:
             data = json.load(file)

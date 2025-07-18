@@ -46,7 +46,7 @@ export default function Map({ landId }: MapProps) {
   if (!isClient || isLoadingLayers || (shouldFetchData && isLoading)) return <MapLoading />;
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-screen">
       {/* Floating UI */}
       <div className="absolute top-12 right-4 z-[1000] space-y-2">
         <LayerSelector
@@ -65,7 +65,7 @@ export default function Map({ landId }: MapProps) {
       </div>
 
       {/* Map */}
-      <MapContainer center={[13.7563, 100.5018]} zoom={16} className="map-container z-0">
+      <MapContainer center={[13.7563, 100.5018]} zoom={16} className="map-container z-0 w-full h-full">
         {flyTo && (
           <FlyToCoordinates
             center={flyTo}
