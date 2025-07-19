@@ -1,7 +1,6 @@
 from fastapi import APIRouter
 import json
 import os
-from ..utils.convert_coor import convert_coordinates
 
 router = APIRouter()
 
@@ -14,24 +13,18 @@ async def get_bound_tambon():
         
         for feature in data["features"]:
             if feature["geometry"]["type"] == "Polygon":
-                feature["geometry"]["coordinates"] = convert_coordinates(
-                    feature["geometry"]["coordinates"]
-                )
-            
+                original_coords = feature["geometry"]["coordinates"]
+                print(f"Coordinates for {feature['properties']['T_NAME_T']}: {original_coords[0][0][:2]}")
+
             props = feature["properties"]
             feature["properties"] = {
                 "id": props["OBJECTID"],
-
                 "tambon_th": props["T_NAME_T"],
                 "tambon_en": props["T_NAME_E"].title(),
-
                 "amphoe_th": props["A_NAME_T"],
                 "amphoe_en": props["A_NAME_E"].title(),
-
                 "province_th": props["P_NAME_T"],
                 "province_en": props["P_NAME_E"].title(),
-
-                # สำหรับแสดงผลแบบ format string
                 "display_multiline": [
                     {
                         "label": "ตำบล",
