@@ -1,4 +1,5 @@
 import { Feature, Geometry } from 'geojson';
+import { stringToColor, addOpacityToHexColor, lightenColor } from '@/utils/labelColorUtils';
 
 const FEATURE_LABELS = {
   highway: 'ถนน',
@@ -225,9 +226,9 @@ export function createBoundTambonPopup(feature: Feature<Geometry, any>) {
               font-size: ${highlight ? '15px' : '13px'};
               font-weight: ${highlight ? 'bold' : 'normal'};
               padding: ${highlight ? '6px 8px' : '0'};
-              background-color: ${highlight ? '#f0f9ff' : 'transparent'};
+              background-color: ${highlight ? addOpacityToHexColor(stringToColor(th), 0.1) : 'transparent'};
               border-radius: ${highlight ? '6px' : '0'};
-              color: ${highlight ? '#1d4ed8' : '#333'};
+              color: ${highlight ? stringToColor(th) : lightenColor(th, 0.5)};
             `;
             return `
               <div style="${baseStyle}">

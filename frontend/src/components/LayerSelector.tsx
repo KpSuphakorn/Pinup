@@ -55,7 +55,7 @@ export default function LayerSelector({ selectedLayers, setSelectedLayers }: Pro
         optionCenter &&
         !currentCenters.includes(optionCenter)
       ) {
-        setWarning('ไม่สามารถเลือกข้อมูลจากคนละพื้นที่พร้อมกันได้');
+        setWarning('ไม่สามารถเลือกข้อมูลจากคนละจังหวัดพร้อมกันได้');
         return withoutNone; // ไม่เพิ่มตัวใหม่
       }
 

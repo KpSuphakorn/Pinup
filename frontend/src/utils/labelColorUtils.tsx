@@ -21,3 +21,20 @@ export function lightenColor(hexColor: string, percent: number): string {
 
   return `rgb(${r}, ${g}, ${b})`;
 }
+
+// แปลง hex → rgba โดยกำหนด opacity (0.0 - 1.0)
+export function addOpacityToHexColor(hexColor: string, opacity: number): string {
+  // ตัด '#' ออกถ้ามี
+  const hex = hexColor.replace('#', '');
+
+  // ถ้าเป็น shorthand (3 หลัก) ให้แปลงเป็น 6 หลัก
+  const fullHex = hex.length === 3
+    ? hex.split('').map(c => c + c).join('')
+    : hex;
+
+  const r = parseInt(fullHex.slice(0, 2), 16);
+  const g = parseInt(fullHex.slice(2, 4), 16);
+  const b = parseInt(fullHex.slice(4, 6), 16);
+
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+}
