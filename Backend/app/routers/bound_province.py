@@ -3,7 +3,7 @@ import json
 
 router = APIRouter()
 
-@router.get("/cnx/bound-province")
+@router.get("/cnx/bound-prov")
 async def get_bound_province():
     """ดึงข้อมูลขอบเขตของจังหวัดเดียว - มี geometry และรายละเอียดของจังหวัด"""
     try:
