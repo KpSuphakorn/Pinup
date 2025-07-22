@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FeatureCollection, Geometry } from 'geojson';
-import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON } from '@/types';
+import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON } from '@/types';
 import { getZoning } from '@/libs/zoning';
 import { getOsmData } from '@/libs/osm';
 import { getPopulationMapData } from '@/libs/getPopulationData';
@@ -10,6 +10,7 @@ import { getLandPriceRange } from '@/libs/getLandPriceSubdRange';
 import { getBoundMunData } from '@/libs/CNX/getBoundMunData';
 import { getBoundTambonData } from '@/libs/CNX/getBoundTambonData';
 import { getBoundAmphoeData } from '@/libs/CNX/getBoundAmphoeData';
+import { getBoundProvinceData } from '@/libs/CNX/getBoundProvinceData';
 
 export function useMapData(landId: number, isClient: boolean) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
@@ -21,6 +22,7 @@ export function useMapData(landId: number, isClient: boolean) {
   const [boundmunData, setBoundMunData] = useState<BoundMunGeoJSON | null>(null);
   const [boundtambonData, setBoundTambonData] = useState<BoundTambonGeoJSON | null>(null);
   const [boundamphoeData, setBoundAmphoeData] = useState<BoundAmphoeGeoJSON | null>(null);
+  const [boundprovinceData, setBoundProvinceData] = useState<BoundProvinceGeoJSON | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -30,7 +32,7 @@ export function useMapData(landId: number, isClient: boolean) {
       setIsLoading(true);
 
       try {
-        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse] = await Promise.allSettled([
+        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse] = await Promise.allSettled([
           getZoning(landId),
           getOsmData(),
           getPopulationMapData(),
@@ -40,6 +42,7 @@ export function useMapData(landId: number, isClient: boolean) {
           getBoundMunData(),
           getBoundTambonData(),
           getBoundAmphoeData(),
+          getBoundProvinceData(),
         ]);
 
         // Handle zoning data
@@ -67,7 +70,6 @@ export function useMapData(landId: number, isClient: boolean) {
         if (populationResponse.status === 'fulfilled') {
           const data = populationResponse.value;
           setPopulationData(data);
-          console.log('populationData:', data); // เช็คข้อมูลที่ได้
         } else {
           console.error('Failed to fetch population map data:', populationResponse.reason);
         }
@@ -76,7 +78,6 @@ export function useMapData(landId: number, isClient: boolean) {
         if (populationRangeResponse.status === 'fulfilled') {
           const data = populationRangeResponse.value;
           setPopulationRangeData(data);
-          console.log('populationRangeData:', data); // เช็คข้อมูลที่ได้
         } else {
           console.error('Failed to fetch population range data:', populationRangeResponse.reason);
         }
@@ -85,7 +86,6 @@ export function useMapData(landId: number, isClient: boolean) {
         if (landpricesubdResponse.status === 'fulfilled') {
           const data = landpricesubdResponse.value;
           setLandPriceSubdData(data);
-          console.log('landpricesubdData in useMapData:', data); // เช็คข้อมูลที่ได้
         } else {
           console.error('Failed to fetch land price subdistrict map data:', landpricesubdResponse.reason);
         }
@@ -94,7 +94,6 @@ export function useMapData(landId: number, isClient: boolean) {
         if (landpricesubdRangeResponse.status === 'fulfilled') {
           const data = landpricesubdRangeResponse.value;
           setLandPriceSubdRangeData(data);
-          console.log('landpricesubdRangeData in useMapData:', data); // เช็คข้อมูลที่ได้
         } else {
           console.error('Failed to fetch land price subdistrict range data:', landpricesubdRangeResponse.reason);
         }
@@ -103,7 +102,6 @@ export function useMapData(landId: number, isClient: boolean) {
         if (boundmunResponse.status === 'fulfilled') {
           const data = boundmunResponse.value;
           setBoundMunData(data);
-          console.log('boundMunData in useMapData:', data); // เช็คข้อมูลที่ได้
         } else {
           console.error('Failed to fetch bound municipality data:', boundmunResponse.reason);
         }
@@ -112,7 +110,6 @@ export function useMapData(landId: number, isClient: boolean) {
         if (boundtambonResponse.status === 'fulfilled') {
           const data = boundtambonResponse.value;
           setBoundTambonData(data);
-          console.log('boundTambonData in useMapData:', data); // เช็คข้อมูลที่ได้
         } else {
           console.error('Failed to fetch bound tambon data:', boundtambonResponse.reason);
         }
@@ -121,9 +118,16 @@ export function useMapData(landId: number, isClient: boolean) {
         if (boundamphoeResponse.status === 'fulfilled') {
           const data = boundamphoeResponse.value;
           setBoundAmphoeData(data);
-          console.log('boundAmphoeData in useMapData:', data); // เช็คข้อมูลที่ได้
         } else {
           console.error('Failed to fetch bound municipality data:', boundamphoeResponse.reason);
+        }
+
+        // Handle bound province data
+        if (boundprovinceResponse.status === 'fulfilled') {
+          const data = boundprovinceResponse.value;
+          setBoundProvinceData(data);
+        } else {
+          console.error('Failed to fetch bound province data:', boundprovinceResponse.reason);
         }
 
       } catch (error) {
@@ -146,6 +150,7 @@ export function useMapData(landId: number, isClient: boolean) {
     boundmunData,
     boundtambonData,
     boundamphoeData,
+    boundprovinceData,
     isLoading
   };
 }

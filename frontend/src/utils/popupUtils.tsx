@@ -195,7 +195,7 @@ export function createBoundMunPopup(feature: Feature<Geometry, any>) {
   return `
     <div style="font-family: Arial, sans-serif; min-width: 250px;">
       <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
-        เขตเทศบาล
+        ขอบเขตเทศบาล
       </h4>
       <div style="margin: 10px 0;">
         ${display_name ? `<p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: ${lightColor}; padding: 4px 8px; border-radius: 4px;">
@@ -213,7 +213,7 @@ export function createBoundTambonPopup(feature: Feature<Geometry, any>) {
   return `
     <div style="font-family: Arial, sans-serif; min-width: 260px;">
       <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
-        ข้อมูลตำบล
+        ขอบเขตตำบล
       </h4>
       <div style="margin: 10px 0;">
         ${display_multiline
@@ -245,15 +245,34 @@ export function createBoundAmphoePopup(feature: Feature<Geometry, any>) {
   const { display_name } = props;
 
   const baseColor = display_name ? stringToColor(display_name) : '#ddd';
-  const lightColor = lightenColor(baseColor, 0.2);
 
   return `
     <div style="font-family: Arial, sans-serif; min-width: 250px;">
       <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
-        เขตอำเภอ
+        ขอบเขตอำเภอ
       </h4>
       <div style="margin: 10px 0;">
-        ${display_name ? `<p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: ${lightColor}; padding: 4px 8px; border-radius: 4px;">
+        ${display_name ? `<p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: ${baseColor}; padding: 4px 8px; border-radius: 4px;">
+          ${display_name}
+        </p>` : ''}
+      </div>
+    </div>
+  `;
+}
+
+export function createBoundProvincePopup(feature: Feature<Geometry, any>) {
+  const props = feature.properties || {};
+  const { display_name } = props;
+
+  const baseColor = display_name ? stringToColor(display_name) : '#ddd';
+
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 300px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        ขอบเขตจังหวัด
+      </h4>
+      <div style="margin: 10px 0;">
+        ${display_name ? `<p style="margin: 5px 0; font-size: 14px; font-weight: bold; color: ${baseColor}; padding: 4px 4px; border-radius: 4px;">
           ${display_name}
         </p>` : ''}
       </div>
