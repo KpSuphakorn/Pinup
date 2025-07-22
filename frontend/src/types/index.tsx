@@ -28,6 +28,7 @@ export interface MapLayersProps {
   boundmunData?: BoundMunGeoJSON | null;
   boundtambonData?: BoundTambonGeoJSON | null;
   boundamphoeData?: BoundAmphoeGeoJSON | null;
+  boundprovinceData?: BoundProvinceGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }
@@ -211,4 +212,25 @@ export interface BoundAmphoeFeature {
 export interface BoundAmphoeGeoJSON {
   type: 'FeatureCollection';
   features: BoundAmphoeFeature[];
+}
+
+export interface BoundProvinceData {
+  prov_th: string;
+  prov_en: string;
+  area_km2: number;
+  display_name: string;
+}
+
+export interface BoundProvinceFeature {
+  type: 'Feature';
+  geometry: {
+    type: 'Polygon';
+    coordinates: number[][][];
+  };
+  properties: BoundProvinceData;
+}
+
+export interface BoundProvinceGeoJSON {
+  type: 'FeatureCollection';
+  features: BoundProvinceFeature[];
 }

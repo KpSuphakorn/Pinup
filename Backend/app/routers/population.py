@@ -1,6 +1,5 @@
 from fastapi import APIRouter
 import json
-import os
 from ..utils.convert_coor import convert_coordinates
 
 router = APIRouter()
