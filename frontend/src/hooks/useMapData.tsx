@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FeatureCollection, Geometry } from 'geojson';
-import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON } from '@/types';
+import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON } from '@/types';
 import { getZoning } from '@/libs/zoning';
 import { getOsmData } from '@/libs/osm';
 import { getPopulationMapData } from '@/libs/getPopulationData';
@@ -9,6 +9,7 @@ import { getLandPriceMapData } from '@/libs/getLandPriceSubdData';
 import { getLandPriceRange } from '@/libs/getLandPriceSubdRange';
 import { getBoundMunData } from '@/libs/CNX/getBoundMunData';
 import { getBoundTambonData } from '@/libs/CNX/getBoundTambonData';
+import { getBoundAmphoeData } from '@/libs/CNX/getBoundAmphoeData';
 
 export function useMapData(landId: number, isClient: boolean) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
@@ -19,6 +20,7 @@ export function useMapData(landId: number, isClient: boolean) {
   const [landpricesubdRangeData, setLandPriceSubdRangeData] = useState<LandPriceSubdRangeData | null>(null);
   const [boundmunData, setBoundMunData] = useState<BoundMunGeoJSON | null>(null);
   const [boundtambonData, setBoundTambonData] = useState<BoundTambonGeoJSON | null>(null);
+  const [boundamphoeData, setBoundAmphoeData] = useState<BoundAmphoeGeoJSON | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export function useMapData(landId: number, isClient: boolean) {
       setIsLoading(true);
 
       try {
-        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse] = await Promise.allSettled([
+        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse] = await Promise.allSettled([
           getZoning(landId),
           getOsmData(),
           getPopulationMapData(),
@@ -36,7 +38,8 @@ export function useMapData(landId: number, isClient: boolean) {
           getLandPriceMapData(),
           getLandPriceRange(),
           getBoundMunData(),
-          getBoundTambonData()
+          getBoundTambonData(),
+          getBoundAmphoeData(),
         ]);
 
         // Handle zoning data
@@ -114,6 +117,15 @@ export function useMapData(landId: number, isClient: boolean) {
           console.error('Failed to fetch bound tambon data:', boundtambonResponse.reason);
         }
 
+        // Handle bound amphoe data
+        if (boundamphoeResponse.status === 'fulfilled') {
+          const data = boundamphoeResponse.value;
+          setBoundAmphoeData(data);
+          console.log('boundAmphoeData in useMapData:', data); // เช็คข้อมูลที่ได้
+        } else {
+          console.error('Failed to fetch bound municipality data:', boundamphoeResponse.reason);
+        }
+
       } catch (error) {
         console.error('Error fetching map data:', error);
       } finally {
@@ -133,6 +145,7 @@ export function useMapData(landId: number, isClient: boolean) {
     landpricesubdRangeData,
     boundmunData,
     boundtambonData,
+    boundamphoeData,
     isLoading
   };
 }

@@ -1,7 +1,6 @@
 from fastapi import APIRouter
 import json
 import os
-from ..utils.convert_coor import convert_coordinates
 
 router = APIRouter()
 
@@ -11,12 +10,7 @@ async def get_bound_amphoe():
     try:
         with open("data/CNX/bound_amphoe.geojson", "r", encoding='utf-8') as file:
             data = json.load(file)
-        for feature in data["features"]:
-            if feature["geometry"]["type"] == "Polygon":
-                feature["geometry"]["coordinates"] = convert_coordinates(
-                    feature["geometry"]["coordinates"]
-                )
-            
+        for feature in data["features"]:            
             props = feature["properties"]
             feature["properties"] = {
                 "name_th": props["AMP_NAME_T"],         # ชื่อภาษาไทยหลัก

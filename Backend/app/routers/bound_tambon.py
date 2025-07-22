@@ -12,10 +12,6 @@ async def get_bound_tambon():
             data = json.load(file)
         
         for feature in data["features"]:
-            if feature["geometry"]["type"] == "Polygon":
-                original_coords = feature["geometry"]["coordinates"]
-                print(f"Coordinates for {feature['properties']['T_NAME_T']}: {original_coords[0][0][:2]}")
-
             props = feature["properties"]
             feature["properties"] = {
                 "id": props["OBJECTID"],

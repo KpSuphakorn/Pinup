@@ -1,11 +1,12 @@
 import dynamic from 'next/dynamic';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
 import { landpricesubdStyles } from '@/styles/landpricesubdStyles';
 import { boundmunStyles } from '@/styles/CNX/boundmunStyles';
 import { boundtambonStyles } from '@/styles/CNX/boundtambonStyles';
+import { boundamphoeStyles } from '@/styles/CNX/boundamphoeStyles';
 import { MapLayersProps } from '@/types/index';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
@@ -19,6 +20,7 @@ export function MapLayers({
   landpricesubdRangeData,
   boundmunData,
   boundtambonData,
+  boundamphoeData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -97,6 +99,18 @@ export function MapLayers({
           style={boundtambonStyles.getStyle}
           onEachFeature={(feature, layer) => {
             const popupContent = createBoundTambonPopup(feature);
+            layer.bindPopup(popupContent);
+          }}
+        />
+      )}
+
+      {/* BoundAmphoe Layer */}
+      {boundamphoeData?.features.length && (
+        <GeoJSON
+          data={boundamphoeData}
+          style={boundamphoeStyles.getStyle}
+          onEachFeature={(feature, layer) => {
+            const popupContent = createBoundAmphoePopup(feature);
             layer.bindPopup(popupContent);
           }}
         />

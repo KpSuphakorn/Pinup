@@ -27,6 +27,7 @@ export interface MapLayersProps {
   landpricesubdRangeData?: LandPriceSubdRangeData | null;
   boundmunData?: BoundMunGeoJSON | null;
   boundtambonData?: BoundTambonGeoJSON | null;
+  boundamphoeData?: BoundAmphoeGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }
@@ -190,4 +191,24 @@ export interface BoundTambonFeature {
 export interface BoundTambonGeoJSON {
   type: 'FeatureCollection';
   features: BoundTambonFeature[];
+}
+
+export interface BoundAmphoeData {
+  amphoe_th: string;
+  amphoe_en: string;
+  display_name: string;
+}
+
+export interface BoundAmphoeFeature {
+  type: 'Feature';
+  geometry: {
+    type: 'Polygon';
+    coordinates: number[][][];
+  };
+  properties: BoundAmphoeData;
+}
+
+export interface BoundAmphoeGeoJSON {
+  type: 'FeatureCollection';
+  features: BoundAmphoeFeature[];
 }

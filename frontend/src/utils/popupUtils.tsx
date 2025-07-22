@@ -39,42 +39,42 @@ const AMENITY_TYPES = {
 
 function getFeatureDescription(props: Record<string, any>) {
   const { highway, landuse, boundary, building, amenity } = props;
-  
+
   if (highway) {
     return {
       type: FEATURE_LABELS.highway,
       description: ROAD_TYPES[highway as keyof typeof ROAD_TYPES] || highway
     };
   }
-  
+
   if (landuse) {
     return {
       type: FEATURE_LABELS.landuse,
       description: LANDUSE_TYPES[landuse as keyof typeof LANDUSE_TYPES] || landuse
     };
   }
-  
+
   if (boundary) {
     return {
       type: FEATURE_LABELS.boundary,
       description: boundary === 'administrative' ? 'ขอบเขตการปกครอง' : 'ขอบเขตอื่นๆ'
     };
   }
-  
+
   if (building) {
     return {
       type: FEATURE_LABELS.building,
       description: building === 'yes' ? 'อาคารทั่วไป' : building
     };
   }
-  
+
   if (amenity) {
     return {
       type: FEATURE_LABELS.amenity,
       description: AMENITY_TYPES[amenity as keyof typeof AMENITY_TYPES] || amenity
     };
   }
-  
+
   return {
     type: 'Unknown',
     description: 'ไม่ระบุประเภท'
@@ -90,7 +90,7 @@ export function createOsmPopup(feature: Feature<Geometry, any>) {
   const props = feature.properties || {};
   const { name, id } = props;
   const { type, description } = getFeatureDescription(props);
-  
+
   return `
     <div style="font-family: Arial, sans-serif; min-width: 200px;">
       <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
@@ -107,7 +107,7 @@ export function createOsmPopup(feature: Feature<Geometry, any>) {
 
 export function createZoningPopup(feature: Feature<Geometry, any>) {
   const props = feature.properties || {};
-  
+
   return `
     <div style="font-family: Arial, sans-serif; min-width: 200px;">
       <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
@@ -126,13 +126,13 @@ export function createZoningPopup(feature: Feature<Geometry, any>) {
 export function createPopulationPopup(feature: Feature<Geometry, any>) {
   const props = feature.properties || {};
   const { id, population, label, province, district, subdistrict } = props;
-  
+
   // ตรวจสอบและสร้าง label จากหลายฟิลด์
   const displayLabel = label || district || subdistrict || 'ไม่ระบุชื่อพื้นที่';
-  
+
   // ตรวจสอบว่าข้อมูลเป็น string หรือไม่ และไม่ว่าง
   const validLabel = displayLabel && displayLabel.toString().trim() !== '' ? displayLabel.toString().trim() : null;
-  
+
   return `
     <div style="font-family: Arial, sans-serif; min-width: 250px;">
       <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
@@ -156,14 +156,14 @@ export function createPopulationPopup(feature: Feature<Geometry, any>) {
 
 export function createLandPriceSubdPopup(feature: Feature<Geometry, any>) {
   const props = feature.properties || {};
-  const { id, land_price, label, province, district, subdistrict } = props;
-  
+  const { land_price, label, province, district, subdistrict } = props;
+
   // ตรวจสอบและสร้าง label จากหลายฟิลด์
   const displayLabel = label || district || subdistrict || 'ไม่ระบุชื่อพื้นที่';
-  
+
   // ตรวจสอบว่าข้อมูลเป็น string หรือไม่ และไม่ว่าง
   const validLabel = displayLabel && displayLabel.toString().trim() !== '' ? displayLabel.toString().trim() : null;
-  
+
   return `
     <div style="font-family: Arial, sans-serif; min-width: 250px;">
       <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
@@ -187,7 +187,10 @@ export function createLandPriceSubdPopup(feature: Feature<Geometry, any>) {
 
 export function createBoundMunPopup(feature: Feature<Geometry, any>) {
   const props = feature.properties || {};
-  const { name_th, name_en, display_name } = props;
+  const display_name = props;
+
+  const baseColor = display_name ? stringToColor(display_name) : '#ddd';
+  const lightColor = lightenColor(baseColor, 0.2);
 
   return `
     <div style="font-family: Arial, sans-serif; min-width: 250px;">
@@ -195,13 +198,8 @@ export function createBoundMunPopup(feature: Feature<Geometry, any>) {
         เขตเทศบาล
       </h4>
       <div style="margin: 10px 0;">
-        ${display_name ? `<p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: #2563eb;"> ${display_name}
-        </p>` : ''}
-        ${name_th ? `<p style="margin: 5px 0; font-size: 14px; color: #059669;">
-          <strong>ชื่อ (ไทย):</strong> ${name_th}
-        </p>` : ''}
-        ${name_en ? `<p style="margin: 5px 0; font-size: 14px; color: #059669;">
-          <strong>ชื่อ (อังกฤษ):</strong> ${name_en}
+        ${display_name ? `<p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: ${lightColor}; padding: 4px 8px; border-radius: 4px;">
+          ${display_name}
         </p>` : ''}
       </div>
     </div>
@@ -219,9 +217,9 @@ export function createBoundTambonPopup(feature: Feature<Geometry, any>) {
       </h4>
       <div style="margin: 10px 0;">
         ${display_multiline
-          .map((item: any) => {
-            const { label, th, en, highlight } = item;
-            const baseStyle = `
+      .map((item: any) => {
+        const { label, th, en, highlight } = item;
+        const baseStyle = `
               margin: 6px 0;
               font-size: ${highlight ? '15px' : '13px'};
               font-weight: ${highlight ? 'bold' : 'normal'};
@@ -230,13 +228,34 @@ export function createBoundTambonPopup(feature: Feature<Geometry, any>) {
               border-radius: ${highlight ? '6px' : '0'};
               color: ${highlight ? stringToColor(th) : lightenColor(th, 0.5)};
             `;
-            return `
+        return `
               <div style="${baseStyle}">
                 <strong>${label}:</strong> ${th} (${en})
               </div>
             `;
-          })
-          .join('')}
+      })
+      .join('')}
+      </div>
+    </div>
+  `;
+}
+
+export function createBoundAmphoePopup(feature: Feature<Geometry, any>) {
+  const props = feature.properties || {};
+  const { display_name } = props;
+
+  const baseColor = display_name ? stringToColor(display_name) : '#ddd';
+  const lightColor = lightenColor(baseColor, 0.2);
+
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 250px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        เขตอำเภอ
+      </h4>
+      <div style="margin: 10px 0;">
+        ${display_name ? `<p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: ${lightColor}; padding: 4px 8px; border-radius: 4px;">
+          ${display_name}
+        </p>` : ''}
       </div>
     </div>
   `;
