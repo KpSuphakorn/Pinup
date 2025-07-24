@@ -1,16 +1,14 @@
-import {Feature, Geometry } from 'geojson';
+'use client'
+
+import { Feature, Geometry } from 'geojson';
 import L from 'leaflet';
 
-// Display as a MARKER
 export function getStyle(feature?: Feature<Geometry, any>) {
-  const displayName = feature?.properties?.display_name || '?';
-
   return L.divIcon({
-    className: 'gate-marker',
+    className: 'custom-gate-marker',
     html: `
       <div style="
-        background-color: #00438bff;
-        color: white;
+        background-color: #00438b;  /* วงกลมสีน้ำเงิน */
         border: 2px solid white;
         border-radius: 50%;
         width: 30px;
@@ -18,13 +16,12 @@ export function getStyle(feature?: Feature<Geometry, any>) {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 12px;
       ">
-        <i class="fas fa-door-open"></i>
+        <img src="/walk.png" alt="icon" style="width: 18px; height: 18px;" />
       </div>
     `,
     iconSize: [30, 30],
-    iconAnchor: [15, 30],
+    iconAnchor: [15, 30],  // กึ่งกลางล่าง
     popupAnchor: [0, -30],
   });
 }
