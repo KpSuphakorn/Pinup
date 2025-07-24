@@ -1,0 +1,5333 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.95524680000005,
+                    18.808036000000072,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "หน้ามหาวิทยาลัยเชียงใหม่ / Chiang Mai University",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/หน้ามหาวิทยาลัยเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "<img src=\"https://doc-0s-80-mymaps.googleusercontent.com/untrusted/hostedimage/f6u64nodcabo26320jjaagdfpc/ujshd28j56t2f4j2q922h6ls2k/1573032600000/lPckScKZPEOdd8xP8MhcE0MXs-TX7p4_/*/2AF2TALqpKeXNB317SqobH7iC3ZUgY8WVZ6aMfgxmMOVHR_lS8Bi-TTbZUSfrFmTVWDgZTQg",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98264830000005,
+                    18.795421800000042,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วัดราชมณเฑียร / Wat Rajamontean",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วัดราชมณเฑียร",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98147340000008,
+                    18.79597540000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ไอคอนปาร์ค / ICON Park",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ไอคอนปาร์ค",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1, R3, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96909240000008,
+                    18.80081240000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ฮิลล์ไซด์พลาซ่า / Hillside Plaza",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ฮิลล์ไซด์พลาซ่า",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1, R3<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98578110000005,
+                    18.79586370000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดช้างเผือก / Chang Phuek Market",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดช้างเผือก",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1, R3, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97283670000007,
+                    18.798575500000027,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วท.ศรีธนาพาณิชยการ / Srithana College",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วท.ศรีธนาพาณิชยการ",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97014380000007,
+                    18.800022800000022,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ฮิลล์ไซด์พลาซ่า (2) / Hillside Plaza (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ฮิลล์ไซด์พลาซ่า (2)",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1, R3<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01749550000005,
+                    18.800200500000074,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สถานีขนส่งอาเขต / Arcade Bus Station",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สถานีขนส่งอาเขต",
+                "SymbolID": 2,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "<img src=\"https://doc-14-80-mymaps.googleusercontent.com/untrusted/hostedimage/f6u64nodcabo26320jjaagdfpc/9tq1oc6ag0of3saeh2phrold60/1573032600000/lPckScKZPEOdd8xP8MhcE0MXs-TX7p4_/*/2AF2TALpOSC4bhUQvsivJo8hNB5-W_yrwXUMrYwHQgqAlVHndP4T-PCHVSYerBvfGVB4RwJe",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.95613190000006,
+                    18.807766900000047,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เดอะเชียงใหม่คอมเพล็กซ์ / The Chiang Mai Complex",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เดอะเชียงใหม่คอมเพล็กซ์",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.95336660000004,
+                    18.809168400000033,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "มทร.ล้านนา / RMUTL",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/มทร.ล้านนา",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.95265040000004,
+                    18.809376600000064,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "มทร.ล้านนา (2) / RMUTL (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/มทร.ล้านนา (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.94794050000007,
+                    18.81038710000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สวนสัตว์เชียงใหม่ / Chiang Mai Zoo",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สวนสัตว์เชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.94598780000007,
+                    18.81283460000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ครูบาศรีวิชัย / Kru-Ba Sri Wichai",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ครูบาศรีวิชัย",
+                "SymbolID": 2,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1<br><br>สถานีต้นทาง/ปลายทาง<br>Terminal station",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.95858350000003,
+                    18.80624350000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ปันนาเรสซิเดนท์ / Punna Residence",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ปันนาเรสซิเดนท์",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, R1<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.95917890000004,
+                    18.806172400000037,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ลานนา 3 คอนโด / Lanna 3 Condominium",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ลานนา 3 คอนโด",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, R1<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96188260000008,
+                    18.804697300000043,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เดอะ ทริโอ้ / The Trio",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เดอะ ทริโอ้",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96263900000008,
+                    18.80402440000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เชียงใหม่ฮิลล์ / Chiang Mai Hill",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เชียงใหม่ฮิลล์",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96531850000008,
+                    18.802846200000033,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วิทยาลัยสารพัดช่าง / Chiang Mai Polytechnic College",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วิทยาลัยสารพัดช่าง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96555190000004,
+                    18.802470500000027,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วิทยาลัยสารพัดช่าง (2) / Chiang Mai Polytechnic College (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วิทยาลัยสารพัดช่าง (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96675620000008,
+                    18.802049000000068,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เมญ่า / MAYA Chiang Mai",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เมญ่า",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96664620000007,
+                    18.80187120000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงแรมอีสติน ตัน / Eastin Tan Hotel",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงแรมอีสติน ตัน",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97308890000005,
+                    18.798697400000037,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วท.ศรีธนาพาณิชยการ (2) / Srithana College (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วท.ศรีธนาพาณิชยการ (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97606070000006,
+                    18.79682850000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "กาดสวนแก้ว / Kad Suan Kaew",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/กาดสวนแก้ว",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97586230000007,
+                    18.797239900000022,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "12 ห้วยแก้ว / 12 Huaykaew",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/12 ห้วยแก้ว",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97805090000008,
+                    18.79487340000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "รพ.เชียงใหม่ราม / Chiang Mai Ram Hospital",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/รพ.เชียงใหม่ราม",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1, R3, 10<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98533050000003,
+                    18.795284700000025,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ประตูช้างเผือก / Chang Phuek Gate",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ประตูช้างเผือก",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98617270000005,
+                    18.797925500000076,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนโกวิทธำรง / Kowit School",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนโกวิทธำรง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98595270000004,
+                    18.800058300000046,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ขนส่งช้างเผือก (1) / Chang Phuek Minibus Station (1)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ขนส่งช้างเผือก (1)",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98680030000008,
+                    18.800634700000046,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ขนส่งช้างเผือก (2) / Chang Phuek Minibus Station (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ขนส่งช้างเผือก (2)",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98927060000005,
+                    18.799474300000043,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สนามกีฬาเทศบาลนครเชียงใหม่ / Municipality Sport Complex",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สนามกีฬาเทศบาลนครเชียงใหม่",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98901050000006,
+                    18.799296600000048,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สนามกีฬาเทศบาลนครเชียงใหม่ (2) / Municipality Sport Complex (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สนามกีฬาเทศบาลนครเชียงใหม่ (2)",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98987140000008,
+                    18.796539100000075,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนเทศบาลวัดเชียงยืน / Wat Chiang Yuen School",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนเทศบาลวัดเชียงยืน",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99582330000004,
+                    18.790013300000055,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ช้างม่อย / Chang Moi",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ช้างม่อย",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B2, R1, R2, R3, 10<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99961860000008,
+                    18.790828400000066,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดวโรรส / Waroros Market",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดวโรรส",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, R1, R2, R3, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00211840000009,
+                    18.790505900000028,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดต้นลำใย / Ton Lam Yai Market",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดต้นลำใย",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B2, R1, R2, R3, 10<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00262800000007,
+                    18.78849230000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ไปรษณีย์แม่ปิง / Mae Ping Post Office",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ไปรษณีย์แม่ปิง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B2, R1, R2, R3, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00681230000004,
+                    18.787263300000063,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สันป่าข่อย / San Pa Khoi",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สันป่าข่อย",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B4, R1<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00973860000005,
+                    18.798159100000078,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "รพ.แมคคอร์มิค / McCormick Hospital",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/รพ.แมคคอร์มิค",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, B4, R1<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01253070000007,
+                    18.799715500000048,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนดาราวิทยาลัย / Dara Academy",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนดาราวิทยาลัย",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, B4, R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01014090000007,
+                    18.798606000000063,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "คณะพยาบาลศาสตร์ ม.พายัพ / Faculty of Nursing, Payap University",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/คณะพยาบาลศาสตร์ ม.พายัพ",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, B4, R1<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01238590000008,
+                    18.79985270000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนดาราวิทยาลัย (2) / Dara Academy (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนดาราวิทยาลัย (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, B4, R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01701540000005,
+                    18.80287930000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "นครชัยแอร์ อาเขต / Nakornchai Air (Arcade)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/นครชัยแอร์ อาเขต",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3, R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00714490000007,
+                    18.78739530000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สันป่าข่อย (2) / San Pa Khoi (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สันป่าข่อย (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01490450000006,
+                    18.807533300000046,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วนัสนันท์ / Wanasanant",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วนัสนันท์",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3, B4, R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01317180000007,
+                    18.809259800000063,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เจี่ยท้งเฮง / Jia Tong Heng",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เจี่ยท้งเฮง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3, B4, R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01732650000008,
+                    18.806182600000056,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เซ็นทรัลเฟสติวัล / CentralFestival",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เซ็นทรัลเฟสติวัล",
+                "SymbolID": 2,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "<img src=\"https://doc-0g-80-mymaps.googleusercontent.com/untrusted/hostedimage/f6u64nodcabo26320jjaagdfpc/d0kfeidd3kjruu438ft1nln758/1573032600000/lPckScKZPEOdd8xP8MhcE0MXs-TX7p4_/*/2AF2TALr1Kr-ijG0raLfTX33-RtSue_8nF3Cf7iB3SgF9wmF2YCZq6EUSwQZpLyKzxTxr11N",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96845130000008,
+                    18.77105410000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ท่าอากาศยานเชียงใหม่ / Chiang Mai International Airport",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ท่าอากาศยานเชียงใหม่",
+                "SymbolID": 2,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "<img src=\"https://doc-0o-80-mymaps.googleusercontent.com/untrusted/hostedimage/f6u64nodcabo26320jjaagdfpc/ai4afssjsq7n15ot0ct94mdb38/1573032600000/lPckScKZPEOdd8xP8MhcE0MXs-TX7p4_/*/2AF2TALrcQcJv8vg7cUQA1otZFKd5Sfnzb7zXVdp_7732MgTWi3aVSwfoMTrjogv04X9IbCn",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97452650000008,
+                    18.77043450000002,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ร้านอาหารสวนผัก / Suan Paak",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ร้านอาหารสวนผัก",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97471960000007,
+                    18.770744300000047,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "มหาวิทยาลัยฟาร์อีสเทอร์น / The Far Eastern University",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/มหาวิทยาลัยฟาร์อีสเทอร์น",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3, 10<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97620560000007,
+                    18.77389080000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "นิยมพาณิชย์ สำนักงานใหญ่ / Niyom Panich",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/นิยมพาณิชย์ สำนักงานใหญ่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97664010000005,
+                    18.774807500000065,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ช็อค เอวินิว / CHOC Avenue",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ช็อค เอวินิว",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97760030000006,
+                    18.785457800000074,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนวัฒโนทัยพายัพ / Wattano School",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนวัฒโนทัยพายัพ",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97811530000007,
+                    18.783893600000056,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนวัฒโนทัยพายัพ (2) / Wattano School (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนวัฒโนทัยพายัพ (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97832450000004,
+                    18.787408000000028,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนสอนคนตาบอด / School for the Blind",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนสอนคนตาบอด",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B2, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97527750000006,
+                    18.789089000000047,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "รพ.มหาราชนครเชียงใหม่ / Maharaj Hospital",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/รพ.มหาราชนครเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97526680000004,
+                    18.788896000000022,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "รพ.มหาราชนครเชียงใหม่ (2) / Maharaj Hospital (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/รพ.มหาราชนครเชียงใหม่ (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96797660000004,
+                    18.789287100000024,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วัดสวนดอก / Wat Suan Dok",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วัดสวนดอก",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, R3<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96805700000004,
+                    18.789505500000075,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "คณะทันตแพทยศาสตร์ มช. / Faculty of Dentistry, Chiang Mai University",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/คณะทันตแพทยศาสตร์ มช.",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, R3<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96468820000007,
+                    18.79254240000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "หอประชุมมหาวิทยาลัยเชียงใหม่ / Chiang Mai University Convention Center",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/หอประชุมมหาวิทยาลัยเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96435830000007,
+                    18.79217680000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "หอประชุมมหาวิทยาลัยเชียงใหม่ (2) / Chiang Mai University Convention Center (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/หอประชุมมหาวิทยาลัยเชียงใหม่ (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96654960000006,
+                    18.797437900000034,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "นิมมาน (3) / Nimman (3)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/นิมมาน (3)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96562970000008,
+                    18.795650400000056,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "นิมมาน (4) / Nimman (4)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/นิมมาน (4)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96751520000004,
+                    18.799916100000075,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "นิมมาน (1) / Nimman (1)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/นิมมาน (1)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96689300000008,
+                    18.799002100000052,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "นิมมาน (2) / Nimman (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/นิมมาน (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98783030000004,
+                    18.792339300000037,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนยุพราชวิทยาลัย / Yupparaj School",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนยุพราชวิทยาลัย",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3, 10<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98771490000007,
+                    18.791514000000063,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วิทยาลัยอาชีวศึกษา / Chiang Mai Vocational College",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วิทยาลัยอาชีวศึกษา",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3, 10<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98891390000006,
+                    18.790815700000053,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนยุพราชวิทยาลัย (2) / Yupparaj School (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนยุพราชวิทยาลัย (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98882810000003,
+                    18.790653200000065,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนยุพราชวิทยาลัย (3) / Yupparaj School (3)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนยุพราชวิทยาลัย (3)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98790800000006,
+                    18.790241800000047,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "อนุสาวรีย์สามกษัตริย์ / Three Kings Monument",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/อนุสาวรีย์สามกษัตริย์",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98882810000003,
+                    18.78818760000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "กลางเวียง / Klang Wiang",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/กลางเวียง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98882000000003,
+                    18.78805550000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "กลางเวียง (2) / Klang Wiang (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/กลางเวียง (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99313840000008,
+                    18.788494800000024,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ประตูท่าแพ / Tha Phae Gate",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ประตูท่าแพ",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B2, R1, R2, R3<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99379550000003,
+                    18.78733690000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ประตูท่าแพ (2) / Tha Phae Gate (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ประตูท่าแพ (2)",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B2<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99327520000008,
+                    18.791196600000035,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดสมเพชร / Som Petch Market",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดสมเพชร",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B2 , R1, R2, R3, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99922430000004,
+                    18.788180000000068,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ถนนท่าแพ / Tha Phae Road",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ถนนท่าแพ",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B2, R1, R2, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00305990000004,
+                    18.782420700000046,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดอนุสาร / Anusarn Market",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดอนุสาร",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2, R3<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00039910000004,
+                    18.78370060000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ไนท์บาซาร์ / Night Bazaar",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ไนท์บาซาร์",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2, R3, 10<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99786980000005,
+                    18.781313600000033,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงแรมอิมพีเรียลแม่ปิง / Imperial Mae Ping Hotel",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงแรมอิมพีเรียลแม่ปิง",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3, 10<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99734680000006,
+                    18.781120600000065,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สุริวงศ์บุ๊คเซ็นเตอร์ / Suriwong Book Center",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สุริวงศ์บุ๊คเซ็นเตอร์",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3, 10<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98798320000009,
+                    18.781501500000047,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ประตูเชียงใหม่ / Chiang Mai Gate",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ประตูเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98850890000006,
+                    18.78101390000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ประตูเชียงใหม่ (2) / Chiang Mai Gate (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ประตูเชียงใหม่ (2)",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3, 10<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98553430000004,
+                    18.779332800000077,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "บ้านกิ่งแก้ว / Ban King Kaew",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/บ้านกิ่งแก้ว",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98539750000003,
+                    18.779452200000037,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "บ้านกิ่งแก้ว (2) / Ban King Kaew (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/บ้านกิ่งแก้ว (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98297010000005,
+                    18.776788300000078,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ถนนวัวลาย / Wua Lai Raod",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ถนนวัวลาย",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98281990000004,
+                    18.77690510000002,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ถนนวัวลาย (2) / Wua Lai Raod (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ถนนวัวลาย (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98116230000005,
+                    18.778306900000075,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ถนนทิพย์เนตร / Thippanet Road",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ถนนทิพย์เนตร",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97932500000007,
+                    18.771567100000027,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ศูนย์วัฒนธรรม / Chiang Mai Cultural Center",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ศูนย์วัฒนธรรม",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97918280000005,
+                    18.77164330000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ศูนย์วัฒนธรรม (2) / Chiang Mai Cultural Center (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ศูนย์วัฒนธรรม (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97564230000006,
+                    18.769728500000042,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เซ็นทรัลพลาซา เชียงใหม่ แอร์พอร์ต / CentralPlaza Chiangmai Airport",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เซ็นทรัลพลาซา เชียงใหม่ แอร์พอร์ต",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, B4, R3, 10<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98361920000008,
+                    18.781120600000065,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สยามทีวี / Siam TV",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สยามทีวี",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97907560000004,
+                    18.781267900000046,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "รพ.สวนปรุง / Suan Prung Hospital",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/รพ.สวนปรุง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R2, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98024500000008,
+                    18.78173520000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สวนบวกหาด / Buak Haad Public Park",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สวนบวกหาด",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96162510000005,
+                    18.790820800000063,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดต้นพยอม (2) / Ton Phayom Market (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดต้นพยอม (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96177530000006,
+                    18.790541500000074,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดต้นพยอม / Ton Phayom Market",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดต้นพยอม",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96146420000008,
+                    18.796320700000024,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงพยาบาลสัตว์เล็ก มช. / CMU Veterinarian Hospital",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงพยาบาลสัตว์เล็ก มช.",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96155000000005,
+                    18.797590300000024,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ประเสริฐแลนด์ / Prasert Land",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ประเสริฐแลนด์",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.95969390000005,
+                    18.80560870000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "แยกภูคำ / Phukham Intersection",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/แยกภูคำ",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96005330000008,
+                    18.80462360000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ชมดอยคอนโด / Chom Doi Condo",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ชมดอยคอนโด",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00970100000006,
+                    18.786719900000037,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดสันป่าข่อย / San Pa Khoi Market",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดสันป่าข่อย",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00974120000006,
+                    18.786890000000028,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดสันป่าข่อย (2) / San Pa Khoi Market (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดสันป่าข่อย (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01340780000004,
+                    18.78600380000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สี่แยกหมอวงศ์ / Mor Wong Intersection",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สี่แยกหมอวงศ์",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01362780000005,
+                    18.78611550000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สี่แยกหมอวงศ์ (2) / Mor Wong Intersection (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สี่แยกหมอวงศ์ (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01583250000004,
+                    18.785694000000035,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สวนรถไฟ / Rotfai Public Park",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สวนรถไฟ",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01702340000008,
+                    18.785292800000036,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สถานีรถไฟเชียงใหม่ / Chiang Mai Railway Station",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สถานีรถไฟเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01796220000006,
+                    18.791115300000058,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "หอการค้าจังหวัดเชียงใหม่ / The Chiang Mai Chamber of Commerce",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/หอการค้าจังหวัดเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01780660000009,
+                    18.791376900000046,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "หอการค้าจังหวัดเชียงใหม่ (2) / The Chiang Mai Chamber of Commerce (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/หอการค้าจังหวัดเชียงใหม่ (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "ฺB1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00655750000004,
+                    18.796628000000055,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนปรินส์รอเยลวิทยาลัย / The Prince's Royal College",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนปรินส์รอเยลวิทยาลัย",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, B4, R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00684710000007,
+                    18.796592400000065,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนปรินส์รอเยลวิทยาลัย (2) / The Prince's Royal College (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนปรินส์รอเยลวิทยาลัย (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "ฺB2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00316180000004,
+                    18.79483780000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนเชตุพนศึกษา / Chedubon School",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนเชตุพนศึกษา",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99377410000005,
+                    18.79094260000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดสมเพชร (2) / Som Petch Market (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดสมเพชร (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B2, R1, R2, R3, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99179190000007,
+                    18.790556700000025,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ไซเรียง อุดมผล / Zairiang Udomphon",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ไซเรียง อุดมผล",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99178120000005,
+                    18.790427200000067,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ไซเรียง อุดมผล (2) / Zairiang Udomphon (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ไซเรียง อุดมผล (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98364070000008,
+                    18.793047700000045,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วิทยาลัยเทคนิคเชียงใหม่ / Chiang Mai Technical College",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วิทยาลัยเทคนิคเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98197230000005,
+                    18.792062500000043,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนหอพระ / Hopra School",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนหอพระ",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98097190000004,
+                    18.789604500000053,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วัดปราสาท / Wat Prasat",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วัดปราสาท",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98260000000005,
+                    18.78825870000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วัดพระสิงห์ / Wat Phra Singh",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วัดพระสิงห์",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B2<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98299960000008,
+                    18.788535500000023,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วัดพระสิงห์ (2) / Wat Phra Singh (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วัดพระสิงห์ (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98498180000007,
+                    18.788304400000072,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สภ.เมืองเชียงใหม่ / Muang Chiang Mai Police Station",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สภ.เมืองเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98506760000004,
+                    18.788428800000077,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สภ.เมืองเชียงใหม่ (2) / Muang Chiang Mai Police Station (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สภ.เมืองเชียงใหม่ (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99162560000008,
+                    18.787814300000036,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ถนนราชดำเนิน / Rajadumnern Road",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ถนนราชดำเนิน",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99163900000008,
+                    18.78797170000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ถนนราชดำเนิน (2) / Rajadumnern Road (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ถนนราชดำเนิน (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99330740000005,
+                    18.783304400000077,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วท.พาณิชยการเชียงใหม่ / Chiang Mai Commercial College",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วท.พาณิชยการเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00790930000005,
+                    18.80942740000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "นิ่มซี่เส็ง / Nim Si Seng",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/นิ่มซี่เส็ง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99692300000004,
+                    18.810473400000035,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เทสโก้ โลตัส คำเที่ยง / Tesco Lotus Khamtieng",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เทสโก้ โลตัส คำเที่ยง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99667080000006,
+                    18.811166600000035,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงแรมบีทู คำเที่ยง / B2 Hotel Khamtieng",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงแรมบีทู คำเที่ยง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99156390000007,
+                    18.81211110000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงพยาบาลลานนา / Lanna Hospital",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงพยาบาลลานนา",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99537800000007,
+                    18.806573600000036,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เจเจมาร์เก็ต / J.J. Market",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เจเจมาร์เก็ต",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98493890000003,
+                    18.807914200000027,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "มหาวิทยาลัยราชภัฏเชียงใหม่ / Chiang Mai Rajabhat University",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/มหาวิทยาลัยราชภัฏเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98562550000008,
+                    18.802465400000074,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงแรมเมอร์เคียว / Mercure Hotel",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงแรมเมอร์เคียว",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98272340000005,
+                    18.815129800000022,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดบริบูรณ์ / Boriboon Market",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดบริบูรณ์",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98296480000005,
+                    18.815180600000076,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดบริบูรณ์ (2) / Boriboon Market (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดบริบูรณ์ (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97562350000004,
+                    18.818694400000027,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สภ.ช้างเผือก / Chang Phuek Police Station",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สภ.ช้างเผือก",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97556720000006,
+                    18.818511600000022,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สภ.ช้างเผือก (2) / Chang Phuek Police Station (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สภ.ช้างเผือก (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96051470000003,
+                    18.824787400000048,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ศูนย์ประชุมและแสดงสินค้านานาชาติเชียงใหม่ / Chiang Mai International Convention & Exhibition Center",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ศูนย์ประชุมและแสดงสินค้านานาชาติเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96290180000005,
+                    18.836967900000047,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ศูนย์บ้านพักข้าราชการจังหวัดเชียงใหม่ / Government Officer Village",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ศูนย์บ้านพักข้าราชการจังหวัดเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96467750000005,
+                    18.82804720000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "กรีนเลค รีสอร์ท / Green Lake Resort",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/กรีนเลค รีสอร์ท",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97263290000006,
+                    18.837759900000037,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ศูนย์ราชการจังหวัดเชียงใหม่ / Chiang Mai Province Government Complex",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ศูนย์ราชการจังหวัดเชียงใหม่",
+                "SymbolID": 2,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B3<br><br>สถานีต้นทาง/ปลายทาง<br>Terminal station",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96250490000006,
+                    18.718436600000075,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "หมู่บ้านขวัญเวียง / Khwan Wiang Village",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/หมู่บ้านขวัญเวียง",
+                "SymbolID": 2,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10<br><br>สถานีต้นทาง/ปลายทาง<br>Terminal station",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.94596100000007,
+                    18.723669700000073,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "แยกสะเมิง / Samoeng Intersection",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/แยกสะเมิง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.94636600000007,
+                    18.72370010000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "แยกสะเมิง (2) / Samoeng Intersection (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/แยกสะเมิง (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.94910990000005,
+                    18.728242100000045,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โชว์รูม ฟอร์ด วีกรุ๊ป / Ford V-Group Showroom",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โชว์รูม ฟอร์ด วีกรุ๊ป",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.94894360000006,
+                    18.72745210000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โชว์รูม ฟอร์ด วีกรุ๊ป (2) / Ford V-Group Showroom (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โชว์รูม ฟอร์ด วีกรุ๊ป (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.95331290000007,
+                    18.734351100000026,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงพยาบาลรักษานานาสัตว์ / Nana Animal Hospital",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงพยาบาลรักษานานาสัตว์",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.95530850000006,
+                    18.737373800000057,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนบ้านดอนปิน / Ban Don Pin School",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนบ้านดอนปิน",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.95487400000007,
+                    18.73621810000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ดอนปินซอย 2 / Don Pin Soi 2",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ดอนปินซอย 2",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.95818110000005,
+                    18.74094260000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "แมคโครหางดง / Makro Hang Dong",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/แมคโครหางดง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.95817040000009,
+                    18.741572500000075,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "แมคโครหางดง (2) / Makro Hang Dong (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/แมคโครหางดง (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97778810000005,
+                    18.790038700000025,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "รพ.มหาราชนครเชียงใหม่ (3) / Maharaj Hospital (3)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/รพ.มหาราชนครเชียงใหม่ (3)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B2, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97257120000006,
+                    18.771663600000068,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ปตท. กองบิน 41 / PTT Wing 41",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ปตท. กองบิน 41",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96030010000004,
+                    18.74404640000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "บิ๊กซี หางดง / Big C Hang Dong",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/บิ๊กซี หางดง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96012040000005,
+                    18.744366400000047,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตรงข้ามบิ๊กซีหางดง / Opposite Big C Hang Dong",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตรงข้ามบิ๊กซีหางดง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96134350000005,
+                    18.74568970000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สำนักงานขนส่งจังหวัดเชียงใหม่ / Department of Land Transport Chiang Mai",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สำนักงานขนส่งจังหวัดเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96195230000006,
+                    18.746982600000024,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สำนักงานขนส่งจังหวัดเชียงใหม่ (2) / Department of Land Transport Chiang Mai (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สำนักงานขนส่งจังหวัดเชียงใหม่ (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96564840000008,
+                    18.751836300000036,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ชุมชนวรุณนิเวศน์ / Warun Niwet Community",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ชุมชนวรุณนิเวศน์",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96537750000005,
+                    18.751948000000027,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ชุมชนวรุณนิเวศน์ (2)/ Warun Niwet Community (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ชุมชนวรุณนิเวศน์ (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96888850000005,
+                    18.756453600000043,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ศูนย์เวชศาสตร์ผู้สูงอายุ / Geriatric Medical Center",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ศูนย์เวชศาสตร์ผู้สูงอายุ",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96866590000008,
+                    18.756623800000057,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "บ้านใหม่สามัคคี ซอย 15 / Ban Mai Samakkee Soi 15",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/บ้านใหม่สามัคคี ซอย 15",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97060510000006,
+                    18.75892730000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เทสโก้ โลตัส หางดง / Tesco Lotus Hang Dong",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เทสโก้ โลตัส หางดง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97095920000004,
+                    18.759907700000042,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เทสโก้ โลตัส หางดง (2) / Tesco Lotus Hang Dong (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เทสโก้ โลตัส หางดง (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97281530000004,
+                    18.76213240000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ธนาคารไทยพาณิชย์ สี่แยกสนามบิน / Siam Commercial Bank - Airport Intersection",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ธนาคารไทยพาณิชย์ สี่แยกสนามบิน",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97194890000009,
+                    18.761365500000068,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "รพ.เชียงใหม่ใกล้หมอ / Chiang Mai Klai Mor Hospital",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/รพ.เชียงใหม่ใกล้หมอ",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97630750000008,
+                    18.76770700000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เซ็นทรัลพลาซา เชียงใหม่ แอร์พอร์ต (2) / CentralPlaza Chiangmai Airport (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เซ็นทรัลพลาซา เชียงใหม่ แอร์พอร์ต (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97658650000005,
+                    18.767572400000063,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ถนนเชียงใหม่-หางดง / Chiang Mai - Hang Dong Road",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ถนนเชียงใหม่-หางดง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99956490000005,
+                    18.778918900000065,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงแรมแชงกรี-ลา / Shangri-La Hotel",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงแรมแชงกรี-ลา",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99924040000008,
+                    18.776105200000075,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "Art in Paradise",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99998340000008,
+                    18.772918100000027,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนมงฟอร์ตวิทยาลัย แผนกประถม / Montfort Primary School",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนมงฟอร์ตวิทยาลัย แผนกประถม",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2, 10<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00272190000004,
+                    18.775396700000044,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนพระหฤทัยเชียงใหม่ / Sacred Heart College",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนพระหฤทัยเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00382160000004,
+                    18.776422600000046,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนเรยีนาเชลีวิทยาลัย / Regina Coeli College",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนเรยีนาเชลีวิทยาลัย",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00456730000008,
+                    18.778522800000076,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สำนักงานป่าไม้เขตเชียงใหม่ / Forest Department",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สำนักงานป่าไม้เขตเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00396110000008,
+                    18.780490800000052,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วัดชัยมงคล / Wat Chai Mongkol",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วัดชัยมงคล",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00152560000004,
+                    18.78113840000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงแรมเชียงใหม่พลาซ่า / Chiang Mai Plaza Hotel",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงแรมเชียงใหม่พลาซ่า",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97728920000009,
+                    18.781374500000027,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "แจ่งกู่เฮือง / Gu Hueng",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/แจ่งกู่เฮือง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99363460000006,
+                    18.786963600000036,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ประตูท่าแพ (RTC) / Tha Phae Gate (RTC)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ประตูท่าแพ (RTC)",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R1, R2, R3<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.94901870000007,
+                    18.810717200000056,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สวนสัตว์เชียงใหม่ (2) / Chiang Mai Zoo (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สวนสัตว์เชียงใหม่ (2)",
+                "SymbolID": 2,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "<img src=\"https://doc-14-80-mymaps.googleusercontent.com/untrusted/hostedimage/f6u64nodcabo26320jjaagdfpc/4b5i34jpu9eg0dhhhlkeoiuv08/1573032600000/lPckScKZPEOdd8xP8MhcE0MXs-TX7p4_/*/2AF2TALobm2w_RIRIyyYJzOIxA9deGK4JoEQTuA5SMHUSCzb8Y4FFolOHaPOXCeVjVG6FWbD",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00459680000006,
+                    18.788880800000072,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "คริสต์จักรที่ 1 เชียงใหม่ / The 1st Church of Chiang Mai",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/คริสต์จักรที่ 1 เชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00362310000008,
+                    18.790500800000075,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ร้านกู๊ดวิว / Good View",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ร้านกู๊ดวิว",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97706390000008,
+                    18.779723900000022,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ไปรษณีย์ เขต 5 / Region 5 Post Office",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ไปรษณีย์ เขต 5",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97735360000007,
+                    18.779678200000035,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ไปรษณีย์ เขต 5 (2) / Region 5 Post Office (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ไปรษณีย์ เขต 5 (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98467600000004,
+                    18.781608100000028,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สถานีดับเพลิงประตูเชียงใหม่",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99125010000006,
+                    18.781430400000033,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วัดทรายมูล",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99462700000004,
+                    18.781156100000032,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนอนุบาลดรุณนิมิต / Darun Nimit School",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนอนุบาลดรุณนิมิต",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99973930000004,
+                    18.780269900000064,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สี่แยกแสงตะวัน",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2, 10",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99888900000008,
+                    18.77264390000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "แอท เคิร์ฟ / @Curve",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/แอท เคิร์ฟ",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99897490000006,
+                    18.769177400000046,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เชียงใหม่แลนด์ / Chiang Mai Land",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เชียงใหม่แลนด์",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99946030000007,
+                    18.76794060000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนวิชัยวิทยา / Wichai Wittaya School",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนวิชัยวิทยา",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00055200000008,
+                    18.765164800000036,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดนัดช้างคลาน / Chang Klan Market",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดนัดช้างคลาน",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00214250000005,
+                    18.76470510000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "สำนักงานสรรพากร / The Revenue Department",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/สำนักงานสรรพากร",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00440100000009,
+                    18.766675900000052,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงพยาบาลราชเวช / Rajavej Hospital",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงพยาบาลราชเวช",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00454040000005,
+                    18.766320300000075,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงแรมฮอลิเดย์ อินน์ / Holiday Inn Hotel",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงแรมฮอลิเดย์ อินน์",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00580380000008,
+                    18.764126100000055,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดหนองหอย / Nong Hoi Market",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดหนองหอย",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00555160000005,
+                    18.764118500000052,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ตลาดหนองหอย (2) / Nong Hoi Market (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ตลาดหนองหอย (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00689540000008,
+                    18.759722300000078,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "การเคหะ / Kan K-Ha",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/การเคหะ",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00661110000004,
+                    18.759752700000035,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "การเคหะ (2) / Kan K-Ha (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/การเคหะ (2)",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "ฺB4, R2<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01179310000003,
+                    18.759006100000022,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "การเคหะ (3) / Kan K-Ha (3)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/การเคหะ (3)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01582180000008,
+                    18.759610500000065,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนวารีเชียงใหม่ / Varee Chiang Mai School",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนวารีเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.01527730000004,
+                    18.759676600000034,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนวารีเชียงใหม่ (2) / Varee Chiang Mai School (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนวารีเชียงใหม่ (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.02321130000007,
+                    18.762559100000033,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "มงฟอร์ต ฝ่ายมัธยม / Montfort High School",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/มงฟอร์ต ฝ่ายมัธยม",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.02356800000007,
+                    18.76245240000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "มงฟอร์ต ฝ่ายมัธยม (2) / Montfort High School (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/มงฟอร์ต ฝ่ายมัธยม (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.02504590000007,
+                    18.763234700000055,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนกาวิละวิทยาลัย / Kawila Wittayalai School",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนกาวิละวิทยาลัย",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.02488770000008,
+                    18.762909600000057,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนกาวิละวิทยาลัย (2) / Kawila Wittayalai School (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนกาวิละวิทยาลัย (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.03689860000009,
+                    18.765903800000046,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "พรอมเมนาดา / Promenada",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/พรอมเมนาดา",
+                "SymbolID": 2,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R2<br><br>สถานีต้นทาง/ปลายทาง<br>Terminal station",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.03781060000006,
+                    18.759290500000077,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ดิ เออร์บาน่า 5 / The Urbana 5",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ดิ เออร์บาน่า 5",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.03687180000009,
+                    18.75609550000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "อรสิริน / Ornsirin",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/อรสิริน",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.03732240000005,
+                    18.75885370000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "ศุภาลัย วิลล์ / Supalai Ville",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/ศุภาลัย วิลล์",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.03578280000005,
+                    18.765040400000032,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "พาราโน คอนโด / Parano Condo",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/พาราโน คอนโด",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00217470000007,
+                    18.766419300000052,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนอนุบาลสวนเด็ก / Suan Dek School",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนอนุบาลสวนเด็ก",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00283990000008,
+                    18.785366400000044,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "พรพิงค์ ทาเวอร์ / Pornping Tower",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/พรพิงค์ ทาเวอร์",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R2, R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99462160000007,
+                    18.78098600000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "โรงเรียนอนุบาลดรุณนิมิต (2) / Darun Nimit School (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/โรงเรียนอนุบาลดรุณนิมิต (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "R3",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98208500000004,
+                    18.767966000000058,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "นิสสัน นอร์ทเวฟ / Nissan Northwave",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/นิสสัน นอร์ทเวฟ",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4 (ยกเลิกเดินรถแล้ว / CANCELED)",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98231570000007,
+                    18.76767650000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "แดง กลอนประตู / Dang Klon Pratu",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/แดง กลอนประตู",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4 (ยกเลิกเดินรถแล้ว / CANCELED)",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98318740000008,
+                    18.767557100000033,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "อันดามันซีฟู๊ด / Andaman Seafood",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/อันดามันซีฟู๊ด",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4 (ยกเลิกเดินรถแล้ว / CANCELED)",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98955490000009,
+                    18.765939400000036,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "มาสด้าเชียงใหม่ / Mazda Chiang Mai",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/มาสด้าเชียงใหม่",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4 (ยกเลิกเดินรถแล้ว / CANCELED)",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99286750000005,
+                    18.763963500000045,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เชียงใหม่แลนด์ (2) / Chiang Mai Land (2)",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เชียงใหม่แลนด์ (2)",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4 (ยกเลิกเดินรถแล้ว / CANCELED)",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99416030000003,
+                    18.76292230000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "หมู่บ้านเวียงทอง / Wiang Thong Village",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/หมู่บ้านเวียงทอง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4 (ยกเลิกเดินรถแล้ว / CANCELED)",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99626580000006,
+                    18.761169900000027,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เอส บี เฟอร์นิเจอร์ / S.B. Furniture",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เอส บี เฟอร์นิเจอร์",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4 (ยกเลิกเดินรถแล้ว / CANCELED)",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99564360000005,
+                    18.761347700000044,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "มิตรสินด่วน / Mitr Sin Duan",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/มิตรสินด่วน",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4 (ยกเลิกเดินรถแล้ว / CANCELED)",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99882730000007,
+                    18.759013700000025,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "กองบัญชาการตำรวจภูธรภาค 5 / Police Region 5 Headquarters",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/กองบัญชาการตำรวจภูธรภาค 5",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4 (ยกเลิกเดินรถแล้ว / CANCELED)",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99946570000009,
+                    18.75804100000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "หมู่บ้านเกาะกลาง / Ban Koh Klang",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/หมู่บ้านเกาะกลาง",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4 (ยกเลิกเดินรถแล้ว / CANCELED)",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00061370000009,
+                    18.757086000000072,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "เค-พาร์ค / K-Park",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/เค-พาร์ค",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4 (ยกเลิกเดินรถแล้ว / CANCELED)",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00268970000008,
+                    18.75687270000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "มหิดล ซอย 5 / Mahidol Soi 5",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/มหิดล ซอย 5",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4 (ยกเลิกเดินรถแล้ว / CANCELED)",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00878910000006,
+                    18.792598300000066,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "คิวเฮาส์ วิลล่า / Q House Villa",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/คิวเฮาส์ วิลล่า",
+                "SymbolID": 0,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B4, R1",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00140000000005,
+                    18.78778120000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "Name": "วัดอุปคุต / Wat U-pa-khut",
+                "FolderPath": "Chiang Mai City Bus/จุดรอรถประจำทาง (Bus Stop)/วัดอุปคุต",
+                "SymbolID": 1,
+                "AltMode": -1,
+                "Base": 0,
+                "Snippet": "",
+                "PopupInfo": "B1, B2, R1, R2, R3, 10<br><br>เปลี่ยนสายรถได้ที่นี่ (แนะนำ)<br>Recommended for interchange",
+                "HasLabel": -1,
+                "LabelID": 0
+            }
+        }
+    ]
+}
