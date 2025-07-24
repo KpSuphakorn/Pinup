@@ -1,4 +1,4 @@
-export type LayerOption = 'none' | 'osm' | 'zoning' | 'population' | 'landprice' | 'boundmun' | 'boundtambon' | 'boundamphoe' | 'boundprovince' | 'gatecount' | 'busstop';
+export type LayerOption = 'none' | 'osm' | 'zoning' | 'population' | 'landprice' | 'boundmun' | 'boundtambon' | 'boundamphoe' | 'boundprovince' | 'gatecount' | 'busstop' | 'busroute';
 
 export interface LayerOptionData {
   value: LayerOption;
@@ -19,6 +19,7 @@ export const layerOptions: LayerOptionData[] = [
   { value: 'boundprovince', label: 'ขอบเขตจังหวัด', description: 'แสดงขอบเขตจังหวัด', center: 'chiangmai' },
   { value: 'gatecount', label: 'ปริมาณคนเดินผ่าน', description: 'แสดงข้อมูลจำนวนคนเดินผ่านจากการสำรวจ', center: 'chiangmai' },
   { value: 'busstop', label: 'ป้ายรถเมล์', description: 'แสดงข้อมูลป้ายรถเมล์', center: 'chiangmai' },
+  { value: 'busroute', label: 'เส้นทางรถเมล์', description: 'แสดงเส้นทางการเดินทางของรถเมล์', center: 'chiangmai' },
 ];
 
 // กำหนด global layers ที่ไม่ติดพื้นที่

@@ -350,3 +350,37 @@ export function createBusStopPopup(feature: Feature<Geometry, any>): string {
     </div>
   `;
 }
+
+export function createBusRoutePopup(feature: Feature<Geometry, any>): string {
+  const props = feature.properties || {};
+  const name = props.name || 'ไม่ทราบชื่อ';
+  const summary = props.segments_summary || '';
+  const total = props.total_distance_display || '';
+
+  return `
+    <div style="
+      min-width: 240px;
+      font-family: Arial, sans-serif;
+      font-size: 12.5px;
+      color: #333;
+    ">
+      <div style="
+        background-color: rgba(255, 165, 0, 0.3);
+        padding: 6px 10px;
+        border-radius: 4px;
+        margin-bottom: 8px;
+      ">
+        <h4 style="
+          margin: 0;
+          font-size: 14px;
+          font-weight: bold;
+        ">${name}</h4>
+      </div>
+
+      <div style="line-height: 1.4;">
+        <strong>รวม:</strong> ${total}<br/>
+        <strong>รายละเอียด:</strong> ${summary}
+      </div>
+    </div>
+  `;
+}

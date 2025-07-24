@@ -1,7 +1,10 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup } from '@/utils/popupUtils';
+import { useRef } from 'react';
+import L, { Layer } from 'leaflet';
+import type { BusRouteFeature } from '@/types';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -12,9 +15,11 @@ import { boundamphoeStyles } from '@/styles/CNX/boundamphoeStyles';
 import { boundprovinceStyles } from '@/styles/CNX/boundprovinceStyles';
 import { gatecountStyles } from '@/styles/CNX/gatecountStyles';
 import { busstopStyles } from '@/styles/CNX/busstopStyles';
+import { busrouteStyles } from '@/styles/CNX/busrouteStyles';
 import { MapLayersProps } from '@/types/index';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
+
 
 export function MapLayers({
   osmData,
@@ -29,6 +34,7 @@ export function MapLayers({
   boundprovinceData,
   gatecountData,
   busstopData,
+  busrouteData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -38,6 +44,7 @@ export function MapLayers({
   if (typeof window === 'undefined') return null;
 
   const L = require('leaflet');
+  const layerRefs = useRef<Layer[]>([]);
 
   return (
     <>
@@ -152,7 +159,7 @@ export function MapLayers({
         />
       )}
 
-      {/* BUsStop Layer */}
+      {/* BusStop Layer */}
       {busstopData?.features.length && (
         <GeoJSON
           data={busstopData}
@@ -162,6 +169,42 @@ export function MapLayers({
           }}
         />
       )}
+
+      {/* BusRoute Layer */}
+      {Array.isArray(busrouteData?.features) && busrouteData.features.length > 0 && (
+        <>
+          {busrouteData.features.map((feature: BusRouteFeature, index: number) => (
+            <GeoJSON
+              key={`busroute-${index}`}
+              data={feature}
+              style={() => busrouteStyles.getStyle(feature)}
+              eventHandlers={{
+                add: (e) => {
+                  layerRefs.current.push(e.target);
+                },
+                click: (e) => {
+                  const clickedLayer = e.target as L.Path;
+
+                  layerRefs.current.forEach((layer) => {
+                    (layer as L.Path).setStyle({ opacity: 0.0 });
+                  });
+
+                  clickedLayer.setStyle({ opacity: 1.0 });
+
+                  clickedLayer.bindPopup(createBusRoutePopup(feature)).openPopup();
+
+                  clickedLayer.on('popupclose', () => {
+                    layerRefs.current.forEach((layer) => {
+                      (layer as L.Path).setStyle({ opacity: 1.0 });
+                    });
+                  });
+                },
+              }}
+            />
+          ))}
+        </>
+      )}
+
     </>
   );
 }
