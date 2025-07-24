@@ -31,6 +31,7 @@ export interface MapLayersProps {
   boundprovinceData?: BoundProvinceGeoJSON | null;
   gatecountData?: GateCountGeoJSON | null;
   busstopData?: BusStopGeoJSON | null;
+  busrouteData?: BusRouteGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }
@@ -297,4 +298,35 @@ export interface BusStopFeature {
 export interface BusStopGeoJSON {
   type: 'FeatureCollection';
   features: BusStopFeature[];
+}
+
+export interface BusRouteSegment {
+  segment_number: number;
+  length_meters: number;
+  distance_display: string;
+  coordinates: number[][];
+}
+
+export interface BusRouteData {
+  name: string;
+  total_length_meters: number;
+  total_distance_display: string;
+  display_name: string;
+  geometry_type: 'LineString' | 'MultiLineString';
+  segments: BusRouteSegment[];
+  segments_summary: string;
+}
+
+export interface BusRouteFeature {
+  type: 'Feature';
+  geometry: {
+    type: 'LineString' | 'MultiLineString';
+    coordinates: number[][] | number[][][];
+  };
+  properties: BusRouteData;
+}
+
+export interface BusRouteGeoJSON {
+  type: 'FeatureCollection';
+  features: BusRouteFeature[];
 }
