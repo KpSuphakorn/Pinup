@@ -1,5 +1,8 @@
+'use client';
+
 import dynamic from 'next/dynamic';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup } from '@/utils/popupUtils';
+// import L from 'leaflet';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -8,6 +11,7 @@ import { boundmunStyles } from '@/styles/CNX/boundmunStyles';
 import { boundtambonStyles } from '@/styles/CNX/boundtambonStyles';
 import { boundamphoeStyles } from '@/styles/CNX/boundamphoeStyles';
 import { boundprovinceStyles } from '@/styles/CNX/boundprovinceStyles';
+import { gatecountStyles } from '@/styles/CNX/gatecountStyles';
 import { MapLayersProps } from '@/types/index';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
@@ -23,10 +27,16 @@ export function MapLayers({
   boundtambonData,
   boundamphoeData,
   boundprovinceData,
+  gatecountData,
   landId,
   isLoading
 }: MapLayersProps) {
+
   if (isLoading) return null;
+
+  if (typeof window === 'undefined') return null;
+
+  const L = require('leaflet');
 
   return (
     <>
@@ -93,7 +103,7 @@ export function MapLayers({
           }}
         />
       )}
-      
+
       {/* BoundTambon Layer */}
       {boundtambonData?.features.length && (
         <GeoJSON
@@ -126,6 +136,17 @@ export function MapLayers({
           onEachFeature={(feature, layer) => {
             const popupContent = createBoundProvincePopup(feature);
             layer.bindPopup(popupContent);
+          }}
+        />
+      )}
+
+      {/* GateCount Layer */}
+      {gatecountData?.features.length && (
+        <GeoJSON
+          data={gatecountData}
+          pointToLayer={(feature, latlng) => L.marker(latlng, { icon: gatecountStyles.getStyle(feature) })}
+          onEachFeature={(feature, layer) => {
+            layer.bindPopup(createGateCountPopup(feature));
           }}
         />
       )}

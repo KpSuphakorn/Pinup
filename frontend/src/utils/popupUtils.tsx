@@ -279,3 +279,51 @@ export function createBoundProvincePopup(feature: Feature<Geometry, any>) {
     </div>
   `;
 }
+
+export function createGateCountPopup(feature: Feature<Geometry, any>): string {
+  const props = feature.properties || {};
+
+  return `
+    <div style="
+      position: relative;
+      min-width: 220px;
+      padding: 6px 10px;
+      font-family: Arial, sans-serif;
+    ">
+
+      <h4 style="
+        margin: 0 0 8px 0;
+        font-size: 16px;
+        font-weight: bold;
+        color: #00438b;
+        padding-right: 24px;
+      ">
+        ${props.display_name || ''}
+      </h4>
+
+      <hr style="
+        border-top: 1px solid #ddd;
+        margin: 6px 0 10px;
+      " />
+
+      <ul style="
+        padding-left: 18px;
+        margin: 0 0 10px 0;
+        font-size: 14px;
+        color: #333;
+      ">
+        ${Object.values(props.statistics || {}).map((stat: any) => `
+          <li>${stat.label}: <strong>${stat.count}</strong> คน</li>
+        `).join('')}
+      </ul>
+
+      <p style="
+        margin: 0;
+        font-size: 13px;
+        color: #555;
+      ">
+        ${props.description || ''}
+      </p>
+    </div>
+  `;
+}

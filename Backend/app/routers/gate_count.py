@@ -13,11 +13,11 @@ async def get_gate_count():
         
         for feature in data["features"]:
             # แปลงพิกัดถ้าเป็น Point
-            if feature["geometry"]["type"] == "Point":
-                coordinates = feature["geometry"]["coordinates"]
-                # แปลงเฉพาะ longitude และ latitude (2 ตัวแรก)
-                converted = convert_coordinates([coordinates[:2]])[0]
-                feature["geometry"]["coordinates"] = converted + coordinates[2:]
+            # if feature["geometry"]["type"] == "Point":
+            #     coordinates = feature["geometry"]["coordinates"]
+            #     # แปลงเฉพาะ longitude และ latitude (2 ตัวแรก)
+            #     converted = convert_coordinates([coordinates[:2]])[0]
+            #     feature["geometry"]["coordinates"] = converted + coordinates[2:]
             
             props = feature["properties"]
             

@@ -21,10 +21,12 @@ export default function Map({ landId }: MapProps) {
   const [isLoadingLayers, setIsLoadingLayers] = useState(false);
 
   const shouldFetchData = selectedLayers.some(layer => layer !== 'none');
+
   const {
     zoningData, osmData, populationData, populationRangeData,
     landpricesubdData, landpricesubdRangeData,
     boundmunData, boundtambonData, boundamphoeData, boundprovinceData,
+    gatecountData,
     isLoading
   } = useMapData(landId, isClient && shouldFetchData);
 
@@ -86,6 +88,7 @@ export default function Map({ landId }: MapProps) {
           boundtambonData={selectedLayers.includes('boundtambon') ? boundtambonData : null}
           boundamphoeData={selectedLayers.includes('boundamphoe') ? boundamphoeData : null}
           boundprovinceData={selectedLayers.includes('boundprovince') ? boundprovinceData : null}
+          gatecountData={selectedLayers.includes('gatecount') ? gatecountData : null}
           landId={landId.toString()}
           isLoading={false}
         />

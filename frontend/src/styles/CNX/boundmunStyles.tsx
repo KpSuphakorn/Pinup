@@ -1,6 +1,6 @@
-  import { Feature, Geometry } from 'geojson';
-  import { PathOptions } from 'leaflet';
-  import { stringToColor, lightenColor } from '@/utils/labelColorUtils';
+import { Feature, Geometry } from 'geojson';
+import { PathOptions } from 'leaflet';
+import { stringToColor, lightenColor } from '@/utils/labelColorUtils';
 
 // ฟังก์ชันคืน style สำหรับแต่ละ feature
 function getStyle(feature?: Feature<Geometry, any>): PathOptions {
