@@ -295,7 +295,7 @@ export function createGateCountPopup(feature: Feature<Geometry, any>): string {
         margin: 0 0 8px 0;
         font-size: 16px;
         font-weight: bold;
-        color: #00438b;
+        color: #094381ff;
         padding-right: 24px;
       ">
         ${props.display_name || ''}
@@ -324,6 +324,29 @@ export function createGateCountPopup(feature: Feature<Geometry, any>): string {
       ">
         ${props.description || ''}
       </p>
+    </div>
+  `;
+}
+
+export function createBusStopPopup(feature: Feature<Geometry, any>): string {
+  const props = feature.properties || {};
+
+  return `
+    <div style="
+      position: relative;
+      min-width: 220px;
+      padding: 6px 5px;
+      font-family: Arial, sans-serif;
+    ">
+
+      <h4 style="
+        margin: 0 0 8px 0;
+        font-size: 16px;
+        font-weight: bold;
+        color: #856208ff;
+      ">
+        ${props.display_name || ''}
+      </h4>
     </div>
   `;
 }

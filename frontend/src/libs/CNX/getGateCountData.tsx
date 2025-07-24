@@ -3,7 +3,7 @@
 import { GateCountGeoJSON } from "@/types";
 
 export async function getGateCountData(): Promise<GateCountGeoJSON> {
-    const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
   const response = await fetch(`${BACKEND_URL}/api/cnx/gate-count`, {
     method: 'GET',

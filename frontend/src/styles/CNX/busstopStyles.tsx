@@ -5,10 +5,10 @@ import L from 'leaflet';
 
 export function getStyle(feature?: Feature<Geometry, any>) {
   return L.divIcon({
-    className: 'custom-gate-marker',
+    className: 'custom-busstop-marker',
     html: `
       <div style="
-        background-color: #00438b;
+        background-color: #ffb700ff;
         border: 2px solid white;
         border-radius: 50%;
         width: 30px;
@@ -17,7 +17,7 @@ export function getStyle(feature?: Feature<Geometry, any>) {
         align-items: center;
         justify-content: center;
       ">
-        <img src="/walk.png" alt="icon" style="width: 18px; height: 18px;" />
+        <img src="/bus.png" alt="icon" style="width: 18px; height: 18px;" />
       </div>
     `,
     iconSize: [30, 30],
@@ -26,6 +26,6 @@ export function getStyle(feature?: Feature<Geometry, any>) {
   });
 }
 
-export const gatecountStyles = {
+export const busstopStyles = {
   getStyle,
 };

@@ -30,6 +30,7 @@ export interface MapLayersProps {
   boundamphoeData?: BoundAmphoeGeoJSON | null;
   boundprovinceData?: BoundProvinceGeoJSON | null;
   gatecountData?: GateCountGeoJSON | null;
+  busstopData?: BusStopGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }
@@ -277,4 +278,23 @@ export interface GateCountFeature {
 export interface GateCountGeoJSON {
   type: 'FeatureCollection';
   features: GateCountFeature[];
+}
+
+export interface BusStopData {
+  name: string;
+  display_name: string;
+}
+
+export interface BusStopFeature {
+  type: 'Feature';
+  geometry: {
+    type: 'Point';
+    coordinates: [number, number, number?, number?];
+  };
+  properties: BusStopData;
+}
+
+export interface BusStopGeoJSON {
+  type: 'FeatureCollection';
+  features: BusStopFeature[];
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -11,6 +11,7 @@ import { boundtambonStyles } from '@/styles/CNX/boundtambonStyles';
 import { boundamphoeStyles } from '@/styles/CNX/boundamphoeStyles';
 import { boundprovinceStyles } from '@/styles/CNX/boundprovinceStyles';
 import { gatecountStyles } from '@/styles/CNX/gatecountStyles';
+import { busstopStyles } from '@/styles/CNX/busstopStyles';
 import { MapLayersProps } from '@/types/index';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
@@ -27,6 +28,7 @@ export function MapLayers({
   boundamphoeData,
   boundprovinceData,
   gatecountData,
+  busstopData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -146,6 +148,17 @@ export function MapLayers({
           pointToLayer={(feature, latlng) => L.marker(latlng, { icon: gatecountStyles.getStyle(feature) })}
           onEachFeature={(feature, layer) => {
             layer.bindPopup(createGateCountPopup(feature));
+          }}
+        />
+      )}
+
+      {/* BUsStop Layer */}
+      {busstopData?.features.length && (
+        <GeoJSON
+          data={busstopData}
+          pointToLayer={(feature, latlng) => L.marker(latlng, { icon: busstopStyles.getStyle(feature) })}
+          onEachFeature={(feature, layer) => {
+            layer.bindPopup(createBusStopPopup(feature));
           }}
         />
       )}
