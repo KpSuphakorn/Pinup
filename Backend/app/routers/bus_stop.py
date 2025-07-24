@@ -4,7 +4,7 @@ import json
 router = APIRouter()
 
 @router.get("/cnx/bus-stop")
-async def get_bus_stops():
+async def get_bus_stop():
     """ดึงข้อมูลป้ายรถเมล์ - มี geometry และข้อมูลรายละเอียดป้าย"""
     try:
         with open("data/CNX/bus_stop.geojson", "r", encoding='utf-8') as file:
