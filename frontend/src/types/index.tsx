@@ -1,4 +1,4 @@
-import { Feature, Geometry, FeatureCollection } from 'geojson';
+import { Feature, Geometry, FeatureCollection, LineString, MultiLineString } from 'geojson';
 
 export interface ZoningData {
   feature: Feature<Geometry, { id: number; name: string }>;
@@ -317,14 +317,9 @@ export interface BusRouteData {
   segments_summary: string;
 }
 
-export interface BusRouteFeature {
-  type: 'Feature';
-  geometry: {
-    type: 'LineString' | 'MultiLineString';
-    coordinates: number[][] | number[][][];
-  };
-  properties: BusRouteData;
-}
+export type BusRouteFeature =
+  | Feature<LineString, BusRouteData>
+  | Feature<MultiLineString, BusRouteData>;
 
 export interface BusRouteGeoJSON {
   type: 'FeatureCollection';
