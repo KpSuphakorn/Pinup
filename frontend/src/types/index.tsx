@@ -32,6 +32,7 @@ export interface MapLayersProps {
   gatecountData?: GateCountGeoJSON | null;
   busstopData?: BusStopGeoJSON | null;
   busrouteData?: BusRouteGeoJSON | null;
+  LRTrouteData?: LRTRouteGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }
