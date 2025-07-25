@@ -16,6 +16,7 @@ import { boundprovinceStyles } from '@/styles/CNX/boundprovinceStyles';
 import { gatecountStyles } from '@/styles/CNX/gatecountStyles';
 import { busstopStyles } from '@/styles/CNX/busstopStyles';
 import { busrouteStyles } from '@/styles/CNX/busrouteStyles';
+import { LRTrouteStyles } from '@/styles/CNX/LRTrouteStyles';
 import { MapLayersProps } from '@/types/index';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
@@ -35,6 +36,7 @@ export function MapLayers({
   gatecountData,
   busstopData,
   busrouteData,
+  LRTrouteData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -205,6 +207,47 @@ export function MapLayers({
         </>
       )}
 
+      {/* LRTRout Layer */}
+      {Array.isArray(LRTrouteData?.features) && LRTrouteData.features.length > 0 && (
+        <>
+          {LRTrouteData.features.map((feature, index) => (
+            <GeoJSON
+              key={`lrtroute-${index}`}
+              data={feature}
+              style={() => LRTrouteStyles.getStyle(feature)}
+              eventHandlers={{
+                add: (e) => {
+                  layerRefs.current.push(e.target);
+                },
+                click: (e) => {
+                  const clickedLayer = e.target as L.Path;
+
+                  // ซ่อนเส้นอื่น (ลด opacity)
+                  layerRefs.current.forEach((layer) => {
+                    (layer as L.Path).setStyle({ opacity: 0.0 });
+                  });
+
+                  // เน้นเส้นที่คลิก
+                  clickedLayer.setStyle({ opacity: 1.0 });
+
+                  // เปิด popup
+                  const { createLRTRoutePopup } = require('@/utils/popupUtils');
+                  clickedLayer
+                    .bindPopup(createLRTRoutePopup(feature))
+                    .openPopup();
+
+                  // เมื่อ popup ปิด → แสดงเส้นทั้งหมดตามเดิม
+                  clickedLayer.on('popupclose', () => {
+                    layerRefs.current.forEach((layer) => {
+                      (layer as L.Path).setStyle({ opacity: 1.0 });
+                    });
+                  });
+                },
+              }}
+            />
+          ))}
+        </>
+      )}
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { Feature, Geometry } from 'geojson';
 import { stringToColor, addOpacityToHexColor, lightenColor } from '@/utils/labelColorUtils';
+import { LRT_LINE_COLORS, LRT_DEFAULT_COLOR, hexToRgba } from '@/utils/lineColorUtils';
 
 const FEATURE_LABELS = {
   highway: 'ถนน',
@@ -187,10 +188,12 @@ export function createLandPriceSubdPopup(feature: Feature<Geometry, any>) {
 
 export function createBoundMunPopup(feature: Feature<Geometry, any>) {
   const props = feature.properties || {};
-  const display_name = props;
+  const display_name = props.display_name;
 
   const baseColor = display_name ? stringToColor(display_name) : '#ddd';
   const lightColor = lightenColor(baseColor, 0.2);
+
+  console.log(display_name);
 
   return `
     <div style="font-family: Arial, sans-serif; min-width: 250px;">
@@ -380,6 +383,27 @@ export function createBusRoutePopup(feature: Feature<Geometry, any>): string {
       <div style="line-height: 1.4;">
         <strong>รวม:</strong> ${total}<br/>
         <strong>รายละเอียด:</strong> ${summary}
+      </div>
+    </div>
+  `;
+}
+
+export function createLRTRoutePopup(feature: Feature<Geometry, any>): string {
+  const props = feature.properties || {};
+  const displayName = props.display_name || 'ไม่ทราบชื่อ';
+  const displayDistance = props.total_distance_display || '';
+  const lineKey = props.line || '';
+  const baseColor = LRT_LINE_COLORS[lineKey] || LRT_DEFAULT_COLOR;
+
+  const bgColor = hexToRgba(baseColor, 0.3);
+
+  return `
+    <div style="min-width: 220px; font-family: Arial, sans-serif;">
+      <div style="font-weight: bold; font-size: 14px; background: ${bgColor}; padding: 4px 8px; border-radius: 4px;">
+        ${displayName}
+      </div>
+      <div style="font-size: 12px; color: #333; margin-top: 6px;">
+        <strong>ระยะทางรวม:</strong> ${displayDistance}
       </div>
     </div>
   `;

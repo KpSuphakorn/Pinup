@@ -10,9 +10,6 @@ LINE_COLOR_MAP = {
     "Red": "สีแดง",
     "Blue": "สีน้ำเงิน",
     "Green": "สีเขียว",
-    "Yellow": "สีเหลือง",
-    "Purple": "สีม่วง",
-    "Orange": "สีส้ม",
 }
 
 router = APIRouter()
@@ -44,7 +41,7 @@ async def get_lrt_route():
                 "line": line_code,
                 "total_length_meters": round(total_length_meters, 2),
                 "total_distance_display": f"ระยะทางรวม: {total_distance_display}",
-                "display_name": f"LRT สาย{line_thai})"
+                "display_name": f"LRT สาย{line_thai}"
             }
 
         print(f"LRT route data processed: {len(data['features'])} routes")
