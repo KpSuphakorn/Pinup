@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 import json
 from ..utils.distance_calculator import format_distance, calculate_linestring_length 
+from ..utils.convert_coor import convert_coordinates
 
 router = APIRouter()
 
@@ -28,7 +29,7 @@ async def get_lrt_route():
             geometry = feature["geometry"]
 
             if geometry["type"] == "LineString":
-                coordinates = geometry["coordinates"]
+                coordinates = convert_coordinates(geometry["coordinates"]) # แปลงเป็น lng lat
                 total_length_meters = calculate_linestring_length(coordinates)
             else:
                 total_length_meters = 0
@@ -42,8 +43,8 @@ async def get_lrt_route():
                 "name": f"LRT สาย{line_thai}",
                 "line": line_code,
                 "total_length_meters": round(total_length_meters, 2),
-                "total_distance_display": total_distance_display,
-                "display_name": f"LRT สาย{line_thai} (รวม: {total_distance_display})"
+                "total_distance_display": f"ระยะทางรวม: {total_distance_display}",
+                "display_name": f"LRT สาย{line_thai})"
             }
 
         print(f"LRT route data processed: {len(data['features'])} routes")
