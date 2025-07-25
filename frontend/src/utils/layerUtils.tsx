@@ -18,8 +18,8 @@ export const layerOptions: LayerOptionData[] = [
   { value: 'boundamphoe', label: 'ขอบเขตอำเภอ', description: 'แสดงขอบเขตอำเภอ', center: 'chiangmai' },
   { value: 'boundprovince', label: 'ขอบเขตจังหวัด', description: 'แสดงขอบเขตจังหวัด', center: 'chiangmai' },
   { value: 'gatecount', label: 'ปริมาณคนเดินผ่าน', description: 'แสดงข้อมูลจำนวนคนเดินผ่านจากการสำรวจ', center: 'chiangmai' },
-  { value: 'busstop', label: 'ป้ายรถเมล์', description: 'แสดงข้อมูลป้ายรถเมล์', center: 'chiangmai' },
-  { value: 'busroute', label: 'เส้นทางรถเมล์', description: 'แสดงเส้นทางการเดินทางของรถเมล์', center: 'chiangmai' },
+  { value: 'busstop', label: 'ป้ายรถประจำทาง', description: 'แสดงข้อมูลป้ายรถประจำทาง', center: 'chiangmai' },
+  { value: 'busroute', label: 'เส้นทางรถประจำทาง', description: 'แสดงเส้นทางการเดินทางของรถประจำทาง', center: 'chiangmai' },
 ];
 
 // กำหนด global layers ที่ไม่ติดพื้นที่
