@@ -218,6 +218,7 @@ export function MapLayers({
               eventHandlers={{
                 add: (e) => {
                   layerRefs.current.push(e.target);
+                  console.log("Feature :", feature); 
                 },
                 click: (e) => {
                   const clickedLayer = e.target as L.Path;

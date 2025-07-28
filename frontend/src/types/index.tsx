@@ -341,7 +341,7 @@ export interface LRTRouteFeature {
     type: 'LineString';
     coordinates: [number, number][];
   };
-  properties: BusStopData;
+  properties: LRTRouteData;
 }
 
 export interface LRTRouteGeoJSON {
