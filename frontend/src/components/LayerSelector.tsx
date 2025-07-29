@@ -111,9 +111,11 @@ export default function LayerSelector({ selectedLayers, setSelectedLayers }: Pro
       {showDropdown && (
         <div className="layer-selector-dropdown">
           <div className="layer-selector-content">
-            <div className="layer-selector-header">
-              <h3 className="layer-selector-title">เลือกข้อมูลที่ต้องการแสดง</h3>
-              <p className="layer-selector-subtitle">เลือกได้หลายรายการ กดยืนยันเพื่อดึงข้อมูล</p>
+            <div className='layer-selector-header-wrapper'>
+              <div className="layer-selector-header">
+                <h3 className="layer-selector-title">เลือกข้อมูลที่ต้องการแสดง</h3>
+                <p className="layer-selector-subtitle">เลือกได้หลายรายการ กดยืนยันเพื่อดึงข้อมูล</p>
+              </div>
             </div>
 
             {warning && (
