@@ -3,8 +3,6 @@ import json
 from ..utils.distance_calculator import format_distance, calculate_linestring_length 
 from ..utils.convert_coor import convert_coordinates
 
-router = APIRouter()
-
 # Map สีเป็นชื่อภาษาไทย
 LINE_COLOR_MAP = {
     "Red": "สีแดง",
