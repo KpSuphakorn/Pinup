@@ -34,6 +34,7 @@ export interface MapLayersProps {
   busrouteData?: BusRouteGeoJSON | null;
   LRTrouteData?: LRTRouteGeoJSON | null;
   ruralargiData?: RuralArgiGeoJSON | null;
+  recreatenvData?: RecreatEnvGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }
@@ -368,4 +369,23 @@ export interface RuralArgiFeature {
 export interface RuralArgiGeoJSON {
   type: 'FeatureCollection';
   features: RuralArgiFeature[];
+}
+
+export interface RecreatEnvData {
+  elevation: number;
+  display_data: string;
+}
+
+export interface RecreatEnvFeature {
+  type: 'Feature';
+  geometry: {
+    type: 'Polygon';
+    coordinates: number[][][];
+  };
+  properties: RecreatEnvData;
+}
+
+export interface RecreatEnvGeoJSON {
+  type: 'FeatureCollection';
+  features: RecreatEnvFeature[];
 }

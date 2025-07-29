@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import L, { Layer } from 'leaflet';
 import type { BusRouteFeature } from '@/types';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRuralArgiPopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRuralArgiPopup, createRecreatEnvPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -18,6 +18,7 @@ import { busstopStyles } from '@/styles/CNX/busstopStyles';
 import { busrouteStyles } from '@/styles/CNX/busrouteStyles';
 import { LRTrouteStyles } from '@/styles/CNX/LRTrouteStyles';
 import { ruralargiStyles } from '@/styles/CNX/ruralargiStyles';
+import { recreatenvStyles } from '@/styles/CNX/recreatenvStyles';
 import { MapLayersProps } from '@/types/index';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
@@ -39,6 +40,7 @@ export function MapLayers({
   busrouteData,
   LRTrouteData,
   ruralargiData,
+  recreatenvData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -220,7 +222,7 @@ export function MapLayers({
               eventHandlers={{
                 add: (e) => {
                   layerRefs.current.push(e.target);
-                  console.log("Feature :", feature); 
+                  console.log("Feature :", feature);
                 },
                 click: (e) => {
                   const clickedLayer = e.target as L.Path;
@@ -257,6 +259,18 @@ export function MapLayers({
           style={ruralargiStyles.getStyle}
           onEachFeature={(feature, layer) => {
             const popupContent = createRuralArgiPopup(feature);
+            layer.bindPopup(popupContent);
+          }}
+        />
+      )}
+
+      {/* Recreate & Environment Layer */}
+      {recreatenvData?.features.length && (
+        <GeoJSON
+          data={recreatenvData}
+          style={recreatenvStyles.getStyle}
+          onEachFeature={(feature, layer) => {
+            const popupContent = createRecreatEnvPopup(feature);
             layer.bindPopup(popupContent);
           }}
         />

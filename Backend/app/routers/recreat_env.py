@@ -4,11 +4,11 @@ from ..utils.convert_coor import convert_coordinates
 
 router = APIRouter()
 
-@router.get("/cnx/rural-argi")
+@router.get("/cnx/recreat-env")
 async def get_rural_argi():
-    """ดึงข้อมูลชนบทและเกษตรกรรม - มี geometry ระดับ และขนาดพื้นที่"""
+    """ดึงข้อมูลที่โล่งเพื่อนันทนาการและการอนุรักษ์คุณภาพสิ่งแวดล้อม - มี geometry และระดับ"""
     try:
-        with open("data/CNX/rural_argi.geojson", "r", encoding='utf-8') as file:
+        with open("data/CNX/recreat_env.geojson", "r", encoding='utf-8') as file:
             data = json.load(file)
         
         for feature in data["features"]:
@@ -21,13 +21,12 @@ async def get_rural_argi():
             props = feature["properties"]
             feature["properties"] = {
                 "elevation": props["ELEVATION"],
-                "area": props["AREA"],
-                "display_data": f"พื้นที่: {props['AREA']:,} [หน่วยของพื้นที่] - ระดับ: {props['ELEVATION']}"
+                "display_data": f"ระดับ: {props['ELEVATION']}"
             }
 
         print(f"Plan data processed: {len(data['features'])} features")
         return data
         
     except Exception as e:
-        print(f"Error processing rural & argicultural data: {str(e)}")
+        print(f"Error processing recreate & environment data: {str(e)}")
         raise

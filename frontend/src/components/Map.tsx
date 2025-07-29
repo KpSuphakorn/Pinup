@@ -27,7 +27,7 @@ export default function Map({ landId }: MapProps) {
     landpricesubdData, landpricesubdRangeData,
     boundmunData, boundtambonData, boundamphoeData, boundprovinceData,
     gatecountData, busstopData, busrouteData, LRTRouteData,
-    RuralArgiData,
+    RuralArgiData, recreatenvData,
     isLoading
   } = useMapData(landId, isClient && shouldFetchData);
 
@@ -94,6 +94,7 @@ export default function Map({ landId }: MapProps) {
           busrouteData={selectedLayers.includes('busroute') ? busrouteData : null}
           LRTrouteData={selectedLayers.includes('LRTroute') ? LRTRouteData : null}
           ruralargiData={selectedLayers.includes('ruralargi') ? RuralArgiData : null}
+          recreatenvData={selectedLayers.includes('recreatenv') ? recreatenvData : null}
           landId={landId.toString()}
           isLoading={false}
         />
