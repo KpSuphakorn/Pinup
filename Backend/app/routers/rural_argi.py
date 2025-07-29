@@ -22,7 +22,7 @@ async def get_rural_argi():
             feature["properties"] = {
                 "elevation": props["ELEVATION"],
                 "area": props["AREA"],
-                "display_data": f"พื้นที่: {props['AREA']:,} [หน่วยของพื้นที่] - ระดับ: {props['ELEVATION']}"
+                "display_data": f"พื้นที่: {props['AREA']:,} ตร.กม. - ระดับ: {props['ELEVATION']}"
             }
 
         print(f"Plan data processed: {len(data['features'])} features")
