@@ -1,5 +1,5 @@
-import { BoundTambonGeoJSON } from "@/types/index";
-import { api } from "../api";
+import { api } from "@/libs/api";
+import { BoundTambonGeoJSON } from "./types";
 
 export async function getBoundTambonData(): Promise<BoundTambonGeoJSON> {
   return api

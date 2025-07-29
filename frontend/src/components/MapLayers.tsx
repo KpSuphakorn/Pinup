@@ -1,26 +1,41 @@
-'use client';
+"use client";
 
-import dynamic from 'next/dynamic';
-import { useRef } from 'react';
-import L, { Layer } from 'leaflet';
-import type { BusRouteFeature } from '@/types';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup } from '@/utils/popupUtils';
-import { osmStyles } from '@/styles/osmStyles';
-import { zoningStyles } from '@/styles/zoningStyles';
-import { populationStyles } from '@/styles/populationStyles';
-import { landpricesubdStyles } from '@/styles/landpricesubdStyles';
-import { boundmunStyles } from '@/styles/CNX/boundmunStyles';
-import { boundtambonStyles } from '@/styles/CNX/boundtambonStyles';
-import { boundamphoeStyles } from '@/styles/CNX/boundamphoeStyles';
-import { boundprovinceStyles } from '@/styles/CNX/boundprovinceStyles';
-import { gatecountStyles } from '@/styles/CNX/gatecountStyles';
-import { busstopStyles } from '@/styles/CNX/busstopStyles';
-import { busrouteStyles } from '@/styles/CNX/busrouteStyles';
-import { LRTrouteStyles } from '@/styles/CNX/LRTrouteStyles';
-import { MapLayersProps } from '@/types/index';
+import dynamic from "next/dynamic";
+import { useRef } from "react";
+import L, { Layer } from "leaflet";
+import { BusRouteFeature } from "@/mapLayers/bus-route/types";
+import {
+  createOsmPopup,
+  createZoningPopup,
+  createPopulationPopup,
+  createLandPriceSubdPopup,
+  createBoundMunPopup,
+  createBoundTambonPopup,
+  createBoundAmphoePopup,
+  createBoundProvincePopup,
+  createGateCountPopup,
+  createBusStopPopup,
+  createBusRoutePopup,
+} from "@/utils/popupUtils";
 
-const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
+import { osmStyles } from "@/mapLayers/osm/styles";
+import { zoningStyles } from "@/mapLayers/zoning/styles";
+import { populationStyles } from "@/mapLayers/population/styles";
+import { landpricesubdStyles } from "@/mapLayers/landprice-subd/styles";
+import { boundmunStyles } from "@/mapLayers/bound-mun/styles";
+import { boundtambonStyles } from "@/mapLayers/bound-tambon/styles";
+import { boundamphoeStyles } from "@/mapLayers/bound-amphoe/styles";
+import { boundprovinceStyles } from "@/mapLayers/bound-province/styles";
+import { gatecountStyles } from "@/mapLayers/gate-count/styles";
+import { busstopStyles } from "@/mapLayers/bus-stop/styles";
+import { busrouteStyles } from "@/mapLayers/bus-route/styles";
+import { LRTrouteStyles } from "@/mapLayers/lrt-route/styles";
+import { MapLayersProps } from "@/types";
 
+const GeoJSON = dynamic(
+  () => import("react-leaflet").then((mod) => mod.GeoJSON),
+  { ssr: false }
+);
 
 export function MapLayers({
   osmData,
@@ -38,14 +53,13 @@ export function MapLayers({
   busrouteData,
   LRTrouteData,
   landId,
-  isLoading
+  isLoading,
 }: MapLayersProps) {
-
   if (isLoading) return null;
 
-  if (typeof window === 'undefined') return null;
+  if (typeof window === "undefined") return null;
 
-  const L = require('leaflet');
+  const L = require("leaflet");
   const layerRefs = useRef<Layer[]>([]);
 
   return (
@@ -81,7 +95,9 @@ export function MapLayers({
         <GeoJSON
           key={`landpricesubd-${landId}`}
           data={landpricesubdData}
-          style={landpricesubdStyles.createStyleFunction(landpricesubdRangeData)}
+          style={landpricesubdStyles.createStyleFunction(
+            landpricesubdRangeData
+          )}
           onEachFeature={(feature, layer) => {
             const popupContent = createLandPriceSubdPopup(feature);
             layer.bindPopup(popupContent);
@@ -154,7 +170,9 @@ export function MapLayers({
       {gatecountData?.features.length && (
         <GeoJSON
           data={gatecountData}
-          pointToLayer={(feature, latlng) => L.marker(latlng, { icon: gatecountStyles.getStyle(feature) })}
+          pointToLayer={(feature, latlng) =>
+            L.marker(latlng, { icon: gatecountStyles.getStyle(feature) })
+          }
           onEachFeature={(feature, layer) => {
             layer.bindPopup(createGateCountPopup(feature));
           }}
@@ -165,7 +183,9 @@ export function MapLayers({
       {busstopData?.features.length && (
         <GeoJSON
           data={busstopData}
-          pointToLayer={(feature, latlng) => L.marker(latlng, { icon: busstopStyles.getStyle(feature) })}
+          pointToLayer={(feature, latlng) =>
+            L.marker(latlng, { icon: busstopStyles.getStyle(feature) })
+          }
           onEachFeature={(feature, layer) => {
             layer.bindPopup(createBusStopPopup(feature));
           }}
@@ -173,81 +193,89 @@ export function MapLayers({
       )}
 
       {/* BusRoute Layer */}
-      {Array.isArray(busrouteData?.features) && busrouteData.features.length > 0 && (
-        <>
-          {busrouteData.features.map((feature: BusRouteFeature, index: number) => (
-            <GeoJSON
-              key={`busroute-${index}`}
-              data={feature}
-              style={() => busrouteStyles.getStyle(feature)}
-              eventHandlers={{
-                add: (e) => {
-                  layerRefs.current.push(e.target);
-                },
-                click: (e) => {
-                  const clickedLayer = e.target as L.Path;
+      {Array.isArray(busrouteData?.features) &&
+        busrouteData.features.length > 0 && (
+          <>
+            {busrouteData.features.map(
+              (feature: BusRouteFeature, index: number) => (
+                <GeoJSON
+                  key={`busroute-${index}`}
+                  data={feature}
+                  style={() => busrouteStyles.getStyle(feature)}
+                  eventHandlers={{
+                    add: (e) => {
+                      layerRefs.current.push(e.target);
+                    },
+                    click: (e) => {
+                      const clickedLayer = e.target as L.Path;
 
-                  layerRefs.current.forEach((layer) => {
-                    (layer as L.Path).setStyle({ opacity: 0.0 });
-                  });
+                      layerRefs.current.forEach((layer) => {
+                        (layer as L.Path).setStyle({ opacity: 0.0 });
+                      });
 
-                  clickedLayer.setStyle({ opacity: 1.0 });
+                      clickedLayer.setStyle({ opacity: 1.0 });
 
-                  clickedLayer.bindPopup(createBusRoutePopup(feature)).openPopup();
+                      clickedLayer
+                        .bindPopup(createBusRoutePopup(feature))
+                        .openPopup();
 
-                  clickedLayer.on('popupclose', () => {
-                    layerRefs.current.forEach((layer) => {
-                      (layer as L.Path).setStyle({ opacity: 1.0 });
-                    });
-                  });
-                },
-              }}
-            />
-          ))}
-        </>
-      )}
+                      clickedLayer.on("popupclose", () => {
+                        layerRefs.current.forEach((layer) => {
+                          (layer as L.Path).setStyle({ opacity: 1.0 });
+                        });
+                      });
+                    },
+                  }}
+                />
+              )
+            )}
+          </>
+        )}
 
       {/* LRTRout Layer */}
-      {Array.isArray(LRTrouteData?.features) && LRTrouteData.features.length > 0 && (
-        <>
-          {LRTrouteData.features.map((feature, index) => (
-            <GeoJSON
-              key={`lrtroute-${index}`}
-              data={feature}
-              style={() => LRTrouteStyles.getStyle(feature)}
-              eventHandlers={{
-                add: (e) => {
-                  layerRefs.current.push(e.target);
-                },
-                click: (e) => {
-                  const clickedLayer = e.target as L.Path;
+      {Array.isArray(LRTrouteData?.features) &&
+        LRTrouteData.features.length > 0 && (
+          <>
+            {LRTrouteData.features.map((feature, index) => (
+              <GeoJSON
+                key={`lrtroute-${index}`}
+                data={feature}
+                style={() => LRTrouteStyles.getStyle(feature)}
+                eventHandlers={{
+                  add: (e) => {
+                    layerRefs.current.push(e.target);
+                  },
+                  click: (e) => {
+                    const clickedLayer = e.target as L.Path;
 
-                  // ซ่อนเส้นอื่น (ลด opacity)
-                  layerRefs.current.forEach((layer) => {
-                    (layer as L.Path).setStyle({ opacity: 0.0 });
-                  });
-
-                  // เน้นเส้นที่คลิก
-                  clickedLayer.setStyle({ opacity: 1.0 });
-
-                  // เปิด popup
-                  const { createLRTRoutePopup } = require('@/utils/popupUtils');
-                  clickedLayer
-                    .bindPopup(createLRTRoutePopup(feature))
-                    .openPopup();
-
-                  // เมื่อ popup ปิด → แสดงเส้นทั้งหมดตามเดิม
-                  clickedLayer.on('popupclose', () => {
+                    // ซ่อนเส้นอื่น (ลด opacity)
                     layerRefs.current.forEach((layer) => {
-                      (layer as L.Path).setStyle({ opacity: 1.0 });
+                      (layer as L.Path).setStyle({ opacity: 0.0 });
                     });
-                  });
-                },
-              }}
-            />
-          ))}
-        </>
-      )}
+
+                    // เน้นเส้นที่คลิก
+                    clickedLayer.setStyle({ opacity: 1.0 });
+
+                    // เปิด popup
+                    const {
+                      createLRTRoutePopup,
+                    } = require("@/utils/popupUtils");
+                    clickedLayer
+                      .bindPopup(createLRTRoutePopup(feature))
+                      .openPopup();
+
+                    // เมื่อ popup ปิด → แสดงเส้นทั้งหมดตามเดิม
+                    clickedLayer.on("popupclose", () => {
+                      layerRefs.current.forEach((layer) => {
+                        (layer as L.Path).setStyle({ opacity: 1.0 });
+                      });
+                    });
+                  },
+                }}
+              />
+            ))}
+          </>
+        )}
     </>
   );
 }

@@ -1,5 +1,5 @@
-import { LandPriceSubdRangeData } from "@/types";
-import { api } from "./api";
+import { api } from "@/libs/api";
+import { LandPriceSubdRangeData } from "./types";
 
 export async function getLandPriceRange(): Promise<LandPriceSubdRangeData> {
   return api

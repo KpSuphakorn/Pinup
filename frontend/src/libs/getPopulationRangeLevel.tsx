@@ -1,4 +1,4 @@
-import { PopulationRange } from "@/types";
+import { PopulationRange } from "@/mapLayers/population/types";
 
 export function getPopulationRangeLevel(
   population: number,

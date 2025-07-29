@@ -1,5 +1,5 @@
-import { FeatureCollection, Geometry } from 'geojson';
-import { ZoningData } from '.';
+import { ZoningData } from "@/mapLayers/zoning/types";
+import { FeatureCollection, Geometry } from "geojson";
 
 export interface MapProps {
   landId: number;

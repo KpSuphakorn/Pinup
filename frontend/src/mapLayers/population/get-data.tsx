@@ -1,5 +1,5 @@
-import { PopulationGeoJSON } from "@/types/index";
-import { api } from "./api";
+import { api } from "@/libs/api";
+import { PopulationGeoJSON } from "./types";
 
 export async function getPopulationMapData(): Promise<PopulationGeoJSON> {
   return api

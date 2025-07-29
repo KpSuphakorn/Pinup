@@ -1,5 +1,5 @@
-import { BoundAmphoeGeoJSON } from "@/types";
-import { api } from "../api";
+import { api } from "@/libs/api";
+import { BoundAmphoeGeoJSON } from "./types";
 
 export async function getBoundAmphoeData(): Promise<BoundAmphoeGeoJSON> {
   return api

@@ -1,45 +1,48 @@
-import { PopulationRange, PopulationRangeData } from '@/types';
-import { Feature, Geometry } from 'geojson';
+import { Feature } from "geojson";
+import { PopulationRange, PopulationRangeData } from "./types";
 
 // สีสำหรับแต่ละช่วง (10 ช่วง - จากสีอ่อนมากไปสีเข้มมาก)
 const POPULATION_COLORS = [
-    { fill: '#F3E5F5', stroke: '#8E24AA' },  // ช่วง 1 (มากที่สุด) - สีม่วงอ่อนมาก
-    { fill: '#E1BEE7', stroke: '#8E24AA' },  // ช่วง 2
-    { fill: '#CE93D8', stroke: '#8E24AA' },  // ช่วง 3
-    { fill: '#BA68C8', stroke: '#7B1FA2' },  // ช่วง 4
-    { fill: '#AB47BC', stroke: '#7B1FA2' },  // ช่วง 5
-    { fill: '#9C27B0', stroke: '#6A1B9A' },  // ช่วง 6
-    { fill: '#8E24AA', stroke: '#6A1B9A' },  // ช่วง 7
-    { fill: '#7B1FA2', stroke: '#4A148C' },  // ช่วง 8
-    { fill: '#6A1B9A', stroke: '#4A148C' },  // ช่วง 9
-    { fill: '#4A148C', stroke: '#311B92' },  // ช่วง 10 (น้อยที่สุด) - สีม่วงเข้มมาก
+  { fill: "#F3E5F5", stroke: "#8E24AA" }, // ช่วง 1 (มากที่สุด) - สีม่วงอ่อนมาก
+  { fill: "#E1BEE7", stroke: "#8E24AA" }, // ช่วง 2
+  { fill: "#CE93D8", stroke: "#8E24AA" }, // ช่วง 3
+  { fill: "#BA68C8", stroke: "#7B1FA2" }, // ช่วง 4
+  { fill: "#AB47BC", stroke: "#7B1FA2" }, // ช่วง 5
+  { fill: "#9C27B0", stroke: "#6A1B9A" }, // ช่วง 6
+  { fill: "#8E24AA", stroke: "#6A1B9A" }, // ช่วง 7
+  { fill: "#7B1FA2", stroke: "#4A148C" }, // ช่วง 8
+  { fill: "#6A1B9A", stroke: "#4A148C" }, // ช่วง 9
+  { fill: "#4A148C", stroke: "#311B92" }, // ช่วง 10 (น้อยที่สุด) - สีม่วงเข้มมาก
 ];
 
-const DEFAULT_COLOR = { fill: '#F5F5F5', stroke: '#9E9E9E' };
+const DEFAULT_COLOR = { fill: "#F5F5F5", stroke: "#9E9E9E" };
 
 // ฟังก์ชันสำหรับหาช่วงประชากรที่ถูกต้อง
-function getPopulationRangeIndex(population: number, ranges: PopulationRange[]): number {
+function getPopulationRangeIndex(
+  population: number,
+  ranges: PopulationRange[]
+): number {
   if (!ranges || ranges.length === 0) return -1;
-  
+
   for (let i = 0; i < ranges.length; i++) {
     const range = ranges[i];
     if (population >= range.min && population <= range.max) {
       return i;
     }
   }
-  
+
   // หากไม่พบช่วงที่ตรงกัน ให้ใช้ช่วงที่ใกล้เคียงที่สุด
   if (population < ranges[0].min) return 0;
   if (population > ranges[ranges.length - 1].max) return ranges.length - 1;
-  
+
   return -1;
 }
 
 // ฟังก์ชันสำหรับสร้าง style ตามจำนวนประชากร
 function getStyle(feature?: Feature, rangeData?: PopulationRangeData) {
   const population = feature?.properties?.population || 0;
-  console.log('ranges in Population getStyle:', rangeData?.ranges);
-  
+  console.log("ranges in Population getStyle:", rangeData?.ranges);
+
   if (!rangeData || !rangeData.ranges || rangeData.ranges.length === 0) {
     return {
       color: DEFAULT_COLOR.stroke,
@@ -47,22 +50,26 @@ function getStyle(feature?: Feature, rangeData?: PopulationRangeData) {
       weight: 2,
       fillOpacity: 0.7,
       opacity: 1,
-      dashArray: undefined
+      dashArray: undefined,
     };
   }
-  
-  const rangeIndex = getPopulationRangeIndex(Number(population), rangeData.ranges);
-  const colors = rangeIndex >= 0 && rangeIndex < POPULATION_COLORS.length 
-    ? POPULATION_COLORS[rangeIndex] 
-    : DEFAULT_COLOR;
-  
+
+  const rangeIndex = getPopulationRangeIndex(
+    Number(population),
+    rangeData.ranges
+  );
+  const colors =
+    rangeIndex >= 0 && rangeIndex < POPULATION_COLORS.length
+      ? POPULATION_COLORS[rangeIndex]
+      : DEFAULT_COLOR;
+
   return {
     color: colors.stroke,
     fillColor: colors.fill,
     weight: 2,
     fillOpacity: 0.7,
     opacity: 1,
-    dashArray: undefined
+    dashArray: undefined,
   };
 }
 
@@ -75,25 +82,33 @@ function createStyleFunction(rangeData: PopulationRangeData) {
 function getPopulationInfo(feature?: Feature) {
   const properties = feature?.properties || {};
   const population = properties.population || 0;
-  
+
   // ตรวจสอบ label จากหลายฟิลด์ที่เป็นไปได้
-  const label = properties.label || properties.name || properties.district || properties.subdistrict || '';
-  const province = properties.province || '';
-  const district = properties.district || '';
-  const subdistrict = properties.subdistrict || '';
-  
+  const label =
+    properties.label ||
+    properties.name ||
+    properties.district ||
+    properties.subdistrict ||
+    "";
+  const province = properties.province || "";
+  const district = properties.district || "";
+  const subdistrict = properties.subdistrict || "";
+
   // สร้าง full address โดยตรวจสอบว่ามีข้อมูลหรือไม่
-  const addressParts = [subdistrict, district, province].filter(part => part && part.trim() !== '');
-  const fullAddress = addressParts.length > 0 ? addressParts.join(', ') : 'ไม่ระบุที่อยู่';
-  
+  const addressParts = [subdistrict, district, province].filter(
+    (part) => part && part.trim() !== ""
+  );
+  const fullAddress =
+    addressParts.length > 0 ? addressParts.join(", ") : "ไม่ระบุที่อยู่";
+
   return {
     population: Number(population),
-    formattedPopulation: Number(population).toLocaleString('th-TH'),
+    formattedPopulation: Number(population).toLocaleString("th-TH"),
     label: label.trim(),
     province: province.trim(),
     district: district.trim(),
     subdistrict: subdistrict.trim(),
-    fullAddress
+    fullAddress,
   };
 }
 
@@ -102,7 +117,7 @@ function getLegendItems(rangeData: PopulationRangeData) {
   if (!rangeData || !rangeData.ranges) {
     return [];
   }
-  
+
   // เรียงลำดับจากมากไปน้อย (สีอ่อนไปสีเข้ม)
   return rangeData.ranges.map((range, index) => ({
     range: range.range,
@@ -110,7 +125,7 @@ function getLegendItems(rangeData: PopulationRangeData) {
     color: POPULATION_COLORS[index]?.fill || DEFAULT_COLOR.fill,
     stroke: POPULATION_COLORS[index]?.stroke || DEFAULT_COLOR.stroke,
     min: range.min,
-    max: range.max
+    max: range.max,
   }));
 }
 
@@ -120,5 +135,5 @@ export const populationStyles = {
   getLegendItems,
   createStyleFunction,
   POPULATION_COLORS,
-  DEFAULT_COLOR
+  DEFAULT_COLOR,
 };

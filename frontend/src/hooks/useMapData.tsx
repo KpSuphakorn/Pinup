@@ -1,36 +1,70 @@
-import { useState, useEffect } from 'react';
-import { FeatureCollection, Geometry } from 'geojson';
-import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON } from '@/types';
-import { getZoning } from '@/libs/zoning';
-import { getOsmData } from '@/libs/osm';
-import { getPopulationMapData } from '@/libs/getPopulationData';
-import { getPopulationRange } from '@/libs/getPopulationRange';
-import { getLandPriceMapData } from '@/libs/getLandPriceSubdData';
-import { getLandPriceRange } from '@/libs/getLandPriceSubdRange';
-import { getBoundMunData } from '@/libs/CNX/getBoundMunData';
-import { getBoundTambonData } from '@/libs/CNX/getBoundTambonData';
-import { getBoundAmphoeData } from '@/libs/CNX/getBoundAmphoeData';
-import { getBoundProvinceData } from '@/libs/CNX/getBoundProvinceData';
-import { getGateCountData } from '@/libs/CNX/getGateCountData';
-import { getBusStopData } from '@/libs/CNX/getBusStopData'; 
-import { getBusRouteData } from '@/libs/CNX/getBusRouteData';
-import { getLRTRouteData } from '@/libs/CNX/getLRTRouteData';
+import { useState, useEffect } from "react";
+import { FeatureCollection, Geometry } from "geojson";
+import {
+  PopulationGeoJSON,
+  PopulationRangeData,
+} from "@/mapLayers/population/types";
+import { ZoningData } from "@/mapLayers/zoning/types";
+import {
+  LandPriceSubdGeoJSON,
+  LandPriceSubdRangeData,
+} from "@/mapLayers/landprice-subd/types";
+import { BoundMunGeoJSON } from "@/mapLayers/bound-mun/types";
+import { BoundTambonGeoJSON } from "@/mapLayers/bound-tambon/types";
+import { BoundAmphoeGeoJSON } from "@/mapLayers/bound-amphoe/types";
+import { BoundProvinceGeoJSON } from "@/mapLayers/bound-province/types";
+import { GateCountGeoJSON } from "@/mapLayers/gate-count/types";
+import { BusStopGeoJSON } from "@/mapLayers/bus-stop/types";
+import { BusRouteGeoJSON } from "@/mapLayers/bus-route/types";
+import { LRTRouteGeoJSON } from "@/mapLayers/lrt-route/types";
+import { getZoning } from "@/mapLayers/zoning/get-data";
+import { getOsmData } from "@/mapLayers/osm/get-data";
+import { getPopulationMapData } from "@/mapLayers/population/get-data";
+import { getPopulationRange } from "@/mapLayers/population/get-range";
+import { getLandPriceMapData } from "@/mapLayers/landprice-subd/get-data";
+import { getLandPriceRange } from "@/mapLayers/landprice-subd/get-range";
+import { getBoundMunData } from "@/mapLayers/bound-mun/get-data";
+import { getBoundTambonData } from "@/mapLayers/bound-tambon/get-data";
+import { getBoundAmphoeData } from "@/mapLayers/bound-amphoe/get-data";
+import { getBoundProvinceData } from "@/mapLayers/bound-province/get-data";
+import { getGateCountData } from "@/mapLayers/gate-count/get-data";
+import { getBusStopData } from "@/mapLayers/bus-stop/get-data";
+import { getBusRouteData } from "@/mapLayers/bus-route/get-data";
+import { getLRTRouteData } from "@/mapLayers/lrt-route/get-data";
 
 export function useMapData(landId: number, isClient: boolean) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
-  const [osmData, setOsmData] = useState<FeatureCollection<Geometry, any> | null>(null);
-  const [populationData, setPopulationData] = useState<PopulationGeoJSON | null>(null);
-  const [populationRangeData, setPopulationRangeData] = useState<PopulationRangeData | null>(null);
-  const [landpricesubdData, setLandPriceSubdData] = useState<LandPriceSubdGeoJSON | null>(null);
-  const [landpricesubdRangeData, setLandPriceSubdRangeData] = useState<LandPriceSubdRangeData | null>(null);
-  const [boundmunData, setBoundMunData] = useState<BoundMunGeoJSON | null>(null);
-  const [boundtambonData, setBoundTambonData] = useState<BoundTambonGeoJSON | null>(null);
-  const [boundamphoeData, setBoundAmphoeData] = useState<BoundAmphoeGeoJSON | null>(null);
-  const [boundprovinceData, setBoundProvinceData] = useState<BoundProvinceGeoJSON | null>(null);
-  const [gatecountData, setGateCountData] = useState<GateCountGeoJSON | null>(null);
+  const [osmData, setOsmData] = useState<FeatureCollection<
+    Geometry,
+    any
+  > | null>(null);
+  const [populationData, setPopulationData] =
+    useState<PopulationGeoJSON | null>(null);
+  const [populationRangeData, setPopulationRangeData] =
+    useState<PopulationRangeData | null>(null);
+  const [landpricesubdData, setLandPriceSubdData] =
+    useState<LandPriceSubdGeoJSON | null>(null);
+  const [landpricesubdRangeData, setLandPriceSubdRangeData] =
+    useState<LandPriceSubdRangeData | null>(null);
+  const [boundmunData, setBoundMunData] = useState<BoundMunGeoJSON | null>(
+    null
+  );
+  const [boundtambonData, setBoundTambonData] =
+    useState<BoundTambonGeoJSON | null>(null);
+  const [boundamphoeData, setBoundAmphoeData] =
+    useState<BoundAmphoeGeoJSON | null>(null);
+  const [boundprovinceData, setBoundProvinceData] =
+    useState<BoundProvinceGeoJSON | null>(null);
+  const [gatecountData, setGateCountData] = useState<GateCountGeoJSON | null>(
+    null
+  );
   const [busstopData, setBusStopData] = useState<BusStopGeoJSON | null>(null);
-  const [busrouteData, setBusRouteData] = useState<BusRouteGeoJSON | null>(null);
-  const [LRTRouteData, setLRTRouteData] = useState<LRTRouteGeoJSON | null>(null);
+  const [busrouteData, setBusRouteData] = useState<BusRouteGeoJSON | null>(
+    null
+  );
+  const [LRTRouteData, setLRTRouteData] = useState<LRTRouteGeoJSON | null>(
+    null
+  );
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -40,7 +74,22 @@ export function useMapData(landId: number, isClient: boolean) {
       setIsLoading(true);
 
       try {
-        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse] = await Promise.allSettled([
+        const [
+          zoningResponse,
+          osmResponse,
+          populationResponse,
+          populationRangeResponse,
+          landpricesubdResponse,
+          landpricesubdRangeResponse,
+          boundmunResponse,
+          boundtambonResponse,
+          boundamphoeResponse,
+          boundprovinceResponse,
+          gatecountResponse,
+          busstopResponse,
+          busrouteResponse,
+          LRTrouteResponse,
+        ] = await Promise.allSettled([
           getZoning(landId),
           getOsmData(),
           getPopulationMapData(),
@@ -58,125 +107,163 @@ export function useMapData(landId: number, isClient: boolean) {
         ]);
 
         // Handle zoning data
-        if (zoningResponse.status === 'fulfilled' && !zoningResponse.value.error) {
+        if (
+          zoningResponse.status === "fulfilled" &&
+          !zoningResponse.value.error
+        ) {
           const data = zoningResponse.value;
           setZoningData({
             feature: {
-              type: 'Feature',
+              type: "Feature",
               properties: { id: data.id, name: data.name },
-              geometry: data.geometry
-            }
+              geometry: data.geometry,
+            },
           });
         }
 
         // Handle OSM data
-        if (osmResponse.status === 'fulfilled') {
+        if (osmResponse.status === "fulfilled") {
           const data = osmResponse.value;
           setOsmData({
-            type: 'FeatureCollection',
-            features: Array.isArray(data) ? data : []
+            type: "FeatureCollection",
+            features: Array.isArray(data) ? data : [],
           });
         }
 
         // Handle population map data
-        if (populationResponse.status === 'fulfilled') {
+        if (populationResponse.status === "fulfilled") {
           const data = populationResponse.value;
           setPopulationData(data);
         } else {
-          console.error('Failed to fetch population map data:', populationResponse.reason);
+          console.error(
+            "Failed to fetch population map data:",
+            populationResponse.reason
+          );
         }
 
         // Handle population range data
-        if (populationRangeResponse.status === 'fulfilled') {
+        if (populationRangeResponse.status === "fulfilled") {
           const data = populationRangeResponse.value;
           setPopulationRangeData(data);
         } else {
-          console.error('Failed to fetch population range data:', populationRangeResponse.reason);
+          console.error(
+            "Failed to fetch population range data:",
+            populationRangeResponse.reason
+          );
         }
 
         // Handle land price map data
-        if (landpricesubdResponse.status === 'fulfilled') {
+        if (landpricesubdResponse.status === "fulfilled") {
           const data = landpricesubdResponse.value;
           setLandPriceSubdData(data);
         } else {
-          console.error('Failed to fetch land price subdistrict map data:', landpricesubdResponse.reason);
+          console.error(
+            "Failed to fetch land price subdistrict map data:",
+            landpricesubdResponse.reason
+          );
         }
 
         // Handle land price range data
-        if (landpricesubdRangeResponse.status === 'fulfilled') {
+        if (landpricesubdRangeResponse.status === "fulfilled") {
           const data = landpricesubdRangeResponse.value;
           setLandPriceSubdRangeData(data);
         } else {
-          console.error('Failed to fetch land price subdistrict range data:', landpricesubdRangeResponse.reason);
+          console.error(
+            "Failed to fetch land price subdistrict range data:",
+            landpricesubdRangeResponse.reason
+          );
         }
 
         // Handle bound municipality data
-        if (boundmunResponse.status === 'fulfilled') {
+        if (boundmunResponse.status === "fulfilled") {
           const data = boundmunResponse.value;
           setBoundMunData(data);
         } else {
-          console.error('Failed to fetch bound municipality data:', boundmunResponse.reason);
+          console.error(
+            "Failed to fetch bound municipality data:",
+            boundmunResponse.reason
+          );
         }
 
         // Handle bound tambon data
-        if (boundtambonResponse.status === 'fulfilled') {
+        if (boundtambonResponse.status === "fulfilled") {
           const data = boundtambonResponse.value;
           setBoundTambonData(data);
         } else {
-          console.error('Failed to fetch bound tambon data:', boundtambonResponse.reason);
+          console.error(
+            "Failed to fetch bound tambon data:",
+            boundtambonResponse.reason
+          );
         }
 
         // Handle bound amphoe data
-        if (boundamphoeResponse.status === 'fulfilled') {
+        if (boundamphoeResponse.status === "fulfilled") {
           const data = boundamphoeResponse.value;
           setBoundAmphoeData(data);
         } else {
-          console.error('Failed to fetch bound municipality data:', boundamphoeResponse.reason);
+          console.error(
+            "Failed to fetch bound municipality data:",
+            boundamphoeResponse.reason
+          );
         }
 
         // Handle bound province data
-        if (boundprovinceResponse.status === 'fulfilled') {
+        if (boundprovinceResponse.status === "fulfilled") {
           const data = boundprovinceResponse.value;
           setBoundProvinceData(data);
         } else {
-          console.error('Failed to fetch bound province data:', boundprovinceResponse.reason);
+          console.error(
+            "Failed to fetch bound province data:",
+            boundprovinceResponse.reason
+          );
         }
 
         // Handle gate count data
-        if (gatecountResponse.status === 'fulfilled') {
+        if (gatecountResponse.status === "fulfilled") {
           const data = gatecountResponse.value;
           setGateCountData(data);
         } else {
-          console.error('Failed to fetch gate count data:', gatecountResponse.reason);
+          console.error(
+            "Failed to fetch gate count data:",
+            gatecountResponse.reason
+          );
         }
 
         // Handle bus stop data
-        if (busstopResponse.status === 'fulfilled') {
+        if (busstopResponse.status === "fulfilled") {
           const data = busstopResponse.value;
           setBusStopData(data);
         } else {
-          console.error('Failed to fetch bus stop data:', busstopResponse.reason);
+          console.error(
+            "Failed to fetch bus stop data:",
+            busstopResponse.reason
+          );
         }
 
         // Handle bus route data
-        if (busrouteResponse.status === 'fulfilled') {
+        if (busrouteResponse.status === "fulfilled") {
           const data = busrouteResponse.value;
           setBusRouteData(data);
         } else {
-          console.error('Failed to fetch bus route data:', busrouteResponse.reason);
+          console.error(
+            "Failed to fetch bus route data:",
+            busrouteResponse.reason
+          );
         }
 
         // Handle LRT route data
-        if (LRTrouteResponse.status === 'fulfilled') {
+        if (LRTrouteResponse.status === "fulfilled") {
           const data = LRTrouteResponse.value;
           setLRTRouteData(data);
           console.log(data);
         } else {
-          console.error('Failed to fetch LRT route data:', LRTrouteResponse.reason);
+          console.error(
+            "Failed to fetch LRT route data:",
+            LRTrouteResponse.reason
+          );
         }
-
       } catch (error) {
-        console.error('Error fetching map data:', error);
+        console.error("Error fetching map data:", error);
       } finally {
         setIsLoading(false);
       }
@@ -200,6 +287,6 @@ export function useMapData(landId: number, isClient: boolean) {
     busstopData,
     busrouteData,
     LRTRouteData,
-    isLoading
+    isLoading,
   };
 }

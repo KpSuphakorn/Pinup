@@ -1,5 +1,5 @@
-import { LandPriceSubdGeoJSON } from "@/types/index";
-import { api } from "./api";
+import { api } from "@/libs/api";
+import { LandPriceSubdGeoJSON } from "./types";
 
 export async function getLandPriceMapData(): Promise<LandPriceSubdGeoJSON> {
   return api

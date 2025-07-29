@@ -1,4 +1,4 @@
-import { LandPriceSubdRange } from "@/types";
+import { LandPriceSubdRange } from "@/mapLayers/landprice-subd/types";
 
 export function getLandPriceSubdRangeLevel(
   landPrice: number,

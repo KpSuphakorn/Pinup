@@ -1,5 +1,5 @@
-import { BoundProvinceGeoJSON } from "@/types/index";
-import { api } from "../api";
+import { api } from "@/libs/api";
+import { BoundProvinceGeoJSON } from "./types";
 
 export async function getBoundProvinceData(): Promise<BoundProvinceGeoJSON> {
   return api

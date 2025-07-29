@@ -1,5 +1,5 @@
-import { PopulationRangeData } from "@/types";
-import { api } from "./api";
+import { api } from "@/libs/api";
+import { PopulationRangeData } from "./types";
 
 export async function getPopulationRange(): Promise<PopulationRangeData> {
   return api
