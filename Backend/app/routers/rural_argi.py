@@ -13,16 +13,16 @@ async def get_rural_argi():
         
         for feature in data["features"]:
             # ถ้าจะแปลงคู่อันดับให้ uncomment นี้
-            # if feature["geometry"]["type"] == "Polygon":
-            #     feature["geometry"]["coordinates"] = convert_coordinates(
-            #         feature["geometry"]["coordinates"]
-            #     )
+            if feature["geometry"]["type"] == "Polygon":
+                feature["geometry"]["coordinates"] = convert_coordinates(
+                    feature["geometry"]["coordinates"]
+                )
             
             props = feature["properties"]
             feature["properties"] = {
                 "elevation": props["ELEVATION"],
                 "area": props["AREA"],
-                "display_data": f"พื้นที่: {props['AREA']:,} [หน่วยของพื้นที่] | ระดับ: {props['ELEVATION']}"
+                "display_data": f"พื้นที่: {props['AREA']:,} [หน่วยของพื้นที่] - ระดับ: {props['ELEVATION']}"
             }
 
         print(f"Boundary data processed: {len(data['features'])} features")

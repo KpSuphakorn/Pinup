@@ -408,3 +408,24 @@ export function createLRTRoutePopup(feature: Feature<Geometry, any>): string {
     </div>
   `;
 }
+
+export function createRuralArgiPopup(feature: Feature<Geometry, any>) {
+  const props = feature.properties || {};
+  const display_data = props.display_data;
+
+  const baseColor = display_data ? stringToColor(display_data) : '#ddd';
+  const lightColor = lightenColor(baseColor, 0.2);
+
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 250px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        ผังเมือง: ชนบทและเกษตรกรรม
+      </h4>
+      <div style="margin: 10px 0;">
+        ${display_data ? `<p style="margin: 5px 0; font-size: 14px; font-weight: bold; color: ${lightColor}; padding: 4px 8px; border-radius: 4px;">
+          ${display_data}
+        </p>` : ''}
+      </div>
+    </div>
+  `;
+}

@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import L, { Layer } from 'leaflet';
 import type { BusRouteFeature } from '@/types';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRuralArgiPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -17,6 +17,7 @@ import { gatecountStyles } from '@/styles/CNX/gatecountStyles';
 import { busstopStyles } from '@/styles/CNX/busstopStyles';
 import { busrouteStyles } from '@/styles/CNX/busrouteStyles';
 import { LRTrouteStyles } from '@/styles/CNX/LRTrouteStyles';
+import { ruralargiStyles } from '@/styles/CNX/ruralargiStyles';
 import { MapLayersProps } from '@/types/index';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
@@ -37,6 +38,7 @@ export function MapLayers({
   busstopData,
   busrouteData,
   LRTrouteData,
+  ruralargiData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -231,8 +233,6 @@ export function MapLayers({
                   // เน้นเส้นที่คลิก
                   clickedLayer.setStyle({ opacity: 1.0 });
 
-                  // เปิด popup
-                  const { createLRTRoutePopup } = require('@/utils/popupUtils');
                   clickedLayer
                     .bindPopup(createLRTRoutePopup(feature))
                     .openPopup();
@@ -248,6 +248,18 @@ export function MapLayers({
             />
           ))}
         </>
+      )}
+
+      {/* Rural & Argicultural Layer */}
+      {ruralargiData?.features.length && (
+        <GeoJSON
+          data={ruralargiData}
+          style={ruralargiStyles.getStyle}
+          onEachFeature={(feature, layer) => {
+            const popupContent = createRuralArgiPopup(feature);
+            layer.bindPopup(popupContent);
+          }}
+        />
       )}
     </>
   );

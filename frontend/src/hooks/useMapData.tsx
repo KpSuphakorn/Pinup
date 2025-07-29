@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FeatureCollection, Geometry } from 'geojson';
-import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON } from '@/types';
+import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON, RuralArgiGeoJSON } from '@/types';
 import { getZoning } from '@/libs/zoning';
 import { getOsmData } from '@/libs/osm';
 import { getPopulationMapData } from '@/libs/getPopulationData';
@@ -15,6 +15,7 @@ import { getGateCountData } from '@/libs/CNX/getGateCountData';
 import { getBusStopData } from '@/libs/CNX/getBusStopData'; 
 import { getBusRouteData } from '@/libs/CNX/getBusRouteData';
 import { getLRTRouteData } from '@/libs/CNX/getLRTRouteData';
+import { getRuralArgiData } from '@/libs/CNX/getRuralArgiData';
 
 export function useMapData(landId: number, isClient: boolean) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
@@ -31,6 +32,7 @@ export function useMapData(landId: number, isClient: boolean) {
   const [busstopData, setBusStopData] = useState<BusStopGeoJSON | null>(null);
   const [busrouteData, setBusRouteData] = useState<BusRouteGeoJSON | null>(null);
   const [LRTRouteData, setLRTRouteData] = useState<LRTRouteGeoJSON | null>(null);
+  const [RuralArgiData, setRuralArgiData] = useState<RuralArgiGeoJSON | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -40,7 +42,7 @@ export function useMapData(landId: number, isClient: boolean) {
       setIsLoading(true);
 
       try {
-        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse] = await Promise.allSettled([
+        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse, ruralargiResponse] = await Promise.allSettled([
           getZoning(landId),
           getOsmData(),
           getPopulationMapData(),
@@ -55,6 +57,7 @@ export function useMapData(landId: number, isClient: boolean) {
           getBusStopData(),
           getBusRouteData(),
           getLRTRouteData(),
+          getRuralArgiData(),
         ]);
 
         // Handle zoning data
@@ -170,9 +173,16 @@ export function useMapData(landId: number, isClient: boolean) {
         if (LRTrouteResponse.status === 'fulfilled') {
           const data = LRTrouteResponse.value;
           setLRTRouteData(data);
-          console.log(data);
         } else {
           console.error('Failed to fetch LRT route data:', LRTrouteResponse.reason);
+        }
+
+        // Handle Rural & Argicultural data
+        if (ruralargiResponse.status === 'fulfilled') {
+          const data = ruralargiResponse.value;
+          setRuralArgiData(data);
+        } else {
+          console.error('Failed to fetch Rural & Argicultural data:', ruralargiResponse.reason);
         }
 
       } catch (error) {
@@ -200,6 +210,7 @@ export function useMapData(landId: number, isClient: boolean) {
     busstopData,
     busrouteData,
     LRTRouteData,
+    RuralArgiData,
     isLoading
   };
 }

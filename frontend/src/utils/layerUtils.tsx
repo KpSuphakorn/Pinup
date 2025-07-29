@@ -1,4 +1,4 @@
-export type LayerOption = 'none' | 'osm' | 'zoning' | 'population' | 'landprice' | 'boundmun' | 'boundtambon' | 'boundamphoe' | 'boundprovince' | 'gatecount' | 'busstop' | 'busroute' | 'LRTroute';
+export type LayerOption = 'none' | 'osm' | 'zoning' | 'population' | 'landprice' | 'boundmun' | 'boundtambon' | 'boundamphoe' | 'boundprovince' | 'gatecount' | 'busstop' | 'busroute' | 'LRTroute' | 'ruralargi';
 
 export interface LayerOptionData {
   value: LayerOption;
@@ -21,6 +21,7 @@ export const layerOptions: LayerOptionData[] = [
   { value: 'busstop', label: 'ป้ายรถประจำทาง', description: 'แสดงข้อมูลป้ายรถประจำทาง', center: 'chiangmai' },
   { value: 'busroute', label: 'เส้นทางรถประจำทาง', description: 'แสดงเส้นทางการเดินทางของรถประจำทาง', center: 'chiangmai' },
   { value: 'LRTroute', label: 'เส้นทางรถไฟรางเบา (LRT)', description: 'แสดงเส้นทางการเดินทางของรถไฟรางเบา', center: 'chiangmai' },
+  { value: 'ruralargi', label: 'ชนบทและเกษตรกรรม', description: 'แสดงผังเมืองชนบทและเกษตรกรรม', center: 'chiangmai' },
 ];
 
 // กำหนด global layers ที่ไม่ติดพื้นที่
