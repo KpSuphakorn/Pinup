@@ -33,6 +33,7 @@ export interface MapLayersProps {
   busstopData?: BusStopGeoJSON | null;
   busrouteData?: BusRouteGeoJSON | null;
   LRTrouteData?: LRTRouteGeoJSON | null;
+  roadData?: RoadGeoJSON | null;
   ruralargiData?: RuralArgiGeoJSON | null;
   recreatenvData?: RecreatEnvGeoJSON | null;
   artcultData?: ArtCultGeoJSON | null;
@@ -350,6 +351,26 @@ export interface LRTRouteFeature {
 export interface LRTRouteGeoJSON {
   type: 'FeatureCollection';
   features: LRTRouteFeature[];
+}
+
+export interface RoadData {
+  name_th: string;
+  name_en: string,
+  len_km: number;
+}
+
+export interface RoadFeature {
+  type: 'Feature';
+  geometry: {
+    type: 'LineString';
+    coordinates: [number, number][];
+  };
+  properties: RoadData;
+}
+
+export interface RoadGeoJSON {
+  type: 'FeatureCollection';
+  features: RoadFeature[];
 }
 
 export interface RuralArgiData {

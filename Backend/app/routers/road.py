@@ -1,6 +1,5 @@
 from fastapi import APIRouter
 import json
-from ..utils.convert_coor import convert_coordinates
 
 router = APIRouter()
 
@@ -13,11 +12,6 @@ async def get_road():
 
         for feature in data["features"]:
             props = feature["properties"]
-            geometry = feature["geometry"]
-
-            if geometry["type"] == "LineString":
-                coordinates = convert_coordinates(geometry["coordinates"]) # แปลงเป็น lng lat
-                feature["geometry"]["coordinates"] = coordinates
 
             len_km = props["Lenght_KM"]
             name_th = props["RDLNNAMT"]

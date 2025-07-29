@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import L, { Layer } from 'leaflet';
 import type { BusRouteFeature } from '@/types';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -17,11 +17,11 @@ import { gatecountStyles } from '@/styles/CNX/gatecountStyles';
 import { busstopStyles } from '@/styles/CNX/busstopStyles';
 import { busrouteStyles } from '@/styles/CNX/busrouteStyles';
 import { LRTrouteStyles } from '@/styles/CNX/LRTrouteStyles';
+import { roadStyles } from '@/styles/CNX/roadStyles';
 import { ruralargiStyles } from '@/styles/CNX/ruralargiStyles';
 import { recreatenvStyles } from '@/styles/CNX/recreatenvStyles';
 import { artcultStyles } from '@/styles/CNX/artcultStyles';
 import { MapLayersProps } from '@/types/index';
-import { features } from 'process';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
 
@@ -41,6 +41,7 @@ export function MapLayers({
   busstopData,
   busrouteData,
   LRTrouteData,
+  roadData,
   ruralargiData,
   recreatenvData,
   artcultData,
@@ -254,6 +255,47 @@ export function MapLayers({
           ))}
         </>
       )}
+
+      {/* Road Layer */}
+      {Array.isArray(roadData?.features) && roadData.features.length > 0 && (
+        <>
+          {roadData.features.map((feature, index) => (
+            <GeoJSON
+              key={`road-${index}`}
+              data={feature}
+              style={() => roadStyles.getStyle(feature)}
+              eventHandlers={{
+                add: (e) => {
+                  layerRefs.current.push(e.target);
+                },
+                click: (e) => {
+                  const clickedLayer = e.target as L.Path;
+
+                  // ลดความชัดของเส้นถนนทั้งหมด
+                  layerRefs.current.forEach((layer) => {
+                    (layer as L.Path).setStyle({ opacity: 0.1 });
+                  });
+
+                  // เน้นเส้นที่คลิก
+                  clickedLayer.setStyle({ opacity: 1.0 });
+
+                  clickedLayer
+                    .bindPopup(createRoadPopup(feature))
+                    .openPopup();
+
+                  // เมื่อ popup ปิด → กลับมาแสดงทุกเส้นเหมือนเดิม
+                  clickedLayer.on('popupclose', () => {
+                    layerRefs.current.forEach((layer) => {
+                      (layer as L.Path).setStyle({ opacity: 1.0 });
+                    });
+                  });
+                },
+              }}
+            />
+          ))}
+        </>
+      )}
+
 
       {/* Rural & Argicultural Layer */}
       {ruralargiData?.features.length && (

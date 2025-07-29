@@ -1,6 +1,5 @@
 import { Feature, Geometry } from 'geojson';
 import { PathOptions } from 'leaflet';
-import { stringToColor, lightenColor } from '@/utils/labelColorUtils';
 
 function getStyle(feature?: Feature<Geometry, any>): PathOptions {
   if (!feature) return {};

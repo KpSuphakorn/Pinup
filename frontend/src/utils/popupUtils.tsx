@@ -409,6 +409,27 @@ export function createLRTRoutePopup(feature: Feature<Geometry, any>): string {
   `;
 }
 
+export function createRoadPopup(feature: Feature<Geometry, any>): string {
+  const props = feature.properties || {};
+  const displayName_TH = props.name_th || 'ไม่ทราบชื่อ';
+  const displayName_EN = props.name_en || 'unknown';
+  const displayDistance = props.len_km || '';
+  
+  const baseColor = displayName_TH ? stringToColor(displayName_TH) : '#ddd';
+  const bgColor = hexToRgba(baseColor, 0.3);
+
+  return `
+    <div style="min-width: 220px; font-family: Arial, sans-serif;">
+      <div style="font-weight: bold; font-size: 14px; background: ${bgColor}; padding: 4px 8px; border-radius: 4px;">
+        ${displayName_TH} (${displayName_EN})
+      </div>
+      <div style="font-size: 12px; color: #333; margin-top: 6px;">
+        <strong>ระยะทาง:</strong> ${displayDistance}
+      </div>
+    </div>
+  `;
+}
+
 export function createRuralArgiPopup(feature: Feature<Geometry, any>) {
   const props = feature.properties || {};
   const display_data = props.display_data;
