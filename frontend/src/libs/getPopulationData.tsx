@@ -1,20 +1,8 @@
-'use server';
-
-import { PopulationGeoJSON} from '@/types/index';
+import { PopulationGeoJSON } from "@/types/index";
+import { api } from "./api";
 
 export async function getPopulationMapData(): Promise<PopulationGeoJSON> {
-  const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
-
-  const response = await fetch(`${BACKEND_URL}/api/bkk/population/map-data`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error('Failed to fetch population map data');
-  }
-
-  return await response.json();
+  return api
+    .get<PopulationGeoJSON>("/bkk/population/map-data")
+    .then((res) => res.data);
 }

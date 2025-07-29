@@ -1,20 +1,8 @@
-'use server';
-
-import { LandPriceSubdGeoJSON } from '@/types/index';
+import { LandPriceSubdGeoJSON } from "@/types/index";
+import { api } from "./api";
 
 export async function getLandPriceMapData(): Promise<LandPriceSubdGeoJSON> {
-  const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
-
-  const response = await fetch(`${BACKEND_URL}/api/bkk/land-price-subd/map-data`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error('Failed to fetch land price map data');
-  }
-
-  return await response.json();
+  return api
+    .get<LandPriceSubdGeoJSON>("/bkk/land-price-subd/map-data")
+    .then((res) => res.data);
 }

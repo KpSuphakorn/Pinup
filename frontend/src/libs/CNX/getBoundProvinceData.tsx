@@ -1,20 +1,8 @@
-'use server';
-
 import { BoundProvinceGeoJSON } from "@/types/index";
+import { api } from "../api";
 
 export async function getBoundProvinceData(): Promise<BoundProvinceGeoJSON> {
-    const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
-
-    const response = await fetch(`${BACKEND_URL}/api/cnx/bound-prov`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
-
-    if (!response.ok) {
-        throw new Error('Failed to fetch bound province data');
-    }
-
-    return await response.json();
+  return api
+    .get<BoundProvinceGeoJSON>("/cnx/bound-prov")
+    .then((res) => res.data);
 }
