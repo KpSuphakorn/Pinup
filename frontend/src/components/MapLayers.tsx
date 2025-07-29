@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import L, { Layer } from 'leaflet';
 import type { BusRouteFeature } from '@/types';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRuralArgiPopup, createRecreatEnvPopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -19,7 +19,9 @@ import { busrouteStyles } from '@/styles/CNX/busrouteStyles';
 import { LRTrouteStyles } from '@/styles/CNX/LRTrouteStyles';
 import { ruralargiStyles } from '@/styles/CNX/ruralargiStyles';
 import { recreatenvStyles } from '@/styles/CNX/recreatenvStyles';
+import { artcultStyles } from '@/styles/CNX/artcultStyles';
 import { MapLayersProps } from '@/types/index';
+import { features } from 'process';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
 
@@ -41,6 +43,7 @@ export function MapLayers({
   LRTrouteData,
   ruralargiData,
   recreatenvData,
+  artcultData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -271,6 +274,18 @@ export function MapLayers({
           style={recreatenvStyles.getStyle}
           onEachFeature={(feature, layer) => {
             const popupContent = createRecreatEnvPopup(feature);
+            layer.bindPopup(popupContent);
+          }}
+        />
+      )}
+
+      {/* Art & Culture Layer */}
+      {artcultData?.features.length && (
+        <GeoJSON
+          data={artcultData}
+          style={artcultStyles.getStyle}
+          onEachFeature={(feature, layer) => {
+            const popupContent = createArtCultPopup(feature);
             layer.bindPopup(popupContent);
           }}
         />

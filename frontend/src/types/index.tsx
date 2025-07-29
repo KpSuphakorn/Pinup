@@ -35,6 +35,7 @@ export interface MapLayersProps {
   LRTrouteData?: LRTRouteGeoJSON | null;
   ruralargiData?: RuralArgiGeoJSON | null;
   recreatenvData?: RecreatEnvGeoJSON | null;
+  artcultData?: ArtCultGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }
@@ -388,4 +389,23 @@ export interface RecreatEnvFeature {
 export interface RecreatEnvGeoJSON {
   type: 'FeatureCollection';
   features: RecreatEnvFeature[];
+}
+
+export interface ArtCultData {
+  elevation: number;
+  display_data: string;
+}
+
+export interface ArtCultFeature {
+  type: 'Feature';
+  geometry: {
+    type: 'Polygon';
+    coordinates: number[][][];
+  };
+  properties: ArtCultData;
+}
+
+export interface ArtCultGeoJSON {
+  type: 'FeatureCollection';
+  features: ArtCultFeature[];
 }

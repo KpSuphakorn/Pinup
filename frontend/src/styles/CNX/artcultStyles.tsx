@@ -4,9 +4,9 @@ import { stringToColor, lightenColor } from '@/utils/labelColorUtils';
 
 function getStyle(feature?: Feature<Geometry, any>): PathOptions {
   if (!feature) return {};
-
-  const strokeColor = '#008c1eff'
-  const fillColor = '#ccefd3ff';
+  
+  const strokeColor = stringToColor('วัฒนธรรม');
+  const fillColor = lightenColor(strokeColor, 0.6);
 
   return {
     color: strokeColor,
@@ -17,6 +17,6 @@ function getStyle(feature?: Feature<Geometry, any>): PathOptions {
   };
 }
 
-export const recreatenvStyles = {
+export const artcultStyles = {
   getStyle,
 };

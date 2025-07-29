@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FeatureCollection, Geometry } from 'geojson';
-import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON, RuralArgiGeoJSON, RecreatEnvGeoJSON } from '@/types';
+import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON, RuralArgiGeoJSON, RecreatEnvGeoJSON, ArtCultGeoJSON } from '@/types';
 import { getZoning } from '@/libs/zoning';
 import { getOsmData } from '@/libs/osm';
 import { getPopulationMapData } from '@/libs/getPopulationData';
@@ -17,6 +17,7 @@ import { getBusRouteData } from '@/libs/CNX/getBusRouteData';
 import { getLRTRouteData } from '@/libs/CNX/getLRTRouteData';
 import { getRuralArgiData } from '@/libs/CNX/getRuralArgiData';
 import { getRecreatEnvData } from '@/libs/CNX/getRecreatEnvData';
+import { getArtCultData } from '@/libs/CNX/getArtCultData';
 
 export function useMapData(landId: number, isClient: boolean) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
@@ -35,6 +36,7 @@ export function useMapData(landId: number, isClient: boolean) {
   const [LRTRouteData, setLRTRouteData] = useState<LRTRouteGeoJSON | null>(null);
   const [RuralArgiData, setRuralArgiData] = useState<RuralArgiGeoJSON | null>(null);
   const [recreatenvData, setRecreatEnvData] = useState<RecreatEnvGeoJSON | null>(null);
+  const [artcultData, setArtCultData] = useState<ArtCultGeoJSON | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -44,7 +46,7 @@ export function useMapData(landId: number, isClient: boolean) {
       setIsLoading(true);
 
       try {
-        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse, ruralargiResponse, recreatenvResponse] = await Promise.allSettled([
+        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse, ruralargiResponse, recreatenvResponse, artcultResponse] = await Promise.allSettled([
           getZoning(landId),
           getOsmData(),
           getPopulationMapData(),
@@ -61,6 +63,7 @@ export function useMapData(landId: number, isClient: boolean) {
           getLRTRouteData(),
           getRuralArgiData(),
           getRecreatEnvData(),
+          getArtCultData(),
         ]);
 
         // Handle zoning data
@@ -196,6 +199,14 @@ export function useMapData(landId: number, isClient: boolean) {
           console.error('Failed to fetch Recreate & Environment data:',recreatenvResponse.reason);
         }
 
+        // Handle Art & Culture data
+        if (artcultResponse.status === 'fulfilled') {
+          const data = artcultResponse.value;
+          setArtCultData(data);
+        } else {
+          console.error('Failed to fetch Art & Culture data:',artcultResponse.reason);
+        }
+
       } catch (error) {
         console.error('Error fetching map data:', error);
       } finally {
@@ -223,6 +234,7 @@ export function useMapData(landId: number, isClient: boolean) {
     LRTRouteData,
     RuralArgiData,
     recreatenvData,
+    artcultData,
     isLoading
   };
 }

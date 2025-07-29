@@ -434,8 +434,7 @@ export function createRecreatEnvPopup(feature: Feature<Geometry, any>) {
   const props = feature.properties || {};
   const display_data = props.display_data;
 
-  const baseColor = display_data ? stringToColor(display_data) : '#ddd';
-  const lightColor = lightenColor(baseColor, 0.2);
+  const lightColor = '#ccefd3ff';
 
   return `
     <div style="font-family: Arial, sans-serif; min-width: 250px;">
@@ -443,7 +442,43 @@ export function createRecreatEnvPopup(feature: Feature<Geometry, any>) {
         ผังเมือง: ที่โล่งเพื่อนันทนาการและการอนุรักษ์คุณภาพสิ่งแวดล้อม
       </h4>
       <div style="margin: 10px 0;">
-        ${display_data ? `<p style="margin: 5px 0; font-size: 14px; font-weight: bold; color: ${lightColor}; padding: 4px 8px; border-radius: 4px;">
+        ${display_data ? `<p style="
+          margin: 5px 0;
+          font-size: 14px;
+          font-weight: bold;
+          background-color: ${lightColor};
+          padding: 6px 10px;
+          border-radius: 6px;
+        ">
+          ${display_data}
+        </p>` : ''}
+      </div>
+    </div>
+  `;
+}
+
+
+export function createArtCultPopup(feature: Feature<Geometry, any>) {
+  const props = feature.properties || {};
+  const display_data = props.display_data;
+
+  const baseColor = stringToColor('วัฒนธรรม');
+  const lightColor = lightenColor(baseColor, 0.8);
+
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 250px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        ผังเมือง: ที่อนุรักษ์เพื่อส่งเสริมเอกลักษณ์ศิลปะวัฒนธรรมไทย
+      </h4>
+      <div style="margin: 10px 0;">
+        ${display_data ? `<p style="
+          margin: 5px 0;
+          font-size: 14px;
+          font-weight: bold;
+          background-color: ${lightColor};
+          padding: 6px 10px;
+          border-radius: 6px;
+        ">
           ${display_data}
         </p>` : ''}
       </div>
