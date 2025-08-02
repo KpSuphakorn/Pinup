@@ -25,10 +25,11 @@ async def get_low_dense_res_area():
                 "type": geometry["type"],
                 "coordinates": coords
             }).area
+            area_km2 = round(area_m2 / 1_000_000, 4)
 
             feature["properties"] = {
                 "elevation": props.get("ELEVATION"),
-                "area_m2": round(area_m2, 2),
+                "area_km2": area_km2,
             }
 
         return data

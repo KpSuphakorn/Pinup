@@ -542,19 +542,20 @@ export function createArtCultPopup(feature: Feature<Geometry, any>) {
 export function createLowDenseResAreaPopup(feature: Feature<Geometry, any>): string {
   const props = feature.properties || {};
 
-  const elevation = props.elevation || 'ไม่ทราบระดับชั้น';
-  const area = props.area_m2 ?? 'ไม่ระบุ';
+  const elevation = props.elevation ?? 'ไม่ทราบระดับชั้น';
+  const area = props.area_km2 ?? 'ไม่ระบุ';
+  const bgColor = '#acdbffff';
 
   return `
     <div style="min-width: 220px; font-family: Arial, sans-serif;">
       <div style="
         font-weight: bold;
         font-size: 14px;
-        background: '#d1e3f1ff';
+        background: ${bgColor};
         padding: 6px 10px;
         border-radius: 6px;
       ">
-        ${area} ตร.ม.
+        ${area} ตร.กม.
       </div>
       <div style="font-size: 12px; color: #333; margin-top: 6px;">
         <div><strong>ระดับ:</strong> ${elevation}</div>
