@@ -38,6 +38,7 @@ export interface MapLayersProps {
   ruralargiData?: RuralArgiGeoJSON | null;
   recreatenvData?: RecreatEnvGeoJSON | null;
   artcultData?: ArtCultGeoJSON | null;
+  lowdenseresareaData?: LowDenseResAreaGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }
@@ -466,4 +467,30 @@ export interface ArtCultFeature {
 export interface ArtCultGeoJSON {
   type: 'FeatureCollection';
   features: ArtCultFeature[];
+}
+
+export interface LowDenseResAreaData {
+  elevation: number;
+  area: number;
+}
+
+export type LowDenseResAreaGeometry =
+  | {
+    type: 'Polygon';
+    coordinates: number[][][];
+  }
+  | {
+    type: 'MultiPolygon';
+    coordinates: number[][][][];
+  };
+
+export interface LowDenseResAreaFeature {
+  type: 'Feature';
+  geometry: LowDenseResAreaGeometry;
+  properties: LowDenseResAreaData;
+}
+
+export interface LowDenseResAreaGeoJSON {
+  type: 'FeatureCollection';
+  features: LowDenseResAreaFeature[];
 }

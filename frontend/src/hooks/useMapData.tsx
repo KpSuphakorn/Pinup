@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FeatureCollection, Geometry } from 'geojson';
-import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON, RoadGeoJSON, ParkingLotGeoJSON, RuralArgiGeoJSON, RecreatEnvGeoJSON, ArtCultGeoJSON } from '@/types';
+import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON, RoadGeoJSON, ParkingLotGeoJSON, RuralArgiGeoJSON, RecreatEnvGeoJSON, ArtCultGeoJSON, LowDenseResAreaGeoJSON } from '@/types';
 import { getZoning } from '@/libs/zoning';
 import { getOsmData } from '@/libs/osm';
 import { getPopulationMapData } from '@/libs/getPopulationData';
@@ -20,6 +20,7 @@ import { getParkingLotData } from '@/libs/CNX/getParkingLotData';
 import { getRuralArgiData } from '@/libs/CNX/getRuralArgiData';
 import { getRecreatEnvData } from '@/libs/CNX/getRecreatEnvData';
 import { getArtCultData } from '@/libs/CNX/getArtCultData';
+import { getLowDenseResAreaData } from '@/libs/CNX/getLowDenseResAreaData';
 export function useMapData(landId: number, isClient: boolean) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
   const [osmData, setOsmData] = useState<FeatureCollection<Geometry, any> | null>(null);
@@ -40,6 +41,7 @@ export function useMapData(landId: number, isClient: boolean) {
   const [ruralargiData, setRuralArgiData] = useState<RuralArgiGeoJSON | null>(null);
   const [recreatenvData, setRecreatEnvData] = useState<RecreatEnvGeoJSON | null>(null);
   const [artcultData, setArtCultData] = useState<ArtCultGeoJSON | null>(null);
+  const [lowdenseresareaData, setLowDenseResAreaData] = useState<LowDenseResAreaGeoJSON | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -49,7 +51,7 @@ export function useMapData(landId: number, isClient: boolean) {
       setIsLoading(true);
 
       try {
-        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse, roadResponse, parkinglotResponse, ruralargiResponse, recreatenvResponse, artcultResponse] = await Promise.allSettled([
+        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse, roadResponse, parkinglotResponse, ruralargiResponse, recreatenvResponse, artcultResponse, lowdenseresareaResponse] = await Promise.allSettled([
           getZoning(landId),
           getOsmData(),
           getPopulationMapData(),
@@ -69,6 +71,7 @@ export function useMapData(landId: number, isClient: boolean) {
           getRuralArgiData(),
           getRecreatEnvData(),
           getArtCultData(),
+          getLowDenseResAreaData(),
         ]);
 
         // Handle zoning data
@@ -229,6 +232,14 @@ export function useMapData(landId: number, isClient: boolean) {
           console.error('Failed to fetch Art & Culture data:',artcultResponse.reason);
         }
 
+        // Handle Low-density Residential Area data
+        if (lowdenseresareaResponse.status === 'fulfilled') {
+          const data = lowdenseresareaResponse.value;
+          setLowDenseResAreaData(data);
+        } else {
+          console.log('Failed to fetch Low-density residential area data: ' ,lowdenseresareaResponse.reason);
+        }
+
       } catch (error) {
         console.error('Error fetching map data:', error);
       } finally {
@@ -259,6 +270,7 @@ export function useMapData(landId: number, isClient: boolean) {
     ruralargiData,
     recreatenvData,
     artcultData,
+    lowdenseresareaData,
     isLoading
   };
 }

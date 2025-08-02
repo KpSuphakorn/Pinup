@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import L, { Layer } from 'leaflet';
 import type { BusRouteFeature } from '@/types';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup, createLowDenseResAreaPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -22,6 +22,7 @@ import { parkinglotStyles } from '@/styles/CNX/parkinglotStyles';
 import { ruralargiStyles } from '@/styles/CNX/ruralargiStyles';
 import { recreatenvStyles } from '@/styles/CNX/recreatenvStyles';
 import { artcultStyles } from '@/styles/CNX/artcultStyles';
+import { lowdenseresareaStyles } from '@/styles/CNX/lowdenseresareaStyles';
 import { MapLayersProps } from '@/types/index';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
@@ -47,6 +48,7 @@ export function MapLayers({
   ruralargiData,
   recreatenvData,
   artcultData,
+  lowdenseresareaData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -375,16 +377,6 @@ export function MapLayers({
           ))}
         </>
       )}
-      {/* {ruralargiData?.features.length && (
-        <GeoJSON
-          data={ruralargiData}
-          style={ruralargiStyles.getStyle}
-          onEachFeature={(feature, layer) => {
-            const popupContent = createRuralArgiPopup(feature);
-            layer.bindPopup(popupContent);
-          }}
-        />
-      )} */}
 
       {/* Recreate & Environment Layer */}
       {recreatenvData?.features.length && (
@@ -408,6 +400,43 @@ export function MapLayers({
             layer.bindPopup(popupContent);
           }}
         />
+      )}
+
+      {/* Low-density residential area */}
+      {Array.isArray(lowdenseresareaData?.features) && lowdenseresareaData.features.length > 0 && (
+        <>
+          {lowdenseresareaData.features.map((feature, index) => (
+            <GeoJSON
+              key={`lowdenseresarea-${index}`}
+              data={feature}
+              style={() => lowdenseresareaStyles.getStyle(feature)}
+              eventHandlers={{
+                add: (e) => {
+                  layerRefs.current.push(e.target);
+                },
+                click: (e) => {
+                  const clickedLayer = e.target as L.Path;
+
+                  layerRefs.current.forEach((layer) => {
+                    (layer as L.Path).setStyle({ fillOpacity: 0.1, opacity: 0.1 });
+                  });
+
+                  clickedLayer.setStyle({ fillOpacity: 0.6, opacity: 1.0 });
+
+                  clickedLayer
+                    .bindPopup(createLowDenseResAreaPopup(feature))
+                    .openPopup();
+
+                  clickedLayer.on('popupclose', () => {
+                    layerRefs.current.forEach((layer) => {
+                      (layer as L.Path).setStyle({ fillOpacity: 0.5, opacity: 0.9 });
+                    });
+                  });
+                },
+              }}
+            />
+          ))}
+        </>
       )}
     </>
   );
