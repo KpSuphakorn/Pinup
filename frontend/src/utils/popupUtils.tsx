@@ -1,5 +1,5 @@
 import { Feature, Geometry } from 'geojson';
-import { stringToColor, addOpacityToHexColor, lightenColor } from '@/utils/labelColorUtils';
+import { stringToColor, addOpacityToHexColor, lightenColor, getParkingLotPopupColor } from '@/utils/labelColorUtils';
 import { LRT_LINE_COLORS, LRT_DEFAULT_COLOR, hexToRgba } from '@/utils/lineColorUtils';
 
 const FEATURE_LABELS = {
@@ -414,7 +414,7 @@ export function createRoadPopup(feature: Feature<Geometry, any>): string {
   const displayName_TH = props.name_th || 'ไม่ทราบชื่อ';
   const displayName_EN = props.name_en || 'unknown';
   const displayDistance = props.len_km || '';
-  
+
   const baseColor = displayName_TH ? stringToColor(displayName_TH) : '#ddd';
   const bgColor = hexToRgba(baseColor, 0.3);
 
@@ -425,6 +425,38 @@ export function createRoadPopup(feature: Feature<Geometry, any>): string {
       </div>
       <div style="font-size: 12px; color: #333; margin-top: 6px;">
         <strong>ระยะทาง:</strong> ${displayDistance}
+      </div>
+    </div>
+  `;
+}
+
+export function createParkingLotPopup(feature: Feature<Geometry, any>): string {
+  const props = feature.properties || {};
+
+  const name = props.name || 'ไม่ทราบชื่อ';
+  const type = props.type || 'ไม่ทราบประเภท';
+  const capacity = props.capacity ?? 'ไม่ระบุ';
+  const storey = props.storey ?? 'ไม่ระบุ';
+  const area = props.area_m2 ?? 'ไม่ระบุ';
+
+  const bgColor = getParkingLotPopupColor(type);
+
+  return `
+    <div style="min-width: 220px; font-family: Arial, sans-serif;">
+      <div style="
+        font-weight: bold;
+        font-size: 14px;
+        background: ${bgColor};
+        padding: 6px 10px;
+        border-radius: 6px;
+      ">
+        ${name}
+      </div>
+      <div style="font-size: 12px; color: #333; margin-top: 6px;">
+        <div><strong>ประเภท:</strong> ${type}</div>
+        <div><strong>ความจุ:</strong> ${capacity} คัน</div>
+        <div><strong>จำนวนชั้น:</strong> ${storey} ชั้น</div>
+        <div><strong>พื้นที่:</strong> ${area} ตร.ม.</div>
       </div>
     </div>
   `;

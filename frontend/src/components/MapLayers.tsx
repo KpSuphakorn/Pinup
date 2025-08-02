@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import L, { Layer } from 'leaflet';
 import type { BusRouteFeature } from '@/types';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -18,6 +18,7 @@ import { busstopStyles } from '@/styles/CNX/busstopStyles';
 import { busrouteStyles } from '@/styles/CNX/busrouteStyles';
 import { LRTrouteStyles } from '@/styles/CNX/LRTrouteStyles';
 import { roadStyles } from '@/styles/CNX/roadStyles';
+import { parkinglotStyles } from '@/styles/CNX/parkinglotStyles';
 import { ruralargiStyles } from '@/styles/CNX/ruralargiStyles';
 import { recreatenvStyles } from '@/styles/CNX/recreatenvStyles';
 import { artcultStyles } from '@/styles/CNX/artcultStyles';
@@ -42,6 +43,7 @@ export function MapLayers({
   busrouteData,
   LRTrouteData,
   roadData,
+  parkinglotData,
   ruralargiData,
   recreatenvData,
   artcultData,
@@ -296,9 +298,84 @@ export function MapLayers({
         </>
       )}
 
+      {/* Parking Lot Layer */}
+      {Array.isArray(parkinglotData?.features) && parkinglotData.features.length > 0 && (
+        <>
+          {parkinglotData.features.map((feature, index) => (
+            <GeoJSON
+              key={`parking-${index}`}
+              data={feature}
+              style={() => parkinglotStyles.getStyle(feature)}
+              eventHandlers={{
+                add: (e) => {
+                  layerRefs.current.push(e.target);
+                },
+                click: (e) => {
+                  const clickedLayer = e.target as L.Path;
+
+                  // ลดความชัดของลานจอดรถอื่น ๆ
+                  layerRefs.current.forEach((layer) => {
+                    (layer as L.Path).setStyle({ fillOpacity: 0.1, opacity: 0.1 });
+                  });
+
+                  // เน้นลานจอดรถที่ถูกคลิก
+                  clickedLayer.setStyle({ fillOpacity: 0.6, opacity: 1.0 });
+
+                  clickedLayer
+                    .bindPopup(createParkingLotPopup(feature))
+                    .openPopup();
+
+                  // คืนค่าความชัดเมื่อปิด popup
+                  clickedLayer.on('popupclose', () => {
+                    layerRefs.current.forEach((layer) => {
+                      (layer as L.Path).setStyle({ fillOpacity: 0.5, opacity: 0.9 });
+                    });
+                  });
+                },
+              }}
+            />
+          ))}
+        </>
+      )}
+
 
       {/* Rural & Argicultural Layer */}
-      {ruralargiData?.features.length && (
+      {Array.isArray(ruralargiData?.features) && ruralargiData.features.length > 0 && (
+        <>
+          {ruralargiData.features.map((feature, index) => (
+            <GeoJSON
+              key={`ruralargi-${index}`}
+              data={feature}
+              style={() => ruralargiStyles.getStyle(feature)}
+              eventHandlers={{
+                add: (e) => {
+                  layerRefs.current.push(e.target);
+                },
+                click: (e) => {
+                  const clickedLayer = e.target as L.Path;
+
+                  layerRefs.current.forEach((layer) => {
+                    (layer as L.Path).setStyle({ fillOpacity: 0.1, opacity: 0.1 });
+                  });
+
+                  clickedLayer.setStyle({ fillOpacity: 0.6, opacity: 1.0 });
+
+                  clickedLayer
+                    .bindPopup(createRuralArgiPopup(feature))
+                    .openPopup();
+
+                  clickedLayer.on('popupclose', () => {
+                    layerRefs.current.forEach((layer) => {
+                      (layer as L.Path).setStyle({ fillOpacity: 0.5, opacity: 0.9 });
+                    });
+                  });
+                },
+              }}
+            />
+          ))}
+        </>
+      )}
+      {/* {ruralargiData?.features.length && (
         <GeoJSON
           data={ruralargiData}
           style={ruralargiStyles.getStyle}
@@ -307,7 +384,7 @@ export function MapLayers({
             layer.bindPopup(popupContent);
           }}
         />
-      )}
+      )} */}
 
       {/* Recreate & Environment Layer */}
       {recreatenvData?.features.length && (

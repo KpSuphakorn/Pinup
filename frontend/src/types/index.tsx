@@ -34,6 +34,7 @@ export interface MapLayersProps {
   busrouteData?: BusRouteGeoJSON | null;
   LRTrouteData?: LRTRouteGeoJSON | null;
   roadData?: RoadGeoJSON | null;
+  parkinglotData?: ParkingLotGeoJSON | null;
   ruralargiData?: RuralArgiGeoJSON | null;
   recreatenvData?: RecreatEnvGeoJSON | null;
   artcultData?: ArtCultGeoJSON | null;
@@ -373,18 +374,54 @@ export interface RoadGeoJSON {
   features: RoadFeature[];
 }
 
+export interface ParkingLotData {
+  name: string;
+  area: number;
+  capacity: number;
+  storey: number;
+  type: string;
+}
+
+export type ParkingLotGeometry =
+  | {
+    type: 'Polygon';
+    coordinates: number[][][];
+  }
+  | {
+    type: 'MultiPolygon';
+    coordinates: number[][][][];
+  };
+
+export interface ParkingLotFeature {
+  type: 'Feature';
+  geometry: ParkingLotGeometry;
+  properties: ParkingLotData;
+}
+
+export interface ParkingLotGeoJSON {
+  type: 'FeatureCollection';
+  features: ParkingLotFeature[];
+}
+
 export interface RuralArgiData {
   elevation: number;
   area: number;
   display_data: string;
 }
 
-export interface RuralArgiFeature {
-  type: 'Feature';
-  geometry: {
+export type RuralArgiGeometry =
+  | {
     type: 'Polygon';
     coordinates: number[][][];
+  }
+  | {
+    type: 'MultiPolygon';
+    coordinates: number[][][][];
   };
+
+export interface RuralArgiFeature {
+  type: 'Feature';
+  geometry: RuralArgiGeometry;
   properties: RuralArgiData;
 }
 
