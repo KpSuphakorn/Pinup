@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import L, { Layer } from 'leaflet';
 import type { BusRouteFeature } from '@/types';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup, createLowDenseResAreaPopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup, createLowDenseResAreaPopup, createMedDenseResAreaPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -23,6 +23,7 @@ import { ruralargiStyles } from '@/styles/CNX/ruralargiStyles';
 import { recreatenvStyles } from '@/styles/CNX/recreatenvStyles';
 import { artcultStyles } from '@/styles/CNX/artcultStyles';
 import { lowdenseresareaStyles } from '@/styles/CNX/lowdenseresareaStyles';
+import { meddenseresareaStyles } from '@/styles/CNX/meddenseresareaStyles';
 import { MapLayersProps } from '@/types/index';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
@@ -49,6 +50,7 @@ export function MapLayers({
   recreatenvData,
   artcultData,
   lowdenseresareaData,
+  meddenseresareaData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -425,6 +427,43 @@ export function MapLayers({
 
                   clickedLayer
                     .bindPopup(createLowDenseResAreaPopup(feature))
+                    .openPopup();
+
+                  clickedLayer.on('popupclose', () => {
+                    layerRefs.current.forEach((layer) => {
+                      (layer as L.Path).setStyle({ fillOpacity: 0.5, opacity: 0.9 });
+                    });
+                  });
+                },
+              }}
+            />
+          ))}
+        </>
+      )}
+
+      {/* Med-density residential area */}
+      {Array.isArray(meddenseresareaData?.features) && meddenseresareaData.features.length > 0 && (
+        <>
+          {meddenseresareaData.features.map((feature, index) => (
+            <GeoJSON
+              key={`meddenseresarea-${index}`}
+              data={feature}
+              style={() => meddenseresareaStyles.getStyle(feature)}
+              eventHandlers={{
+                add: (e) => {
+                  layerRefs.current.push(e.target);
+                },
+                click: (e) => {
+                  const clickedLayer = e.target as L.Path;
+
+                  layerRefs.current.forEach((layer) => {
+                    (layer as L.Path).setStyle({ fillOpacity: 0.1, opacity: 0.1 });
+                  });
+
+                  clickedLayer.setStyle({ fillOpacity: 0.6, opacity: 1.0 });
+
+                  clickedLayer
+                    .bindPopup(createMedDenseResAreaPopup(feature))
                     .openPopup();
 
                   clickedLayer.on('popupclose', () => {

@@ -563,3 +563,28 @@ export function createLowDenseResAreaPopup(feature: Feature<Geometry, any>): str
     </div>
   `;
 }
+
+export function createMedDenseResAreaPopup(feature: Feature<Geometry, any>): string {
+  const props = feature.properties || {};
+
+  const elevation = props.elevation ?? 'ไม่ทราบระดับชั้น';
+  const area = props.area_km2 ?? 'ไม่ระบุ';
+  const bgColor = '#ffd6acff';
+
+  return `
+    <div style="min-width: 220px; font-family: Arial, sans-serif;">
+      <div style="
+        font-weight: bold;
+        font-size: 14px;
+        background: ${bgColor};
+        padding: 6px 10px;
+        border-radius: 6px;
+      ">
+        ${area} ตร.กม.
+      </div>
+      <div style="font-size: 12px; color: #333; margin-top: 6px;">
+        <div><strong>ระดับ:</strong> ${elevation}</div>
+      </div>
+    </div>
+  `;
+}

@@ -39,6 +39,7 @@ export interface MapLayersProps {
   recreatenvData?: RecreatEnvGeoJSON | null;
   artcultData?: ArtCultGeoJSON | null;
   lowdenseresareaData?: LowDenseResAreaGeoJSON | null;
+  meddenseresareaData?: MedDenseResAreaGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }
@@ -493,4 +494,23 @@ export interface LowDenseResAreaFeature {
 export interface LowDenseResAreaGeoJSON {
   type: 'FeatureCollection';
   features: LowDenseResAreaFeature[];
+}
+
+export interface MedDenseResAreaData {
+  elevation: number;
+  area: number;
+}
+
+export interface MedDenseResAreaFeature {
+  type: 'Feature';
+  geometry: {
+    type: 'Polygon';
+    coordinates: number[][][];
+  };
+  properties: MedDenseResAreaData;
+}
+
+export interface MedDenseResAreaGeoJSON {
+  type: 'FeatureCollection';
+  features: MedDenseResAreaFeature[];
 }
