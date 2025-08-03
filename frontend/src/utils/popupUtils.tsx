@@ -544,7 +544,7 @@ export function createLowDenseResAreaPopup(feature: Feature<Geometry, any>): str
 
   const elevation = props.elevation ?? 'ไม่ทราบระดับชั้น';
   const area = props.area_km2 ?? 'ไม่ระบุ';
-  const bgColor = '#acdbffff';
+  const bgColor = '#fffeacff';
 
   return `
     <div style="min-width: 220px; font-family: Arial, sans-serif;">

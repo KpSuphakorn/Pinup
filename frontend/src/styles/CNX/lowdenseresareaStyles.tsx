@@ -4,7 +4,7 @@ import { PathOptions } from 'leaflet';
 function getStyle(feature?: Feature<Geometry, any>): PathOptions {
   if (!feature) return {};
 
-  const colors = '#90bddfff';
+  const colors = '#f2eb15ff';
 
   return {
     color: colors,
