@@ -1,3 +1,4 @@
+import { ArtCultGeoJSON } from "@/mapLayers/art-cult/types";
 import { BoundAmphoeGeoJSON } from "@/mapLayers/bound-amphoe/types";
 import { BoundMunGeoJSON } from "@/mapLayers/bound-mun/types";
 import { BoundProvinceGeoJSON } from "@/mapLayers/bound-province/types";
@@ -9,11 +10,16 @@ import {
   LandPriceSubdGeoJSON,
   LandPriceSubdRangeData,
 } from "@/mapLayers/landprice-subd/types";
+import { LowDenseResAreaGeoJSON } from "@/mapLayers/low-dense-res-area/types";
 import { LRTRouteGeoJSON } from "@/mapLayers/lrt-route/types";
+import { ParkingLotGeoJSON } from "@/mapLayers/parking-lot/types";
 import {
   PopulationGeoJSON,
   PopulationRangeData,
 } from "@/mapLayers/population/types";
+import { RecreatEnvGeoJSON } from "@/mapLayers/recreat-env/types";
+import { RoadGeoJSON } from "@/mapLayers/road/types";
+import { RuralArgiGeoJSON } from "@/mapLayers/rural-argi/types";
 import { ZoningData } from "@/mapLayers/zoning/types";
 import { Geometry, FeatureCollection } from "geojson";
 
@@ -32,6 +38,12 @@ export interface MapLayersProps {
   busstopData?: BusStopGeoJSON | null;
   busrouteData?: BusRouteGeoJSON | null;
   LRTrouteData?: LRTRouteGeoJSON | null;
+  roadData?: RoadGeoJSON | null;
+  parkinglotData?: ParkingLotGeoJSON | null;
+  ruralargiData?: RuralArgiGeoJSON | null;
+  recreatenvData?: RecreatEnvGeoJSON | null;
+  artcultData?: ArtCultGeoJSON | null;
+  lowdenseresareaData?: LowDenseResAreaGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }

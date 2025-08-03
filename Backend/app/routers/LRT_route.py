@@ -3,8 +3,6 @@ import json
 from ..utils.distance_calculator import format_distance, calculate_linestring_length 
 from ..utils.convert_coor import convert_coordinates
 
-router = APIRouter()
-
 # Map สีเป็นชื่อภาษาไทย
 LINE_COLOR_MAP = {
     "Red": "สีแดง",
@@ -27,6 +25,7 @@ async def get_lrt_route():
 
             if geometry["type"] == "LineString":
                 coordinates = convert_coordinates(geometry["coordinates"]) # แปลงเป็น lng lat
+                feature["geometry"]["coordinates"] = coordinates
                 total_length_meters = calculate_linestring_length(coordinates)
             else:
                 total_length_meters = 0

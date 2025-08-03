@@ -1,4 +1,4 @@
-export type LayerOption = 'none' | 'osm' | 'zoning' | 'population' | 'landprice' | 'boundmun' | 'boundtambon' | 'boundamphoe' | 'boundprovince' | 'gatecount' | 'busstop' | 'busroute' | 'LRTroute';
+export type LayerOption = 'none' | 'osm' | 'zoning' | 'population' | 'landprice' | 'boundmun' | 'boundtambon' | 'boundamphoe' | 'boundprovince' | 'gatecount' | 'busstop' | 'busroute' | 'LRTroute' | 'road' | 'parkinglot' | 'ruralargi' | 'recreatenv' | 'artcult' | 'lowdenseresarea';
 
 export interface LayerOptionData {
   value: LayerOption;
@@ -21,6 +21,12 @@ export const layerOptions: LayerOptionData[] = [
   { value: 'busstop', label: 'ป้ายรถประจำทาง', description: 'แสดงข้อมูลป้ายรถประจำทาง', center: 'chiangmai' },
   { value: 'busroute', label: 'เส้นทางรถประจำทาง', description: 'แสดงเส้นทางการเดินทางของรถประจำทาง', center: 'chiangmai' },
   { value: 'LRTroute', label: 'เส้นทางรถไฟรางเบา (LRT)', description: 'แสดงเส้นทางการเดินทางของรถไฟรางเบา', center: 'chiangmai' },
+  { value: 'road', label: 'ถนน', description: 'แสดงถนน', center: 'chiangmai' },
+  { value: 'parkinglot', label: 'ที่จอดรถ', description: 'แสดงที่จอดรถ', center: 'chiangmai' },
+  { value: 'ruralargi', label: 'ชนบทและเกษตรกรรม', description: 'แสดงผังเมืองชนบทและเกษตรกรรม', center: 'chiangmai' },
+  { value: 'recreatenv', label: 'นันทนาการและอนุรักษ์สิ่งแวดล้อม', description: 'แสดงที่โล่งเพื่อนันทนาการและการอนุรักษ์คุณภาพสิ่งแวดล้อม', center: 'chiangmai' },
+  { value: 'artcult', label: 'ที่อนุรักษ์ศิลปะวัฒนธรรมไทย', description: 'แสดงที่อนุรักษ์เพื่อส่งเสริมเอกลักษณ์ศิลปะวัฒนธรรมไทย', center: 'chiangmai' },
+  { value: 'lowdenseresarea', label: 'ที่อยู่อาศัยหนาแน่นน้อย', description: 'แสดงพื้นที่ที่อยู่อาศัยหนาแน่นน้อย', center: 'chiangmai' },
 ];
 
 // กำหนด global layers ที่ไม่ติดพื้นที่

@@ -16,6 +16,13 @@ import {
   createGateCountPopup,
   createBusStopPopup,
   createBusRoutePopup,
+  createLRTRoutePopup,
+  createRoadPopup,
+  createParkingLotPopup,
+  createRuralArgiPopup,
+  createRecreatEnvPopup,
+  createArtCultPopup,
+  createLowDenseResAreaPopup,
 } from "@/utils/popupUtils";
 
 import { osmStyles } from "@/mapLayers/osm/styles";
@@ -30,6 +37,12 @@ import { gatecountStyles } from "@/mapLayers/gate-count/styles";
 import { busstopStyles } from "@/mapLayers/bus-stop/styles";
 import { busrouteStyles } from "@/mapLayers/bus-route/styles";
 import { LRTrouteStyles } from "@/mapLayers/lrt-route/styles";
+import { roadStyles } from "@/mapLayers/road/styles";
+import { parkinglotStyles } from "@/mapLayers/parking-lot/styles";
+import { ruralargiStyles } from "@/mapLayers/rural-argi/styles";
+import { recreatenvStyles } from "@/mapLayers/recreat-env/styles";
+import { artcultStyles } from "@/mapLayers/art-cult/styles";
+import { lowdenseresareaStyles } from "@/mapLayers/low-dense-res-area/styles";
 import { MapLayersProps } from "@/types";
 
 const GeoJSON = dynamic(
@@ -52,6 +65,12 @@ export function MapLayers({
   busstopData,
   busrouteData,
   LRTrouteData,
+  roadData,
+  parkinglotData,
+  ruralargiData,
+  recreatenvData,
+  artcultData,
+  lowdenseresareaData,
   landId,
   isLoading,
 }: MapLayersProps) {
@@ -244,6 +263,7 @@ export function MapLayers({
                 eventHandlers={{
                   add: (e) => {
                     layerRefs.current.push(e.target);
+                    console.log("Feature :", feature);
                   },
                   click: (e) => {
                     const clickedLayer = e.target as L.Path;
@@ -256,10 +276,6 @@ export function MapLayers({
                     // เน้นเส้นที่คลิก
                     clickedLayer.setStyle({ opacity: 1.0 });
 
-                    // เปิด popup
-                    const {
-                      createLRTRoutePopup,
-                    } = require("@/utils/popupUtils");
                     clickedLayer
                       .bindPopup(createLRTRoutePopup(feature))
                       .openPopup();
@@ -268,6 +284,203 @@ export function MapLayers({
                     clickedLayer.on("popupclose", () => {
                       layerRefs.current.forEach((layer) => {
                         (layer as L.Path).setStyle({ opacity: 1.0 });
+                      });
+                    });
+                  },
+                }}
+              />
+            ))}
+          </>
+        )}
+
+      {/* Road Layer */}
+      {Array.isArray(roadData?.features) && roadData.features.length > 0 && (
+        <>
+          {roadData.features.map((feature, index) => (
+            <GeoJSON
+              key={`road-${index}`}
+              data={feature}
+              style={() => roadStyles.getStyle(feature)}
+              eventHandlers={{
+                add: (e) => {
+                  layerRefs.current.push(e.target);
+                },
+                click: (e) => {
+                  const clickedLayer = e.target as L.Path;
+
+                  // ลดความชัดของเส้นถนนทั้งหมด
+                  layerRefs.current.forEach((layer) => {
+                    (layer as L.Path).setStyle({ opacity: 0.1 });
+                  });
+
+                  // เน้นเส้นที่คลิก
+                  clickedLayer.setStyle({ opacity: 1.0 });
+
+                  clickedLayer.bindPopup(createRoadPopup(feature)).openPopup();
+
+                  // เมื่อ popup ปิด → กลับมาแสดงทุกเส้นเหมือนเดิม
+                  clickedLayer.on("popupclose", () => {
+                    layerRefs.current.forEach((layer) => {
+                      (layer as L.Path).setStyle({ opacity: 1.0 });
+                    });
+                  });
+                },
+              }}
+            />
+          ))}
+        </>
+      )}
+
+      {/* Parking Lot Layer */}
+      {Array.isArray(parkinglotData?.features) &&
+        parkinglotData.features.length > 0 && (
+          <>
+            {parkinglotData.features.map((feature, index) => (
+              <GeoJSON
+                key={`parking-${index}`}
+                data={feature}
+                style={() => parkinglotStyles.getStyle(feature)}
+                eventHandlers={{
+                  add: (e) => {
+                    layerRefs.current.push(e.target);
+                  },
+                  click: (e) => {
+                    const clickedLayer = e.target as L.Path;
+
+                    // ลดความชัดของลานจอดรถอื่น ๆ
+                    layerRefs.current.forEach((layer) => {
+                      (layer as L.Path).setStyle({
+                        fillOpacity: 0.1,
+                        opacity: 0.1,
+                      });
+                    });
+
+                    // เน้นลานจอดรถที่ถูกคลิก
+                    clickedLayer.setStyle({ fillOpacity: 0.6, opacity: 1.0 });
+
+                    clickedLayer
+                      .bindPopup(createParkingLotPopup(feature))
+                      .openPopup();
+
+                    // คืนค่าความชัดเมื่อปิด popup
+                    clickedLayer.on("popupclose", () => {
+                      layerRefs.current.forEach((layer) => {
+                        (layer as L.Path).setStyle({
+                          fillOpacity: 0.5,
+                          opacity: 0.9,
+                        });
+                      });
+                    });
+                  },
+                }}
+              />
+            ))}
+          </>
+        )}
+
+      {/* Rural & Argicultural Layer */}
+      {Array.isArray(ruralargiData?.features) &&
+        ruralargiData.features.length > 0 && (
+          <>
+            {ruralargiData.features.map((feature, index) => (
+              <GeoJSON
+                key={`ruralargi-${index}`}
+                data={feature}
+                style={() => ruralargiStyles.getStyle(feature)}
+                eventHandlers={{
+                  add: (e) => {
+                    layerRefs.current.push(e.target);
+                  },
+                  click: (e) => {
+                    const clickedLayer = e.target as L.Path;
+
+                    layerRefs.current.forEach((layer) => {
+                      (layer as L.Path).setStyle({
+                        fillOpacity: 0.1,
+                        opacity: 0.1,
+                      });
+                    });
+
+                    clickedLayer.setStyle({ fillOpacity: 0.6, opacity: 1.0 });
+
+                    clickedLayer
+                      .bindPopup(createRuralArgiPopup(feature))
+                      .openPopup();
+
+                    clickedLayer.on("popupclose", () => {
+                      layerRefs.current.forEach((layer) => {
+                        (layer as L.Path).setStyle({
+                          fillOpacity: 0.5,
+                          opacity: 0.9,
+                        });
+                      });
+                    });
+                  },
+                }}
+              />
+            ))}
+          </>
+        )}
+
+      {/* Recreate & Environment Layer */}
+      {recreatenvData?.features.length && (
+        <GeoJSON
+          data={recreatenvData}
+          style={recreatenvStyles.getStyle}
+          onEachFeature={(feature, layer) => {
+            const popupContent = createRecreatEnvPopup(feature);
+            layer.bindPopup(popupContent);
+          }}
+        />
+      )}
+
+      {/* Art & Culture Layer */}
+      {artcultData?.features.length && (
+        <GeoJSON
+          data={artcultData}
+          style={artcultStyles.getStyle}
+          onEachFeature={(feature, layer) => {
+            const popupContent = createArtCultPopup(feature);
+            layer.bindPopup(popupContent);
+          }}
+        />
+      )}
+
+      {/* Low-density residential area */}
+      {Array.isArray(lowdenseresareaData?.features) &&
+        lowdenseresareaData.features.length > 0 && (
+          <>
+            {lowdenseresareaData.features.map((feature, index) => (
+              <GeoJSON
+                key={`lowdenseresarea-${index}`}
+                data={feature}
+                style={() => lowdenseresareaStyles.getStyle(feature)}
+                eventHandlers={{
+                  add: (e) => {
+                    layerRefs.current.push(e.target);
+                  },
+                  click: (e) => {
+                    const clickedLayer = e.target as L.Path;
+
+                    layerRefs.current.forEach((layer) => {
+                      (layer as L.Path).setStyle({
+                        fillOpacity: 0.1,
+                        opacity: 0.1,
+                      });
+                    });
+
+                    clickedLayer.setStyle({ fillOpacity: 0.6, opacity: 1.0 });
+
+                    clickedLayer
+                      .bindPopup(createLowDenseResAreaPopup(feature))
+                      .openPopup();
+
+                    clickedLayer.on("popupclose", () => {
+                      layerRefs.current.forEach((layer) => {
+                        (layer as L.Path).setStyle({
+                          fillOpacity: 0.5,
+                          opacity: 0.9,
+                        });
                       });
                     });
                   },

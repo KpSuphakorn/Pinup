@@ -17,6 +17,12 @@ import { GateCountGeoJSON } from "@/mapLayers/gate-count/types";
 import { BusStopGeoJSON } from "@/mapLayers/bus-stop/types";
 import { BusRouteGeoJSON } from "@/mapLayers/bus-route/types";
 import { LRTRouteGeoJSON } from "@/mapLayers/lrt-route/types";
+import { RoadGeoJSON } from "@/mapLayers/road/types";
+import { ParkingLotGeoJSON } from "@/mapLayers/parking-lot/types";
+import { RuralArgiGeoJSON } from "@/mapLayers/rural-argi/types";
+import { RecreatEnvGeoJSON } from "@/mapLayers/recreat-env/types";
+import { ArtCultGeoJSON } from "@/mapLayers/art-cult/types";
+import { LowDenseResAreaGeoJSON } from "@/mapLayers/low-dense-res-area/types";
 import { getZoning } from "@/mapLayers/zoning/get-data";
 import { getOsmData } from "@/mapLayers/osm/get-data";
 import { getPopulationMapData } from "@/mapLayers/population/get-data";
@@ -31,7 +37,12 @@ import { getGateCountData } from "@/mapLayers/gate-count/get-data";
 import { getBusStopData } from "@/mapLayers/bus-stop/get-data";
 import { getBusRouteData } from "@/mapLayers/bus-route/get-data";
 import { getLRTRouteData } from "@/mapLayers/lrt-route/get-data";
-
+import { getRoadData } from "@/mapLayers/road/get-data";
+import { getParkingLotData } from "@/mapLayers/parking-lot/get-data";
+import { getRuralArgiData } from "@/mapLayers/rural-argi/get-data";
+import { getRecreatEnvData } from "@/mapLayers/recreat-env/get-data";
+import { getArtCultData } from "@/mapLayers/art-cult/get-data";
+import { getLowDenseResAreaData } from "@/mapLayers/low-dense-res-area/get-data";
 export function useMapData(landId: number, isClient: boolean) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
   const [osmData, setOsmData] = useState<FeatureCollection<
@@ -65,6 +76,17 @@ export function useMapData(landId: number, isClient: boolean) {
   const [LRTRouteData, setLRTRouteData] = useState<LRTRouteGeoJSON | null>(
     null
   );
+  const [roadData, setRoadData] = useState<RoadGeoJSON | null>(null);
+  const [parkinglotData, setParkingLotData] =
+    useState<ParkingLotGeoJSON | null>(null);
+  const [ruralargiData, setRuralArgiData] = useState<RuralArgiGeoJSON | null>(
+    null
+  );
+  const [recreatenvData, setRecreatEnvData] =
+    useState<RecreatEnvGeoJSON | null>(null);
+  const [artcultData, setArtCultData] = useState<ArtCultGeoJSON | null>(null);
+  const [lowdenseresareaData, setLowDenseResAreaData] =
+    useState<LowDenseResAreaGeoJSON | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -89,6 +111,12 @@ export function useMapData(landId: number, isClient: boolean) {
           busstopResponse,
           busrouteResponse,
           LRTrouteResponse,
+          roadResponse,
+          parkinglotResponse,
+          ruralargiResponse,
+          recreatenvResponse,
+          artcultResponse,
+          lowdenseresareaResponse,
         ] = await Promise.allSettled([
           getZoning(landId),
           getOsmData(),
@@ -104,6 +132,12 @@ export function useMapData(landId: number, isClient: boolean) {
           getBusStopData(),
           getBusRouteData(),
           getLRTRouteData(),
+          getRoadData(),
+          getParkingLotData(),
+          getRuralArgiData(),
+          getRecreatEnvData(),
+          getArtCultData(),
+          getLowDenseResAreaData(),
         ]);
 
         // Handle zoning data
@@ -255,11 +289,74 @@ export function useMapData(landId: number, isClient: boolean) {
         if (LRTrouteResponse.status === "fulfilled") {
           const data = LRTrouteResponse.value;
           setLRTRouteData(data);
-          console.log(data);
         } else {
           console.error(
             "Failed to fetch LRT route data:",
             LRTrouteResponse.reason
+          );
+        }
+
+        // Handle Road data
+        if (roadResponse.status === "fulfilled") {
+          const data = roadResponse.value;
+          setRoadData(data);
+        } else {
+          console.log("Failed to fetch Road data: ", roadResponse.reason);
+        }
+
+        // Handle Parking Lot data
+        if (parkinglotResponse.status === "fulfilled") {
+          const data = parkinglotResponse.value;
+          setParkingLotData(data);
+          console.log(data);
+        } else {
+          console.log(
+            "Failed to fetch Parking Lot data: ",
+            parkinglotResponse.reason
+          );
+        }
+
+        // Handle Rural & Argicultural data
+        if (ruralargiResponse.status === "fulfilled") {
+          const data = ruralargiResponse.value;
+          setRuralArgiData(data);
+        } else {
+          console.error(
+            "Failed to fetch Rural & Argicultural data:",
+            ruralargiResponse.reason
+          );
+        }
+
+        // Handle Recreate & Environment data
+        if (recreatenvResponse.status === "fulfilled") {
+          const data = recreatenvResponse.value;
+          setRecreatEnvData(data);
+        } else {
+          console.error(
+            "Failed to fetch Recreate & Environment data:",
+            recreatenvResponse.reason
+          );
+        }
+
+        // Handle Art & Culture data
+        if (artcultResponse.status === "fulfilled") {
+          const data = artcultResponse.value;
+          setArtCultData(data);
+        } else {
+          console.error(
+            "Failed to fetch Art & Culture data:",
+            artcultResponse.reason
+          );
+        }
+
+        // Handle Low-density Residential Area data
+        if (lowdenseresareaResponse.status === "fulfilled") {
+          const data = lowdenseresareaResponse.value;
+          setLowDenseResAreaData(data);
+        } else {
+          console.log(
+            "Failed to fetch Low-density residential area data: ",
+            lowdenseresareaResponse.reason
           );
         }
       } catch (error) {
@@ -287,6 +384,12 @@ export function useMapData(landId: number, isClient: boolean) {
     busstopData,
     busrouteData,
     LRTRouteData,
+    roadData,
+    parkinglotData,
+    ruralargiData,
+    recreatenvData,
+    artcultData,
+    lowdenseresareaData,
     isLoading,
   };
 }

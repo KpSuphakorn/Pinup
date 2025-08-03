@@ -38,3 +38,14 @@ export function addOpacityToHexColor(hexColor: string, opacity: number): string 
 
   return `rgba(${r}, ${g}, ${b}, ${opacity})`;
 }
+
+export function getParkingLotPopupColor(type: string): string {
+  switch (type) {
+    case 'ลานจอดรถ':
+      return 'rgba(30, 144, 255, 0.3)'; // น้ำเงินโปร่ง
+    case 'อาคารจอดรถ':
+      return 'rgba(255, 165, 0, 0.3)'; // ส้มโปร่ง
+    default:
+      return 'rgba(136, 136, 136, 0.3)'; // เทาโปร่ง
+  }
+}

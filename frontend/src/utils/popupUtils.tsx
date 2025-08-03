@@ -1,5 +1,5 @@
 import { Feature, Geometry } from 'geojson';
-import { stringToColor, addOpacityToHexColor, lightenColor } from '@/utils/labelColorUtils';
+import { stringToColor, addOpacityToHexColor, lightenColor, getParkingLotPopupColor } from '@/utils/labelColorUtils';
 import { LRT_LINE_COLORS, LRT_DEFAULT_COLOR, hexToRgba } from '@/utils/lineColorUtils';
 
 const FEATURE_LABELS = {
@@ -404,6 +404,161 @@ export function createLRTRoutePopup(feature: Feature<Geometry, any>): string {
       </div>
       <div style="font-size: 12px; color: #333; margin-top: 6px;">
         <strong>ระยะทางรวม:</strong> ${displayDistance}
+      </div>
+    </div>
+  `;
+}
+
+export function createRoadPopup(feature: Feature<Geometry, any>): string {
+  const props = feature.properties || {};
+  const displayName_TH = props.name_th || 'ไม่ทราบชื่อ';
+  const displayName_EN = props.name_en || 'unknown';
+  const displayDistance = props.len_km || '';
+
+  const baseColor = displayName_TH ? stringToColor(displayName_TH) : '#ddd';
+  const bgColor = hexToRgba(baseColor, 0.3);
+
+  return `
+    <div style="min-width: 220px; font-family: Arial, sans-serif;">
+      <div style="font-weight: bold; font-size: 14px; background: ${bgColor}; padding: 4px 8px; border-radius: 4px;">
+        ${displayName_TH} (${displayName_EN})
+      </div>
+      <div style="font-size: 12px; color: #333; margin-top: 6px;">
+        <strong>ระยะทาง:</strong> ${displayDistance}
+      </div>
+    </div>
+  `;
+}
+
+export function createParkingLotPopup(feature: Feature<Geometry, any>): string {
+  const props = feature.properties || {};
+
+  const name = props.name || 'ไม่ทราบชื่อ';
+  const type = props.type || 'ไม่ทราบประเภท';
+  const capacity = props.capacity ?? 'ไม่ระบุ';
+  const storey = props.storey ?? 'ไม่ระบุ';
+  const area = props.area_m2 ?? 'ไม่ระบุ';
+
+  const bgColor = getParkingLotPopupColor(type);
+
+  return `
+    <div style="min-width: 220px; font-family: Arial, sans-serif;">
+      <div style="
+        font-weight: bold;
+        font-size: 14px;
+        background: ${bgColor};
+        padding: 6px 10px;
+        border-radius: 6px;
+      ">
+        ${name}
+      </div>
+      <div style="font-size: 12px; color: #333; margin-top: 6px;">
+        <div><strong>ประเภท:</strong> ${type}</div>
+        <div><strong>ความจุ:</strong> ${capacity} คัน</div>
+        <div><strong>จำนวนชั้น:</strong> ${storey} ชั้น</div>
+        <div><strong>พื้นที่:</strong> ${area} ตร.ม.</div>
+      </div>
+    </div>
+  `;
+}
+
+export function createRuralArgiPopup(feature: Feature<Geometry, any>) {
+  const props = feature.properties || {};
+  const display_data = props.display_data;
+
+  const baseColor = display_data ? stringToColor(display_data) : '#ddd';
+  const lightColor = lightenColor(baseColor, 0.2);
+
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 250px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        ผังเมือง: ชนบทและเกษตรกรรม
+      </h4>
+      <div style="margin: 10px 0;">
+        ${display_data ? `<p style="margin: 5px 0; font-size: 14px; font-weight: bold; color: ${lightColor}; padding: 4px 8px; border-radius: 4px;">
+          ${display_data}
+        </p>` : ''}
+      </div>
+    </div>
+  `;
+}
+
+export function createRecreatEnvPopup(feature: Feature<Geometry, any>) {
+  const props = feature.properties || {};
+  const display_data = props.display_data;
+
+  const lightColor = '#ccefd3ff';
+
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 250px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        ผังเมือง: ที่โล่งเพื่อนันทนาการและการอนุรักษ์คุณภาพสิ่งแวดล้อม
+      </h4>
+      <div style="margin: 10px 0;">
+        ${display_data ? `<p style="
+          margin: 5px 0;
+          font-size: 14px;
+          font-weight: bold;
+          background-color: ${lightColor};
+          padding: 6px 10px;
+          border-radius: 6px;
+        ">
+          ${display_data}
+        </p>` : ''}
+      </div>
+    </div>
+  `;
+}
+
+
+export function createArtCultPopup(feature: Feature<Geometry, any>) {
+  const props = feature.properties || {};
+  const display_data = props.display_data;
+
+  const baseColor = stringToColor('วัฒนธรรม');
+  const lightColor = lightenColor(baseColor, 0.8);
+
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 250px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        ผังเมือง: ที่อนุรักษ์เพื่อส่งเสริมเอกลักษณ์ศิลปะวัฒนธรรมไทย
+      </h4>
+      <div style="margin: 10px 0;">
+        ${display_data ? `<p style="
+          margin: 5px 0;
+          font-size: 14px;
+          font-weight: bold;
+          background-color: ${lightColor};
+          padding: 6px 10px;
+          border-radius: 6px;
+        ">
+          ${display_data}
+        </p>` : ''}
+      </div>
+    </div>
+  `;
+}
+
+export function createLowDenseResAreaPopup(feature: Feature<Geometry, any>): string {
+  const props = feature.properties || {};
+
+  const elevation = props.elevation ?? 'ไม่ทราบระดับชั้น';
+  const area = props.area_km2 ?? 'ไม่ระบุ';
+  const bgColor = '#acdbffff';
+
+  return `
+    <div style="min-width: 220px; font-family: Arial, sans-serif;">
+      <div style="
+        font-weight: bold;
+        font-size: 14px;
+        background: ${bgColor};
+        padding: 6px 10px;
+        border-radius: 6px;
+      ">
+        ${area} ตร.กม.
+      </div>
+      <div style="font-size: 12px; color: #333; margin-top: 6px;">
+        <div><strong>ระดับ:</strong> ${elevation}</div>
       </div>
     </div>
   `;
