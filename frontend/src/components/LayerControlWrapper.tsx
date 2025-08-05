@@ -4,7 +4,7 @@ import { LayersControl, TileLayer } from 'react-leaflet';
 
 export default function LayerControlWrapper() {
   return (
-    <LayersControl position="topright">
+    <LayersControl position="topleft">
       <LayersControl.BaseLayer checked name="แผนที่ถนน (OSM)">
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

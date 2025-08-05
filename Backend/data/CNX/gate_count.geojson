@@ -1,0 +1,2381 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98657830000008,
+                    18.795392700000036,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G1",
+                "Zone": 1,
+                "PointName": "Z1G1",
+                "WKDMID_CNT": 0,
+                "WKDMID_10H": 0,
+                "WKDEVE_CNT": 0,
+                "WKDEVE_10H": 0,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97799840000005,
+                    18.796001700000033,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G2",
+                "Zone": 1,
+                "PointName": "Z1G2",
+                "WKDMID_CNT": 9,
+                "WKDMID_10H": 90,
+                "WKDEVE_CNT": 3,
+                "WKDEVE_10H": 30,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98174850000004,
+                    18.79538710000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G3",
+                "Zone": 1,
+                "PointName": "Z1G3",
+                "WKDMID_CNT": 2,
+                "WKDMID_10H": 20,
+                "WKDEVE_CNT": 14,
+                "WKDEVE_10H": 140,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98684440000005,
+                    18.795008800000062,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G4",
+                "Zone": 1,
+                "PointName": "Z1G4",
+                "WKDMID_CNT": 9,
+                "WKDMID_10H": 90,
+                "WKDEVE_CNT": 57,
+                "WKDEVE_10H": 570,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99005190000008,
+                    18.794992500000035,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G5",
+                "Zone": 1,
+                "PointName": "Z1G5",
+                "WKDMID_CNT": 5,
+                "WKDMID_10H": 50,
+                "WKDEVE_CNT": 26,
+                "WKDEVE_10H": 260,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97882600000008,
+                    18.79348530000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G6",
+                "Zone": 1,
+                "PointName": "Z1G6",
+                "WKDMID_CNT": 0,
+                "WKDMID_10H": 0,
+                "WKDEVE_CNT": 2,
+                "WKDEVE_10H": 20,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97881800000005,
+                    18.792825100000073,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G7",
+                "Zone": 1,
+                "PointName": "Z1G7",
+                "WKDMID_CNT": 2,
+                "WKDMID_10H": 20,
+                "WKDEVE_CNT": 7,
+                "WKDEVE_10H": 70,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98197490000007,
+                    18.79277480000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G8",
+                "Zone": 1,
+                "PointName": "Z1G8",
+                "WKDMID_CNT": 25,
+                "WKDMID_10H": 250,
+                "WKDEVE_CNT": 30,
+                "WKDEVE_10H": 300,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98229680000009,
+                    18.793107400000054,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G9",
+                "Zone": 1,
+                "PointName": "Z1G9",
+                "WKDMID_CNT": 16,
+                "WKDMID_10H": 160,
+                "WKDEVE_CNT": 38,
+                "WKDEVE_10H": 380,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98738260000005,
+                    18.792594500000067,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G10",
+                "Zone": 1,
+                "PointName": "Z1G10",
+                "WKDMID_CNT": 11,
+                "WKDMID_10H": 110,
+                "WKDEVE_CNT": 15,
+                "WKDEVE_10H": 150,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99002960000007,
+                    18.792998200000053,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G11",
+                "Zone": 1,
+                "PointName": "Z1G11",
+                "WKDMID_CNT": 8,
+                "WKDMID_10H": 80,
+                "WKDEVE_CNT": 24,
+                "WKDEVE_10H": 240,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97866210000007,
+                    18.789665700000057,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G12",
+                "Zone": 1,
+                "PointName": "Z1G12",
+                "WKDMID_CNT": 4,
+                "WKDMID_10H": 40,
+                "WKDEVE_CNT": 6,
+                "WKDEVE_10H": 60,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97820070000006,
+                    18.78881250000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G13",
+                "Zone": 1,
+                "PointName": "Z1G13",
+                "WKDMID_CNT": 6,
+                "WKDMID_10H": 60,
+                "WKDEVE_CNT": 10,
+                "WKDEVE_10H": 100,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98443300000008,
+                    18.788684700000033,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G15",
+                "Zone": 1,
+                "PointName": "Z1G15",
+                "WKDMID_CNT": 3,
+                "WKDMID_10H": 30,
+                "WKDEVE_CNT": 5,
+                "WKDEVE_10H": 50,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98514863375446,
+                    18.790647310208275,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G14",
+                "Zone": 1,
+                "PointName": "Z1G14",
+                "WKDMID_CNT": 21,
+                "WKDMID_10H": 210,
+                "WKDEVE_CNT": 78,
+                "WKDEVE_10H": 780,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98539030000006,
+                    18.788633900000036,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G16",
+                "Zone": 1,
+                "PointName": "Z1G16",
+                "WKDMID_CNT": 11,
+                "WKDMID_10H": 110,
+                "WKDEVE_CNT": 2,
+                "WKDEVE_10H": 20,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98239970000009,
+                    18.78998050000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G17",
+                "Zone": 1,
+                "PointName": "Z1G17",
+                "WKDMID_CNT": 16,
+                "WKDMID_10H": 160,
+                "WKDEVE_CNT": 32,
+                "WKDEVE_10H": 320,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98457690000004,
+                    18.787039100000076,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G18",
+                "Zone": 1,
+                "PointName": "Z1G18",
+                "WKDMID_CNT": 4,
+                "WKDMID_10H": 40,
+                "WKDEVE_CNT": 2,
+                "WKDEVE_10H": 20,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97850830000004,
+                    18.785732300000063,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G19",
+                "Zone": 1,
+                "PointName": "Z1G19",
+                "WKDMID_CNT": 2,
+                "WKDMID_10H": 20,
+                "WKDEVE_CNT": 2,
+                "WKDEVE_10H": 20,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98211605270923,
+                    18.786265159677654,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G20",
+                "Zone": 1,
+                "PointName": "Z1G20",
+                "WKDMID_CNT": 12,
+                "WKDMID_10H": 120,
+                "WKDEVE_CNT": 14,
+                "WKDEVE_10H": 140,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98492854557487,
+                    18.786271514908293,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G21",
+                "Zone": 1,
+                "PointName": "Z1G21",
+                "WKDMID_CNT": 10,
+                "WKDMID_10H": 100,
+                "WKDEVE_CNT": 6,
+                "WKDEVE_10H": 60,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98822170000005,
+                    18.78610660000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G22",
+                "Zone": 1,
+                "PointName": "Z1G22",
+                "WKDMID_CNT": 35,
+                "WKDMID_10H": 350,
+                "WKDEVE_CNT": 163,
+                "WKDEVE_10H": 1630,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98910164593597,
+                    18.786750590713215,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G23",
+                "Zone": 1,
+                "PointName": "Z1G23",
+                "WKDMID_CNT": 6,
+                "WKDMID_10H": 60,
+                "WKDEVE_CNT": 6,
+                "WKDEVE_10H": 60,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98332150000005,
+                    18.785619100000076,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G1",
+                "Zone": 2,
+                "PointName": "Z2G1",
+                "WKDMID_CNT": 2,
+                "WKDMID_10H": 20,
+                "WKDEVE_CNT": 4,
+                "WKDEVE_10H": 40,
+                "WKENIT_CNT": 26,
+                "WKENIT_10H": 260
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98436760000004,
+                    18.78553530000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G2",
+                "Zone": 2,
+                "PointName": "Z2G2",
+                "WKDMID_CNT": 0,
+                "WKDMID_10H": 0,
+                "WKDEVE_CNT": 5,
+                "WKDEVE_10H": 50,
+                "WKENIT_CNT": 30,
+                "WKENIT_10H": 300
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98805460000005,
+                    18.784633900000074,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G3",
+                "Zone": 2,
+                "PointName": "Z2G3",
+                "WKDMID_CNT": 2,
+                "WKDMID_10H": 20,
+                "WKDEVE_CNT": 6,
+                "WKDEVE_10H": 60,
+                "WKENIT_CNT": 6,
+                "WKENIT_10H": 60
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99043140000003,
+                    18.78519190000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G4",
+                "Zone": 2,
+                "PointName": "Z2G4",
+                "WKDMID_CNT": 11,
+                "WKDMID_10H": 110,
+                "WKDEVE_CNT": 11,
+                "WKDEVE_10H": 110,
+                "WKENIT_CNT": 50,
+                "WKENIT_10H": 500
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98665880000004,
+                    18.78422910000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G5",
+                "Zone": 2,
+                "PointName": "Z2G5",
+                "WKDMID_CNT": 0,
+                "WKDMID_10H": 0,
+                "WKDEVE_CNT": 2,
+                "WKDEVE_10H": 20,
+                "WKENIT_CNT": 7,
+                "WKENIT_10H": 70
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98833510000009,
+                    18.783157500000073,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G6",
+                "Zone": 2,
+                "PointName": "Z2G6",
+                "WKDMID_CNT": 3,
+                "WKDMID_10H": 30,
+                "WKDEVE_CNT": 6,
+                "WKDEVE_10H": 60,
+                "WKENIT_CNT": 123,
+                "WKENIT_10H": 1230
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98899150000005,
+                    18.78130740000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G7",
+                "Zone": 2,
+                "PointName": "Z2G7",
+                "WKDMID_CNT": 21,
+                "WKDMID_10H": 210,
+                "WKDEVE_CNT": 50,
+                "WKDEVE_10H": 500,
+                "WKENIT_CNT": 175,
+                "WKENIT_10H": 1750
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98507450000005,
+                    18.782665500000064,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G8",
+                "Zone": 2,
+                "PointName": "Z2G8",
+                "WKDMID_CNT": 4,
+                "WKDMID_10H": 40,
+                "WKDEVE_CNT": 2,
+                "WKDEVE_10H": 20,
+                "WKENIT_CNT": 6,
+                "WKENIT_10H": 60
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98537760000005,
+                    18.781766600000026,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G9",
+                "Zone": 2,
+                "PointName": "Z2G9",
+                "WKDMID_CNT": 0,
+                "WKDMID_10H": 0,
+                "WKDEVE_CNT": 0,
+                "WKDEVE_10H": 0,
+                "WKENIT_CNT": 58,
+                "WKENIT_10H": 580
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97795930000007,
+                    18.78235570000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G10",
+                "Zone": 2,
+                "PointName": "Z2G10",
+                "WKDMID_CNT": 11,
+                "WKDMID_10H": 110,
+                "WKDEVE_CNT": 14,
+                "WKDEVE_10H": 140,
+                "WKENIT_CNT": 5,
+                "WKENIT_10H": 50
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98161720000007,
+                    18.781871100000046,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G11",
+                "Zone": 2,
+                "PointName": "Z2G11",
+                "WKDMID_CNT": 3,
+                "WKDMID_10H": 30,
+                "WKDEVE_CNT": 10,
+                "WKDEVE_10H": 100,
+                "WKENIT_CNT": 29,
+                "WKENIT_10H": 290
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98157690000005,
+                    18.78149530000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G12",
+                "Zone": 2,
+                "PointName": "Z2G12",
+                "WKDMID_CNT": 12,
+                "WKDMID_10H": 120,
+                "WKDEVE_CNT": 9,
+                "WKDEVE_10H": 90,
+                "WKENIT_CNT": 18,
+                "WKENIT_10H": 180
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98767000000004,
+                    18.780877700000076,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G13",
+                "Zone": 2,
+                "PointName": "Z2G13",
+                "WKDMID_CNT": 7,
+                "WKDMID_10H": 70,
+                "WKDEVE_CNT": 0,
+                "WKDEVE_10H": 0,
+                "WKENIT_CNT": 802,
+                "WKENIT_10H": 8020
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98812600000008,
+                    18.780715200000035,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G14",
+                "Zone": 2,
+                "PointName": "Z2G14",
+                "WKDMID_CNT": 15,
+                "WKDMID_10H": 150,
+                "WKDEVE_CNT": 25,
+                "WKDEVE_10H": 250,
+                "WKENIT_CNT": 235,
+                "WKENIT_10H": 2350
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98790550000007,
+                    18.779417400000057,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G15",
+                "Zone": 2,
+                "PointName": "Z2G15",
+                "WKDMID_CNT": 3,
+                "WKDMID_10H": 30,
+                "WKDEVE_CNT": 11,
+                "WKDEVE_10H": 110,
+                "WKENIT_CNT": 14,
+                "WKENIT_10H": 140
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98323540000007,
+                    18.780932500000066,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G16",
+                "Zone": 2,
+                "PointName": "Z2G16",
+                "WKDMID_CNT": 0,
+                "WKDMID_10H": 0,
+                "WKDEVE_CNT": 0,
+                "WKDEVE_10H": 0,
+                "WKENIT_CNT": 68,
+                "WKENIT_10H": 680
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98135810000008,
+                    18.78078040000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G17",
+                "Zone": 2,
+                "PointName": "Z2G17",
+                "WKDMID_CNT": 8,
+                "WKDMID_10H": 80,
+                "WKDEVE_CNT": 10,
+                "WKDEVE_10H": 100,
+                "WKENIT_CNT": 18,
+                "WKENIT_10H": 180
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98430200000007,
+                    18.778293100000045,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G18",
+                "Zone": 2,
+                "PointName": "Z2G18",
+                "WKDMID_CNT": 6,
+                "WKDMID_10H": 60,
+                "WKDEVE_CNT": 25,
+                "WKDEVE_10H": 250,
+                "WKENIT_CNT": 507,
+                "WKENIT_10H": 5070
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98168203000006,
+                    18.775644272000022,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G20",
+                "Zone": 2,
+                "PointName": "Z2G20",
+                "WKDMID_CNT": 1,
+                "WKDMID_10H": 10,
+                "WKDEVE_CNT": 2,
+                "WKDEVE_10H": 20,
+                "WKENIT_CNT": 343,
+                "WKENIT_10H": 3430
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.98231481600004,
+                    18.775429463000023,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G21",
+                "Zone": 2,
+                "PointName": "Z2G21",
+                "WKDMID_CNT": 4,
+                "WKDMID_10H": 40,
+                "WKDEVE_CNT": 1,
+                "WKDEVE_10H": 10,
+                "WKENIT_CNT": 24,
+                "WKENIT_10H": 240
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97741920000004,
+                    18.780637600000034,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G19",
+                "Zone": 2,
+                "PointName": "Z2G19",
+                "WKDMID_CNT": 18,
+                "WKDMID_10H": 180,
+                "WKDEVE_CNT": 12,
+                "WKDEVE_10H": 120,
+                "WKENIT_CNT": 6,
+                "WKENIT_10H": 60
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99329140000003,
+                    18.787773000000076,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G1",
+                "Zone": 3,
+                "PointName": "Z3G1",
+                "WKDMID_CNT": 69,
+                "WKDMID_10H": 690,
+                "WKDEVE_CNT": 72,
+                "WKDEVE_10H": 720,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99302180000007,
+                    18.79042110000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G2",
+                "Zone": 3,
+                "PointName": "Z3G2",
+                "WKDMID_CNT": 18,
+                "WKDMID_10H": 180,
+                "WKDEVE_CNT": 20,
+                "WKDEVE_10H": 200,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99277510000007,
+                    18.787805700000035,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G3",
+                "Zone": 3,
+                "PointName": "Z3G3",
+                "WKDMID_CNT": 67,
+                "WKDMID_10H": 670,
+                "WKDEVE_CNT": 88,
+                "WKDEVE_10H": 880,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99252430000007,
+                    18.785129900000072,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G4",
+                "Zone": 3,
+                "PointName": "Z3G4",
+                "WKDMID_CNT": 28,
+                "WKDMID_10H": 280,
+                "WKDEVE_CNT": 65,
+                "WKDEVE_10H": 650,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99233950000007,
+                    18.78291340000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G5",
+                "Zone": 3,
+                "PointName": "Z3G5",
+                "WKDMID_CNT": 8,
+                "WKDMID_10H": 80,
+                "WKDEVE_CNT": 18,
+                "WKDEVE_10H": 180,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99409340000005,
+                    18.790400900000066,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G6",
+                "Zone": 3,
+                "PointName": "Z3G6",
+                "WKDMID_CNT": 12,
+                "WKDMID_10H": 120,
+                "WKDEVE_CNT": 13,
+                "WKDEVE_10H": 130,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00054360000007,
+                    18.79095190000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G7",
+                "Zone": 3,
+                "PointName": "Z3G7",
+                "WKDMID_CNT": 104,
+                "WKDMID_10H": 1040,
+                "WKDEVE_CNT": 63,
+                "WKDEVE_10H": 630,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99539670000007,
+                    18.78980320000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G8",
+                "Zone": 3,
+                "PointName": "Z3G8",
+                "WKDMID_CNT": 4,
+                "WKDMID_10H": 40,
+                "WKDEVE_CNT": 1,
+                "WKDEVE_10H": 10,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99414680000007,
+                    18.787908900000048,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G9",
+                "Zone": 3,
+                "PointName": "Z3G9",
+                "WKDMID_CNT": 29,
+                "WKDMID_10H": 290,
+                "WKDEVE_CNT": 34,
+                "WKDEVE_10H": 340,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99592250000006,
+                    18.787683900000047,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G10",
+                "Zone": 3,
+                "PointName": "Z3G10",
+                "WKDMID_CNT": 6,
+                "WKDMID_10H": 60,
+                "WKDEVE_CNT": 3,
+                "WKDEVE_10H": 30,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99830230000003,
+                    18.788330200000075,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G11",
+                "Zone": 3,
+                "PointName": "Z3G11",
+                "WKDMID_CNT": 44,
+                "WKDMID_10H": 440,
+                "WKDEVE_CNT": 21,
+                "WKDEVE_10H": 210,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00172480000003,
+                    18.78778180000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G12",
+                "Zone": 3,
+                "PointName": "Z3G12",
+                "WKDMID_CNT": 25,
+                "WKDMID_10H": 250,
+                "WKDEVE_CNT": 30,
+                "WKDEVE_10H": 300,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99886560000004,
+                    18.78781730000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G13",
+                "Zone": 3,
+                "PointName": "Z3G13",
+                "WKDMID_CNT": 11,
+                "WKDMID_10H": 110,
+                "WKDEVE_CNT": 2,
+                "WKDEVE_10H": 20,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00093620000007,
+                    18.787466900000027,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G14",
+                "Zone": 3,
+                "PointName": "Z3G14",
+                "WKDMID_CNT": 19,
+                "WKDMID_10H": 190,
+                "WKDEVE_CNT": 28,
+                "WKDEVE_10H": 280,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99407450000007,
+                    18.784932500000025,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G16",
+                "Zone": 3,
+                "PointName": "Z3G16",
+                "WKDMID_CNT": 33,
+                "WKDMID_10H": 330,
+                "WKDEVE_CNT": 34,
+                "WKDEVE_10H": 340,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99601790000008,
+                    18.784031500000026,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G17",
+                "Zone": 3,
+                "PointName": "Z3G17",
+                "WKDMID_CNT": 2,
+                "WKDMID_10H": 20,
+                "WKDEVE_CNT": 8,
+                "WKDEVE_10H": 80,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99678510000007,
+                    18.784285400000044,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G18",
+                "Zone": 3,
+                "PointName": "Z3G18",
+                "WKDMID_CNT": 25,
+                "WKDMID_10H": 250,
+                "WKDEVE_CNT": 16,
+                "WKDEVE_10H": 160,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00019950000006,
+                    18.783493100000044,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G20",
+                "Zone": 3,
+                "PointName": "Z3G20",
+                "WKDMID_CNT": 30,
+                "WKDMID_10H": 300,
+                "WKDEVE_CNT": 79,
+                "WKDEVE_10H": 790,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00149230000005,
+                    18.783879100000036,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G21",
+                "Zone": 3,
+                "PointName": "Z3G21",
+                "WKDMID_CNT": 13,
+                "WKDMID_10H": 130,
+                "WKDEVE_CNT": 22,
+                "WKDEVE_10H": 220,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99332090000007,
+                    18.781020900000044,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G22",
+                "Zone": 3,
+                "PointName": "Z3G22",
+                "WKDMID_CNT": 16,
+                "WKDMID_10H": 160,
+                "WKDEVE_CNT": 8,
+                "WKDEVE_10H": 80,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99685610000006,
+                    18.78118850000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G23",
+                "Zone": 3,
+                "PointName": "Z3G23",
+                "WKDMID_CNT": 13,
+                "WKDMID_10H": 130,
+                "WKDEVE_CNT": 11,
+                "WKDEVE_10H": 110,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    99.00232070000004,
+                    18.781362800000068,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G24",
+                "Zone": 3,
+                "PointName": "Z3G24",
+                "WKDMID_CNT": 8,
+                "WKDMID_10H": 80,
+                "WKDEVE_CNT": 8,
+                "WKDEVE_10H": 80,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99640270000003,
+                    18.785735000000045,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G15",
+                "Zone": 3,
+                "PointName": "Z3G15",
+                "WKDMID_CNT": 9,
+                "WKDMID_10H": 90,
+                "WKDEVE_CNT": 2,
+                "WKDEVE_10H": 20,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.99839440000005,
+                    18.783508400000073,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G19",
+                "Zone": 3,
+                "PointName": "Z3G19",
+                "WKDMID_CNT": 6,
+                "WKDMID_10H": 60,
+                "WKDEVE_CNT": 8,
+                "WKDEVE_10H": 80,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97068010000004,
+                    18.79497990000004,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G1",
+                "Zone": 4,
+                "PointName": "Z4G1",
+                "WKDMID_CNT": 4,
+                "WKDMID_10H": 40,
+                "WKDEVE_CNT": 5,
+                "WKDEVE_10H": 50,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96638860000007,
+                    18.795457300000066,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G2",
+                "Zone": 4,
+                "PointName": "Z4G2",
+                "WKDMID_CNT": 4,
+                "WKDMID_10H": 40,
+                "WKDEVE_CNT": 0,
+                "WKDEVE_10H": 0,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96579850000006,
+                    18.795894000000033,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G3",
+                "Zone": 4,
+                "PointName": "Z4G3",
+                "WKDMID_CNT": 7,
+                "WKDMID_10H": 70,
+                "WKDEVE_CNT": 9,
+                "WKDEVE_10H": 90,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96625980000005,
+                    18.796087000000057,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G4",
+                "Zone": 4,
+                "PointName": "Z4G4",
+                "WKDMID_CNT": 6,
+                "WKDMID_10H": 60,
+                "WKDEVE_CNT": 2,
+                "WKDEVE_10H": 20,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96602380000007,
+                    18.796452600000066,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G5",
+                "Zone": 4,
+                "PointName": "Z4G5",
+                "WKDMID_CNT": 15,
+                "WKDMID_10H": 150,
+                "WKDEVE_CNT": 27,
+                "WKDEVE_10H": 270,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96645290000004,
+                    18.796655800000053,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G6",
+                "Zone": 4,
+                "PointName": "Z4G6",
+                "WKDMID_CNT": 10,
+                "WKDMID_10H": 100,
+                "WKDEVE_CNT": 11,
+                "WKDEVE_10H": 110,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96841630000006,
+                    18.79618860000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G7",
+                "Zone": 4,
+                "PointName": "Z4G7",
+                "WKDMID_CNT": 16,
+                "WKDMID_10H": 160,
+                "WKDEVE_CNT": 9,
+                "WKDEVE_10H": 90,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97028310000007,
+                    18.79629010000002,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G8",
+                "Zone": 4,
+                "PointName": "Z4G8",
+                "WKDMID_CNT": 2,
+                "WKDMID_10H": 20,
+                "WKDEVE_CNT": 9,
+                "WKDEVE_10H": 90,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97078740000006,
+                    18.79655420000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G9",
+                "Zone": 4,
+                "PointName": "Z4G9",
+                "WKDMID_CNT": 36,
+                "WKDMID_10H": 360,
+                "WKDEVE_CNT": 11,
+                "WKDEVE_10H": 110,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.9674123371371,
+                    18.798689619800818,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G10",
+                "Zone": 4,
+                "PointName": "Z4G10",
+                "WKDMID_CNT": 4,
+                "WKDMID_10H": 40,
+                "WKDEVE_CNT": 6,
+                "WKDEVE_10H": 60,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97112000000004,
+                    18.798839400000077,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G11",
+                "Zone": 4,
+                "PointName": "Z4G11",
+                "WKDMID_CNT": 12,
+                "WKDMID_10H": 120,
+                "WKDEVE_CNT": 8,
+                "WKDEVE_10H": 80,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96766530000008,
+                    18.800789500000064,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G13",
+                "Zone": 4,
+                "PointName": "Z4G13",
+                "WKDMID_CNT": 49,
+                "WKDMID_10H": 490,
+                "WKDEVE_CNT": 58,
+                "WKDEVE_10H": 580,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96123630000005,
+                    18.804900200000077,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G14",
+                "Zone": 4,
+                "PointName": "Z4G14",
+                "WKDMID_CNT": 5,
+                "WKDMID_10H": 50,
+                "WKDEVE_CNT": 6,
+                "WKDEVE_10H": 60,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96977890000005,
+                    18.800312100000042,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G12",
+                "Zone": 4,
+                "PointName": "Z4G12",
+                "WKDMID_CNT": 8,
+                "WKDMID_10H": 80,
+                "WKDEVE_CNT": 32,
+                "WKDEVE_10H": 320,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97705260000004,
+                    18.78884200000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G1",
+                "Zone": 5,
+                "PointName": "Z5G1",
+                "WKDMID_CNT": 5,
+                "WKDMID_10H": 50,
+                "WKDEVE_CNT": 2,
+                "WKDEVE_10H": 20,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97589390000007,
+                    18.787938000000054,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G2",
+                "Zone": 5,
+                "PointName": "Z5G2",
+                "WKDMID_CNT": 0,
+                "WKDMID_10H": 0,
+                "WKDEVE_CNT": 0,
+                "WKDEVE_10H": 0,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97544330000005,
+                    18.787648500000046,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G3",
+                "Zone": 5,
+                "PointName": "Z5G3",
+                "WKDMID_CNT": 0,
+                "WKDMID_10H": 0,
+                "WKDEVE_CNT": 0,
+                "WKDEVE_10H": 0,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97402710000006,
+                    18.78902990000006,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G4",
+                "Zone": 5,
+                "PointName": "Z5G4",
+                "WKDMID_CNT": 21,
+                "WKDMID_10H": 210,
+                "WKDEVE_CNT": 9,
+                "WKDEVE_10H": 90,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97372670000004,
+                    18.788522000000057,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G5",
+                "Zone": 5,
+                "PointName": "Z5G5",
+                "WKDMID_CNT": 3,
+                "WKDMID_10H": 30,
+                "WKDEVE_CNT": 11,
+                "WKDEVE_10H": 110,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97244460000007,
+                    18.788638800000058,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G6",
+                "Zone": 5,
+                "PointName": "Z5G6",
+                "WKDMID_CNT": 2,
+                "WKDMID_10H": 20,
+                "WKDEVE_CNT": 5,
+                "WKDEVE_10H": 50,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.97036960000008,
+                    18.789535800000067,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G7",
+                "Zone": 5,
+                "PointName": "Z5G7",
+                "WKDMID_CNT": 9,
+                "WKDMID_10H": 90,
+                "WKDEVE_CNT": 3,
+                "WKDEVE_10H": 30,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96995815904204,
+                    18.790841515241084,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G8",
+                "Zone": 5,
+                "PointName": "Z5G8",
+                "WKDMID_CNT": 4,
+                "WKDMID_10H": 40,
+                "WKDEVE_CNT": 0,
+                "WKDEVE_10H": 0,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96792880000004,
+                    18.78938850000003,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G10",
+                "Zone": 5,
+                "PointName": "Z5G10",
+                "WKDMID_CNT": 6,
+                "WKDMID_10H": 60,
+                "WKDEVE_CNT": 6,
+                "WKDEVE_10H": 60,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96548680000006,
+                    18.78908380000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G11",
+                "Zone": 5,
+                "PointName": "Z5G11",
+                "WKDMID_CNT": 6,
+                "WKDMID_10H": 60,
+                "WKDEVE_CNT": 5,
+                "WKDEVE_10H": 50,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96504160000006,
+                    18.788895900000057,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G12",
+                "Zone": 5,
+                "PointName": "Z5G12",
+                "WKDMID_CNT": 13,
+                "WKDMID_10H": 130,
+                "WKDEVE_CNT": 0,
+                "WKDEVE_10H": 0,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96322410000005,
+                    18.788062400000058,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G13",
+                "Zone": 5,
+                "PointName": "Z5G13",
+                "WKDMID_CNT": 2,
+                "WKDMID_10H": 20,
+                "WKDEVE_CNT": 3,
+                "WKDEVE_10H": 30,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96252130000005,
+                    18.790048100000035,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G14",
+                "Zone": 5,
+                "PointName": "Z5G14",
+                "WKDMID_CNT": 23,
+                "WKDMID_10H": 230,
+                "WKDEVE_CNT": 1,
+                "WKDEVE_10H": 10,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96136800000005,
+                    18.79075400000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G16",
+                "Zone": 5,
+                "PointName": "Z5G16",
+                "WKDMID_CNT": 7,
+                "WKDMID_10H": 70,
+                "WKDEVE_CNT": 23,
+                "WKDEVE_10H": 230,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.95288460000006,
+                    18.79347910000007,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G17",
+                "Zone": 5,
+                "PointName": "Z5G17",
+                "WKDMID_CNT": 12,
+                "WKDMID_10H": 120,
+                "WKDEVE_CNT": 28,
+                "WKDEVE_10H": 280,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96821850000003,
+                    18.78907360000005,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G9",
+                "Zone": 5,
+                "PointName": "Z5G9",
+                "WKDMID_CNT": 16,
+                "WKDMID_10H": 160,
+                "WKDEVE_CNT": 4,
+                "WKDEVE_10H": 40,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    98.96385170000008,
+                    18.790525500000058,
+                    0,
+                    -1.7976931348623157e+308
+                ]
+            },
+            "properties": {
+                "OID_": 0,
+                "GateCount": "G15",
+                "Zone": 5,
+                "PointName": "Z5G15",
+                "WKDMID_CNT": 1,
+                "WKDMID_10H": 10,
+                "WKDEVE_CNT": 8,
+                "WKDEVE_10H": 80,
+                "WKENIT_CNT": 0,
+                "WKENIT_10H": 0
+            }
+        }
+    ]
+}

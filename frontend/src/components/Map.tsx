@@ -1,16 +1,19 @@
 'use client';
+
 import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { fixLeafletIcons } from '@/utils/leafletFix';
 import { useMapData } from '@/hooks/useMapData';
 import { MapProps } from '@/types/map';
-import { LayerOption } from '@/utils/layerUtils';
+import { LayerOption, getMapCenterByLayers } from '@/utils/layerUtils';
 import LayerSelector from './LayerSelector';
 import { MapLoading } from './MapLoading';
 import { MapLayers } from './MapLayers';
+import RangeLegend from './RangeLegend';
 
 const MapContainer = dynamic(() => import('react-leaflet').then(m => m.MapContainer), { ssr: false });
 const LayerControlWrapper = dynamic(() => import('./LayerControlWrapper'), { ssr: false });
+const FlyToCoordinates = dynamic(() => import('./FlyToCoordinates'), { ssr: false });
 
 export default function Map({ landId }: MapProps) {
   const [isClient, setIsClient] = useState(false);
@@ -18,9 +21,14 @@ export default function Map({ landId }: MapProps) {
   const [isLoadingLayers, setIsLoadingLayers] = useState(false);
 
   const shouldFetchData = selectedLayers.some(layer => layer !== 'none');
+
   const {
     zoningData, osmData, populationData, populationRangeData,
-    landpricesubdData, landpricesubdRangeData, isLoading
+    landpricesubdData, landpricesubdRangeData,
+    boundmunData, boundtambonData, boundamphoeData, boundprovinceData,
+    gatecountData, busstopData, busrouteData, LRTRouteData, roadData, parkinglotData,
+    ruralargiData, recreatenvData, artcultData, lowdenseresareaData, meddenseresareaData,
+    isLoading
   } = useMapData(landId, isClient && shouldFetchData);
 
   useEffect(() => {
@@ -28,12 +36,22 @@ export default function Map({ landId }: MapProps) {
     fixLeafletIcons();
   }, []);
 
+  const selectedLayerKeys = selectedLayers
+    .filter(layer => layer === 'population' || layer === 'landprice')
+    .map(layer => layer as string);
+
+  // ตำแหน่ง center ตามชั้นข้อมูล
+  const flyTo = useMemo(() => {
+    if (!shouldFetchData) return null;
+    return getMapCenterByLayers(selectedLayers);
+  }, [selectedLayers, shouldFetchData]);
+
   if (!isClient || isLoadingLayers || (shouldFetchData && isLoading)) return <MapLoading />;
 
   return (
-    <div className="relative">
-      {/* Header bar */}
-      <div className="w-full h-[20px] bg-white border-b border-gray-200 px-4 flex items-center justify-end">
+    <div className="relative w-full h-screen">
+      {/* Floating UI */}
+      <div className="absolute top-12 right-4 z-[1000] space-y-2">
         <LayerSelector
           selectedLayers={selectedLayers}
           setSelectedLayers={(layers) => {
@@ -42,8 +60,23 @@ export default function Map({ landId }: MapProps) {
             setTimeout(() => setIsLoadingLayers(false), 1000);
           }}
         />
+        <RangeLegend
+          selectedLayerKeys={selectedLayerKeys}
+          populationRangeData={selectedLayers.includes('population') ? populationRangeData : undefined}
+          landpricesubdRangeData={selectedLayers.includes('landprice') ? landpricesubdRangeData : undefined}
+        />
       </div>
-      <MapContainer center={[13.7563, 100.5018]} zoom={16} className="map-container">
+
+      {/* Map */}
+      <MapContainer center={[13.7563, 100.5018]} zoom={16} className="map-container z-0 w-full h-full">
+        {flyTo && (
+          <FlyToCoordinates
+            center={flyTo}
+            zoom={13}
+            shouldFly={true}
+          />
+        )}
+
         <LayerControlWrapper />
         <MapLayers
           osmData={selectedLayers.includes('osm') ? osmData : null}
@@ -52,9 +85,25 @@ export default function Map({ landId }: MapProps) {
           populationRangeData={selectedLayers.includes('population') ? populationRangeData : null}
           landpricesubdData={selectedLayers.includes('landprice') ? landpricesubdData : null}
           landpricesubdRangeData={selectedLayers.includes('landprice') ? landpricesubdRangeData : null}
+          boundmunData={selectedLayers.includes('boundmun') ? boundmunData : null}
+          boundtambonData={selectedLayers.includes('boundtambon') ? boundtambonData : null}
+          boundamphoeData={selectedLayers.includes('boundamphoe') ? boundamphoeData : null}
+          boundprovinceData={selectedLayers.includes('boundprovince') ? boundprovinceData : null}
+          gatecountData={selectedLayers.includes('gatecount') ? gatecountData : null}
+          busstopData={selectedLayers.includes('busstop') ? busstopData : null}
+          busrouteData={selectedLayers.includes('busroute') ? busrouteData : null}
+          LRTrouteData={selectedLayers.includes('LRTroute') ? LRTRouteData : null}
+          roadData={selectedLayers.includes('road') ? roadData : null}
+          parkinglotData={selectedLayers.includes('parkinglot') ? parkinglotData : null}
+          ruralargiData={selectedLayers.includes('ruralargi') ? ruralargiData : null}
+          recreatenvData={selectedLayers.includes('recreatenv') ? recreatenvData : null}
+          artcultData={selectedLayers.includes('artcult') ? artcultData : null}
+          lowdenseresareaData={selectedLayers.includes('lowdenseresarea') ? lowdenseresareaData : null}
+          meddenseresareaData={selectedLayers.includes('meddenseresarea') ? meddenseresareaData : null}
           landId={landId.toString()}
           isLoading={false}
         />
+
       </MapContainer>
     </div>
   );

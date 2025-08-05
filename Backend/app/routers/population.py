@@ -1,15 +1,14 @@
 from fastapi import APIRouter
 import json
-import os
 from ..utils.convert_coor import convert_coordinates
 
 router = APIRouter()
 
-@router.get("/population/map-data")
+@router.get("/bkk/population/map-data")
 async def get_map_data():
     """ดึงข้อมูลสําหรับแสดงบนแผนที่ - มี geometry และ population"""
     try:
-        with open("data/bkk_shp.geojson", "r", encoding='utf-8') as file:
+        with open("data/BKK/bkk_shp.geojson", "r", encoding='utf-8') as file:
             data = json.load(file)
         
         for feature in data["features"]:
@@ -21,8 +20,8 @@ async def get_map_data():
             props = feature["properties"]
             feature["properties"] = {
                 "id": props["OBJECTID"],
-                "population": props["T_2024"],
-                "label": f" {props['DimPOP']:,} คน/ตร.กม.",
+                "population": props["DimPOP"],
+                "label": f" {props['T_2024']:,} คน/ตร.กม.",
                 "province": props["PROV_NAMT"],
                 "district": props["AMP_NAMT"], 
                 "subdistrict": props["TAM_NAMT"]
@@ -35,14 +34,14 @@ async def get_map_data():
         print(f"Error processing population data: {str(e)}")
         raise
 
-@router.get("/population/range")
+@router.get("/bkk/population/range")
 async def get_population_range():
     """ดึงช่วงของจํานวนประชากรสําหรับกําหนดสี - แบ่งเป็น 10 ช่วง"""
     try:
-        with open("data/bkk_shp.geojson", "r", encoding='utf-8') as file:
+        with open("data/BKK/bkk_shp.geojson", "r", encoding='utf-8') as file:
             data = json.load(file)
         
-        populations = [f["properties"]["T_2024"] for f in data["features"]]
+        populations = [f["properties"]["DimPOP"] for f in data["features"]]
         
         min_pop = min(populations)
         max_pop = max(populations)
@@ -61,7 +60,7 @@ async def get_population_range():
                 "range": i + 1,
                 "min": start,
                 "max": end,
-                "label": f"{start:,} - {end:,} คน"
+                "label": f"{start:,} - {end:,}"
             })
         
         print(f"Population ranges: {len(ranges)} ranges created")

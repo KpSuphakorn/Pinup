@@ -5,7 +5,7 @@ import { PopulationRangeData } from "@/types";
 export async function getPopulationRange(): Promise<PopulationRangeData> {
   const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-  const response = await fetch(`${BACKEND_URL}/api/population/range`, {
+  const response = await fetch(`${BACKEND_URL}/api/bkk/population/range`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

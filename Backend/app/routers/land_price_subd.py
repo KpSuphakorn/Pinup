@@ -1,15 +1,14 @@
 from fastapi import APIRouter
 import json
-import os
 from ..utils.convert_coor import convert_coordinates
 
 router = APIRouter()
 
-@router.get("/land-price-subd/map-data")
+@router.get("/bkk/land-price-subd/map-data")
 async def get_map_data():
     """ดึงข้อมูลสําหรับแสดงบนแผนที่ - มี geometry และ land price per district"""
     try:
-        with open("data/bkk_shp.geojson", "r", encoding='utf-8') as file:
+        with open("data/BKK/bkk_shp.geojson", "r", encoding='utf-8') as file:
             data = json.load(file)
         
         for feature in data["features"]:
@@ -22,7 +21,7 @@ async def get_map_data():
             feature["properties"] = {
                 "id": props["OBJECTID"],
                 "land_price": props["price_AVG"],
-                "label": f"{props['Shape_Area']:.2f} ตร.กม.",
+                "label": f"{props['Shape_Area']:.2f} ตร.ว.",
                 "province": props["PROV_NAMT"],
                 "district": props["AMP_NAMT"], 
                 "subdistrict": props["TAM_NAMT"]
@@ -35,11 +34,11 @@ async def get_map_data():
         print(f"Error processing land price data: {str(e)}")
         raise
     
-@router.get("/land-price-subd/range")
+@router.get("/bkk/land-price-subd/range")
 async def get_land_price_range():
     """ดึงช่วงของราคาที่ดินสําหรับกําหนดสี - แบ่งเป็น 10 ช่วง"""
     try:
-        with open("data/bkk_shp.geojson", "r", encoding='utf-8') as file:
+        with open("data/BKK/bkk_shp.geojson", "r", encoding='utf-8') as file:
             data = json.load(file)
         
         land_prices = [f["properties"]["price_AVG"] for f in data["features"]]
@@ -61,7 +60,7 @@ async def get_land_price_range():
                 "range": i + 1,
                 "min": start,
                 "max": end,
-                "label": f"{start:,} - {end:,} คน"
+                "label": f"{start:,} - {end:,}",
             })
         
         print(f"Land price ranges calculated: {len(ranges)} ranges")
