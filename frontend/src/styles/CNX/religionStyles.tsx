@@ -5,7 +5,7 @@ import { stringToColor, lightenColor } from '@/utils/labelColorUtils';
 function getStyle(feature?: Feature<Geometry, any>): PathOptions {
   if (!feature) return {};
 
-  const strokeColor = stringToColor('สถาบันการศึกษา');
+  const strokeColor = stringToColor('สถาบันศาสนา');
   const fillColor = lightenColor(strokeColor, 0.6);
 
   return {
@@ -17,6 +17,6 @@ function getStyle(feature?: Feature<Geometry, any>): PathOptions {
   };
 }
 
-export const educationStyles = {
+export const religionStyles = {
   getStyle,
 };

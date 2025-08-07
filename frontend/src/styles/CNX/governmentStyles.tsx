@@ -5,7 +5,7 @@ import { stringToColor, lightenColor } from '@/utils/labelColorUtils';
 function getStyle(feature?: Feature<Geometry, any>): PathOptions {
   if (!feature) return {};
 
-  const strokeColor = stringToColor('หน่วยงานรัฐบาล');
+  const strokeColor = stringToColor('สถาบันราชการ');
   const fillColor = lightenColor(strokeColor, 0.6);
 
   return {

@@ -5,14 +5,13 @@ from ..utils.convert_coor import convert_coordinates
 
 router = APIRouter()
 
-@router.get("/cnx/government")
-async def get_government():
-    """ดึงข้อมูลสถาบันราชการในเชียงใหม่ - มี geometry และระดับ"""
+@router.get("/cnx/religion")
+async def get_religion():
+    """ดึงข้อมูลสถานที่ศักดิ์สิทธิ์ในเชียงใหม่ - มี geometry และระดับ"""
     try:
-        # หา root path ของ Backend project
         ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        data_path = os.path.join(ROOT_DIR, "data", "CNX", "government.geojson")
-
+        data_path = os.path.join(ROOT_DIR, "data", "CNX", "religion.geojson")
+        
         with open(data_path, "r", encoding='utf-8') as file:
             data = json.load(file)
         
@@ -32,5 +31,5 @@ async def get_government():
         return data
         
     except Exception as e:
-        print(f"Error processing government data: {str(e)}")
+        print(f"Error processing religion data: {str(e)}")
         raise

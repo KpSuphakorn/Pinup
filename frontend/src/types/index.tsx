@@ -42,6 +42,7 @@ export interface MapLayersProps {
   meddenseresareaData?: MedDenseResAreaGeoJSON | null;
   educationData?: EducationGeoJSON | null;
   governmentData?: GovernmentGeoJSON | null;
+  religionData?: ReligionGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }
@@ -508,6 +509,25 @@ export interface GovernmentFeature {
 export interface GovernmentGeoJSON {
   type: 'FeatureCollection';
   features: GovernmentFeature[];
+}
+
+export interface ReligionData {
+  elevation: number;
+  display_data: string;
+}
+
+export interface ReligionFeature {
+  type: 'Feature';
+  geometry: {
+    type: 'Polygon';
+    coordinates: number[][][];
+  };
+  properties: ReligionData;
+}
+
+export interface ReligionGeoJSON {
+  type: 'FeatureCollection';
+  features: ReligionFeature[];
 }
 
 export interface LowDenseResAreaData {
