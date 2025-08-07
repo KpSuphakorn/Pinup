@@ -1,4 +1,4 @@
-export type LayerOption = 'none' | 'osm' | 'zoning' | 'population' | 'landprice' | 'boundmun' | 'boundtambon' | 'boundamphoe' | 'boundprovince' | 'gatecount' | 'busstop' | 'busroute' | 'LRTroute' | 'road' | 'parkinglot' | 'ruralargi' | 'recreatenv' | 'artcult' | 'lowdenseresarea' | 'meddenseresarea' | 'education' | 'government' | 'religion';
+export type LayerOption = 'none' | 'osm' | 'zoning' | 'population' | 'landprice' | 'boundmun' | 'boundtambon' | 'boundamphoe' | 'boundprovince' | 'gatecount' | 'busstop' | 'busroute' | 'LRTroute' | 'road' | 'parkinglot' | 'ruralargi' | 'recreatenv' | 'artcult' | 'lowdenseresarea' | 'meddenseresarea' | 'education' | 'government' | 'religion' | 'residentialConservation';
 
 export interface LayerOptionData {
   value: LayerOption;
@@ -31,6 +31,7 @@ export const layerOptions: LayerOptionData[] = [
   { value: 'education', label: 'สถาบันการศึกษา', description: 'แสดงข้อมูลสถาบันการศึกษาทั่วไป', center: 'chiangmai' },
   { value: 'government', label: 'สถาบันราชการ', description: 'แสดงข้อมูลสถาบันราชการ', center: 'chiangmai' },
   { value: 'religion', label: 'สถาบันศาสนา', description: 'แสดงข้อมูลสถาบันศาสนา', center: 'chiangmai' },
+  { value: 'residentialConservation', label: 'อนุรักษ์เพื่อการอยู่อาศัย', description: 'แสดงพื้นที่อนุรักษ์เพื่อการอยู่อาศัย', center: 'chiangmai' }
 ];
 
 // กำหนด global layers ที่ไม่ติดพื้นที่

@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import L, { Layer } from 'leaflet';
 import type { BusRouteFeature } from '@/types';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup, createLowDenseResAreaPopup, createMedDenseResAreaPopup, createEducationPopup, createGovernmentPopup, createReligionPopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup, createLowDenseResAreaPopup, createMedDenseResAreaPopup, createEducationPopup, createGovernmentPopup, createReligionPopup, createResidentialConservationPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -28,6 +28,7 @@ import { educationStyles } from '@/styles/CNX/educationStyles';
 import { MapLayersProps } from '@/types/index';
 import { governmentStyles } from '@/styles/CNX/governmentStyles';
 import { religionStyles } from '@/styles/CNX/religionStyles';
+import { residentialConservationStyles } from '@/styles/CNX/residentialConservationStyles';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
 
@@ -56,6 +57,7 @@ export function MapLayers({
   educationData,
   governmentData,
   religionData,
+  residentialConservationData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -579,6 +581,43 @@ export function MapLayers({
 
                   clickedLayer
                     .bindPopup(createReligionPopup(feature))
+                    .openPopup();
+
+                  clickedLayer.on('popupclose', () => {
+                    layerRefs.current.forEach((layer) => {
+                      (layer as L.Path).setStyle({ fillOpacity: 0.5, opacity: 0.9 });
+                    });
+                  });
+                },
+              }}
+            />
+          ))}
+        </>
+      )}
+  
+      {/* Residential Conservation Layer */}
+      {Array.isArray(residentialConservationData?.features) && residentialConservationData.features.length > 0 && (
+        <>
+          {residentialConservationData.features.map((feature, index) => (
+            <GeoJSON
+              key={`residential-conservation-${index}`}
+              data={feature}
+              style={() => residentialConservationStyles.getStyle(feature)}
+              eventHandlers={{
+                add: (e) => {
+                  layerRefs.current.push(e.target);
+                },
+                click: (e) => {
+                  const clickedLayer = e.target as L.Path;
+
+                  layerRefs.current.forEach((layer) => {
+                    (layer as L.Path).setStyle({ fillOpacity: 0.1, opacity: 0.1 });
+                  });
+
+                  clickedLayer.setStyle({ fillOpacity: 0.6, opacity: 1.0 });
+
+                  clickedLayer
+                    .bindPopup(createResidentialConservationPopup(feature))
                     .openPopup();
 
                   clickedLayer.on('popupclose', () => {

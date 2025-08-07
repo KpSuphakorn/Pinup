@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FeatureCollection, Geometry } from 'geojson';
-import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON, RoadGeoJSON, ParkingLotGeoJSON, RuralArgiGeoJSON, RecreatEnvGeoJSON, ArtCultGeoJSON, LowDenseResAreaGeoJSON, MedDenseResAreaGeoJSON, EducationGeoJSON, GovernmentGeoJSON, ReligionGeoJSON } from '@/types';
+import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON, RoadGeoJSON, ParkingLotGeoJSON, RuralArgiGeoJSON, RecreatEnvGeoJSON, ArtCultGeoJSON, LowDenseResAreaGeoJSON, MedDenseResAreaGeoJSON, EducationGeoJSON, GovernmentGeoJSON, ReligionGeoJSON, ResidentialConservationGeoJSON } from '@/types';
 import { getZoning } from '@/libs/zoning';
 import { getOsmData } from '@/libs/osm';
 import { getPopulationMapData } from '@/libs/getPopulationData';
@@ -25,6 +25,7 @@ import { getMedDenseResAreaData } from '@/libs/CNX/getMedDenseResAreaData';
 import { getEducationData } from '@/libs/CNX/getEducationData';
 import { getGovernmentData } from '@/libs/CNX/getGovernmentData';
 import { getReligionData } from '@/libs/CNX/getReligionData';
+import { getResidentialConservationData } from '@/libs/CNX/getResidentialConservation';
 export function useMapData(landId: number, isClient: boolean) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
   const [osmData, setOsmData] = useState<FeatureCollection<Geometry, any> | null>(null);
@@ -50,6 +51,7 @@ export function useMapData(landId: number, isClient: boolean) {
   const [educationData, setEducationData] = useState<EducationGeoJSON | null>(null);
   const [governmentData, setGovernmentData] = useState<GovernmentGeoJSON | null>(null);
   const [religionData, setReligionData] = useState<ReligionGeoJSON | null>(null);
+  const [residentialConservationData, setResidentialConservationData] = useState<ResidentialConservationGeoJSON | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -59,7 +61,7 @@ export function useMapData(landId: number, isClient: boolean) {
       setIsLoading(true);
 
       try {
-        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse, roadResponse, parkinglotResponse, ruralargiResponse, recreatenvResponse, artcultResponse, lowdenseresareaResponse, meddenseresareaResponse, educationResponse, governmentResponse, religionData] = await Promise.allSettled([
+        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse, roadResponse, parkinglotResponse, ruralargiResponse, recreatenvResponse, artcultResponse, lowdenseresareaResponse, meddenseresareaResponse, educationResponse, governmentResponse, religionResponse, residentialConservationResponse] = await Promise.allSettled([
           getZoning(landId),
           getOsmData(),
           getPopulationMapData(),
@@ -83,7 +85,8 @@ export function useMapData(landId: number, isClient: boolean) {
           getMedDenseResAreaData(),
           getEducationData(),
           getGovernmentData(),
-          getReligionData()
+          getReligionData(),
+          getResidentialConservationData()
         ]);
 
         // Handle zoning data
@@ -279,11 +282,19 @@ export function useMapData(landId: number, isClient: boolean) {
         }
 
         // Handle Religion data
-        if (religionData.status === 'fulfilled') {
-          const data = religionData.value;
+        if (religionResponse.status === 'fulfilled') {
+          const data = religionResponse.value;
           setReligionData(data);
         } else {
-          console.error('Failed to fetch Religion data:', religionData.reason);
+          console.error('Failed to fetch Religion data:', religionResponse.reason);
+        }
+
+        // Handle Residential Conservation data
+        if (residentialConservationResponse.status === 'fulfilled') {
+          const data = residentialConservationResponse.value;
+          setResidentialConservationData(data);
+        } else {
+          console.error('Failed to fetch Residential Conservation data:', residentialConservationResponse.reason);
         }
 
       } catch (error) {
@@ -321,6 +332,7 @@ export function useMapData(landId: number, isClient: boolean) {
     educationData,
     governmentData,
     religionData,
+    residentialConservationData,
     isLoading
   };
 }

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import zoning, population, land_price_subd, bound_mun, bound_tambon, bound_amphoe, bound_province, gate_count, bus_stop, bus_route, LRT_route, road, parking_lot, rural_argi, recreat_env, art_cult, low_dense_res_area, med_dense_res_area, education, government, religion
+from app.routers import zoning, population, land_price_subd, bound_mun, bound_tambon, bound_amphoe, bound_province, gate_count, bus_stop, bus_route, LRT_route, road, parking_lot, rural_argi, recreat_env, art_cult, low_dense_res_area, med_dense_res_area, education, government, religion, residential_conservation
 
 app = FastAPI()
 
@@ -35,3 +35,4 @@ app.include_router(med_dense_res_area.router, prefix="/api")
 app.include_router(education.router, prefix="/api")
 app.include_router(government.router, prefix="/api")
 app.include_router(religion.router, prefix="/api")
+app.include_router(residential_conservation.router, prefix="/api")

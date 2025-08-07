@@ -729,3 +729,53 @@ export function createReligionPopup(feature: Feature<Geometry, any>): string {
     </div>
   `;
 }
+
+export function createResidentialConservationPopup(feature: Feature<Geometry, any>): string {
+  const props = feature.properties || {};
+  const display_data = props.display_data || 'ไม่ระบุ';
+  const elevation = props.elevation ?? 'ไม่ทราบระดับชั้น';
+  const name = props.NAME || props.name || 'อนุรักษ์เพื่อการอยู่อาศัย';
+  const type = props.TYPE || props.type || 'ไม่ระบุประเภท';
+  const province = props.PROVINCE || props.province || '';
+  const district = props.DISTRICT || props.district || '';
+  const subdistrict = props.SUBDISTRICT || props.subdistrict || '';
+
+  const baseColor = stringToColor('อนุรักษ์เพื่อการอยู่อาศัย');
+  const lightColor = lightenColor(baseColor, 0.8);
+
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 250px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        ผังเมือง: อนุรักษ์เพื่อการอยู่อาศัย
+      </h4>
+      <div style="margin: 10px 0;">
+        <p style="
+          margin: 5px 0;
+          font-size: 14px;
+          font-weight: bold;
+          background-color: ${lightColor};
+          padding: 6px 10px;
+          border-radius: 6px;
+        ">
+          ${name}
+        </p>
+        <p style="margin: 5px 0; font-size: 12px; color: #333;">
+          <strong>ประเภท:</strong> ${type}
+        </p>
+        <p style="margin: 5px 0; font-size: 12px; color: #333;">
+          <strong>ระดับ:</strong> ${elevation}
+        </p>
+        ${display_data !== name ? `<p style="margin: 5px 0; font-size: 12px; color: #333;">
+          <strong>ข้อมูลเพิ่มเติม:</strong> ${display_data}
+        </p>` : ''}
+      </div>
+      ${province || district || subdistrict ? `
+      <div style="margin: 10px 0; padding-top: 8px; border-top: 1px solid #eee;">
+        <h5 style="margin: 0 0 5px 0; font-size: 14px; color: #555;">ที่อยู่:</h5>
+        ${province ? `<p style="margin: 2px 0; font-size: 13px;"><strong>จังหวัด:</strong> ${province}</p>` : ''}
+        ${district ? `<p style="margin: 2px 0; font-size: 13px;"><strong>อำเภอ:</strong> ${district}</p>` : ''}
+        ${subdistrict ? `<p style="margin: 2px 0; font-size: 13px;"><strong>ตำบล:</strong> ${subdistrict}</p>` : ''}
+      </div>` : ''}
+    </div>
+  `;
+}
