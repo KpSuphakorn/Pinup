@@ -27,7 +27,7 @@ export default function Map({ landId }: MapProps) {
     landpricesubdData, landpricesubdRangeData,
     boundmunData, boundtambonData, boundamphoeData, boundprovinceData,
     gatecountData, busstopData, busrouteData, LRTRouteData, roadData, parkinglotData,
-    ruralargiData, recreatenvData, artcultData, lowdenseresareaData, meddenseresareaData,
+    ruralargiData, recreatenvData, artcultData, lowdenseresareaData, meddenseresareaData, highdenseresareaData,
     isLoading
   } = useMapData(landId, isClient && shouldFetchData);
 
@@ -100,6 +100,7 @@ export default function Map({ landId }: MapProps) {
           artcultData={selectedLayers.includes('artcult') ? artcultData : null}
           lowdenseresareaData={selectedLayers.includes('lowdenseresarea') ? lowdenseresareaData : null}
           meddenseresareaData={selectedLayers.includes('meddenseresarea') ? meddenseresareaData : null}
+          highdenseresareaData={selectedLayers.includes('highdenseresarea') ? highdenseresareaData : null}
           landId={landId.toString()}
           isLoading={false}
         />
