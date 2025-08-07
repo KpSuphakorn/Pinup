@@ -41,6 +41,7 @@ export interface MapLayersProps {
   lowdenseresareaData?: LowDenseResAreaGeoJSON | null;
   meddenseresareaData?: MedDenseResAreaGeoJSON | null;
   educationData?: EducationGeoJSON | null;
+  governmentData?: GovernmentGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }
@@ -488,6 +489,25 @@ export interface EducationFeature {
     coordinates: number[][][];
   };
   properties: EducationData;
+}
+
+export interface GovernmentData {
+  elevation: number;
+  display_data: string;
+}
+
+export interface GovernmentFeature {
+  type: 'Feature';
+  geometry: {
+    type: 'Polygon';
+    coordinates: number[][][];
+  };
+  properties: GovernmentData;
+}
+
+export interface GovernmentGeoJSON {
+  type: 'FeatureCollection';
+  features: GovernmentFeature[];
 }
 
 export interface LowDenseResAreaData {

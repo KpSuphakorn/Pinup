@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FeatureCollection, Geometry } from 'geojson';
-import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON, RoadGeoJSON, ParkingLotGeoJSON, RuralArgiGeoJSON, RecreatEnvGeoJSON, ArtCultGeoJSON, LowDenseResAreaGeoJSON, MedDenseResAreaGeoJSON, EducationGeoJSON } from '@/types';
+import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON, RoadGeoJSON, ParkingLotGeoJSON, RuralArgiGeoJSON, RecreatEnvGeoJSON, ArtCultGeoJSON, LowDenseResAreaGeoJSON, MedDenseResAreaGeoJSON, EducationGeoJSON, GovernmentGeoJSON } from '@/types';
 import { getZoning } from '@/libs/zoning';
 import { getOsmData } from '@/libs/osm';
 import { getPopulationMapData } from '@/libs/getPopulationData';
@@ -23,6 +23,7 @@ import { getArtCultData } from '@/libs/CNX/getArtCultData';
 import { getLowDenseResAreaData } from '@/libs/CNX/getLowDenseResAreaData';
 import { getMedDenseResAreaData } from '@/libs/CNX/getMedDenseResAreaData';
 import { getEducationData } from '@/libs/CNX/getEducationData';
+import { getGovernmentData } from '@/libs/CNX/getGovernmentData';
 export function useMapData(landId: number, isClient: boolean) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
   const [osmData, setOsmData] = useState<FeatureCollection<Geometry, any> | null>(null);
@@ -46,6 +47,7 @@ export function useMapData(landId: number, isClient: boolean) {
   const [lowdenseresareaData, setLowDenseResAreaData] = useState<LowDenseResAreaGeoJSON | null>(null);
   const [meddenseresareaData, setMedDenseResAreaData] = useState<MedDenseResAreaGeoJSON | null>(null);
   const [educationData, setEducationData] = useState<EducationGeoJSON | null>(null);
+  const [governmentData, setGovernmentData] = useState<GovernmentGeoJSON | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -55,7 +57,7 @@ export function useMapData(landId: number, isClient: boolean) {
       setIsLoading(true);
 
       try {
-        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse, roadResponse, parkinglotResponse, ruralargiResponse, recreatenvResponse, artcultResponse, lowdenseresareaResponse, meddenseresareaResponse, educationResponse] = await Promise.allSettled([
+        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse, roadResponse, parkinglotResponse, ruralargiResponse, recreatenvResponse, artcultResponse, lowdenseresareaResponse, meddenseresareaResponse, educationResponse, governmentResponse] = await Promise.allSettled([
           getZoning(landId),
           getOsmData(),
           getPopulationMapData(),
@@ -78,6 +80,7 @@ export function useMapData(landId: number, isClient: boolean) {
           getLowDenseResAreaData(),
           getMedDenseResAreaData(),
           getEducationData(),
+          getGovernmentData()
         ]);
 
         // Handle zoning data
@@ -263,6 +266,15 @@ export function useMapData(landId: number, isClient: boolean) {
           console.error('Failed to fetch Education data:', educationResponse.reason);
         }
 
+        // Handle Government data
+        if (governmentResponse.status === 'fulfilled') {
+          const data = governmentResponse.value;
+          setGovernmentData(data);
+        }
+        else {
+          console.error('Failed to fetch Government data:', governmentResponse.reason);
+        }
+
       } catch (error) {
         console.error('Error fetching map data:', error);
       } finally {
@@ -296,6 +308,7 @@ export function useMapData(landId: number, isClient: boolean) {
     lowdenseresareaData,
     meddenseresareaData,
     educationData,
+    governmentData,
     isLoading
   };
 }

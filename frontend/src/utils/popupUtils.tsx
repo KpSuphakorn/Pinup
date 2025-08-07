@@ -128,10 +128,7 @@ export function createPopulationPopup(feature: Feature<Geometry, any>) {
   const props = feature.properties || {};
   const { id, population, label, province, district, subdistrict } = props;
 
-  // ตรวจสอบและสร้าง label จากหลายฟิลด์
   const displayLabel = label || district || subdistrict || 'ไม่ระบุชื่อพื้นที่';
-
-  // ตรวจสอบว่าข้อมูลเป็น string หรือไม่ และไม่ว่าง
   const validLabel = displayLabel && displayLabel.toString().trim() !== '' ? displayLabel.toString().trim() : null;
 
   return `
@@ -159,10 +156,7 @@ export function createLandPriceSubdPopup(feature: Feature<Geometry, any>) {
   const props = feature.properties || {};
   const { land_price, label, province, district, subdistrict } = props;
 
-  // ตรวจสอบและสร้าง label จากหลายฟิลด์
   const displayLabel = label || district || subdistrict || 'ไม่ระบุชื่อพื้นที่';
-
-  // ตรวจสอบว่าข้อมูลเป็น string หรือไม่ และไม่ว่าง
   const validLabel = displayLabel && displayLabel.toString().trim() !== '' ? displayLabel.toString().trim() : null;
 
   return `
@@ -590,6 +584,11 @@ export function createEducationPopup(feature: Feature<Geometry, any>): string {
   const props = feature.properties || {};
   const display_data = props.display_data || 'ไม่ระบุ';
   const elevation = props.elevation ?? 'ไม่ทราบระดับชั้น';
+  const name = props.NAME || props.name || 'ไม่ระบุชื่อ';
+  const type = props.TYPE || props.type || 'ไม่ระบุประเภท';
+  const province = props.PROVINCE || props.province || '';
+  const district = props.DISTRICT || props.district || '';
+  const subdistrict = props.SUBDISTRICT || props.subdistrict || '';
 
   const baseColor = stringToColor('การศึกษา');
   const lightColor = lightenColor(baseColor, 0.8);
@@ -600,7 +599,7 @@ export function createEducationPopup(feature: Feature<Geometry, any>): string {
         ผังเมือง: สถานศึกษา
       </h4>
       <div style="margin: 10px 0;">
-        ${display_data ? `<p style="
+        <p style="
           margin: 5px 0;
           font-size: 14px;
           font-weight: bold;
@@ -608,12 +607,75 @@ export function createEducationPopup(feature: Feature<Geometry, any>): string {
           padding: 6px 10px;
           border-radius: 6px;
         ">
-          ${display_data}
-        </p>` : ''}
+          ${name}
+        </p>
+        <p style="margin: 5px 0; font-size: 12px; color: #333;">
+          <strong>ประเภท:</strong> ${type}
+        </p>
         <p style="margin: 5px 0; font-size: 12px; color: #333;">
           <strong>ระดับ:</strong> ${elevation}
         </p>
+        ${display_data !== name ? `<p style="margin: 5px 0; font-size: 12px; color: #333;">
+          <strong>ข้อมูลเพิ่มเติม:</strong> ${display_data}
+        </p>` : ''}
       </div>
+      ${province || district || subdistrict ? `
+      <div style="margin: 10px 0; padding-top: 8px; border-top: 1px solid #eee;">
+        <h5 style="margin: 0 0 5px 0; font-size: 14px; color: #555;">ที่อยู่:</h5>
+        ${province ? `<p style="margin: 2px 0; font-size: 13px;"><strong>จังหวัด:</strong> ${province}</p>` : ''}
+        ${district ? `<p style="margin: 2px 0; font-size: 13px;"><strong>อำเภอ:</strong> ${district}</p>` : ''}
+        ${subdistrict ? `<p style="margin: 2px 0; font-size: 13px;"><strong>ตำบล:</strong> ${subdistrict}</p>` : ''}
+      </div>` : ''}
+    </div>
+  `;
+}
+
+export function createGovernmentPopup(feature: Feature<Geometry, any>): string {
+  const props = feature.properties || {};
+  const display_data = props.display_data || 'ไม่ระบุ';
+  const elevation = props.elevation ?? 'ไม่ทราบระดับชั้น';
+  const name = props.NAME || props.name || 'หน่วยงานรัฐบาล';
+  const type = props.TYPE || props.type || 'ไม่ระบุประเภท';
+  const province = props.PROVINCE || props.province || '';
+  const district = props.DISTRICT || props.district || '';
+  const subdistrict = props.SUBDISTRICT || props.subdistrict || '';
+
+  const baseColor = stringToColor('หน่วยงานรัฐบาล');
+  const lightColor = lightenColor(baseColor, 0.8);
+
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 250px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        ผังเมือง: หน่วยงานรัฐบาล
+      </h4>
+      <div style="margin: 10px 0;">
+        <p style="
+          margin: 5px 0;
+          font-size: 14px;
+          font-weight: bold;
+          background-color: ${lightColor};
+          padding: 6px 10px;
+          border-radius: 6px;
+        ">
+          ${name}
+        </p>
+        <p style="margin: 5px 0; font-size: 12px; color: #333;">
+          <strong>ประเภท:</strong> ${type}
+        </p>
+        <p style="margin: 5px 0; font-size: 12px; color: #333;">
+          <strong>ระดับ:</strong> ${elevation}
+        </p>
+        ${display_data !== name ? `<p style="margin: 5px 0; font-size: 12px; color: #333;">
+          <strong>ข้อมูลเพิ่มเติม:</strong> ${display_data}
+        </p>` : ''}
+      </div>
+      ${province || district || subdistrict ? `
+      <div style="margin: 10px 0; padding-top: 8px; border-top: 1px solid #eee;">
+        <h5 style="margin: 0 0 5px 0; font-size: 14px; color: #555;">ที่อยู่:</h5>
+        ${province ? `<p style="margin: 2px 0; font-size: 13px;"><strong>จังหวัด:</strong> ${province}</p>` : ''}
+        ${district ? `<p style="margin: 2px 0; font-size: 13px;"><strong>อำเภอ:</strong> ${district}</p>` : ''}
+        ${subdistrict ? `<p style="margin: 2px 0; font-size: 13px;"><strong>ตำบล:</strong> ${subdistrict}</p>` : ''}
+      </div>` : ''}
     </div>
   `;
 }

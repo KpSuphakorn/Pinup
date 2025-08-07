@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import L, { Layer } from 'leaflet';
 import type { BusRouteFeature } from '@/types';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup, createLowDenseResAreaPopup, createMedDenseResAreaPopup, createEducationPopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup, createLowDenseResAreaPopup, createMedDenseResAreaPopup, createEducationPopup, createGovernmentPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -26,6 +26,7 @@ import { lowdenseresareaStyles } from '@/styles/CNX/lowdenseresareaStyles';
 import { meddenseresareaStyles } from '@/styles/CNX/meddenseresareaStyles';
 import { educationStyles } from '@/styles/CNX/educationStyles';
 import { MapLayersProps } from '@/types/index';
+import { governmentStyles } from '@/styles/CNX/governmentStyles';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
 
@@ -52,6 +53,7 @@ export function MapLayers({
   lowdenseresareaData,
   meddenseresareaData,
   educationData,
+  governmentData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -501,6 +503,42 @@ export function MapLayers({
 
                   clickedLayer
                     .bindPopup(createEducationPopup(feature))
+                    .openPopup();
+
+                  clickedLayer.on('popupclose', () => {
+                    layerRefs.current.forEach((layer) => {
+                      (layer as L.Path).setStyle({ fillOpacity: 0.5, opacity: 0.9 });
+                    });
+                  });
+                },
+              }}
+            />
+          ))}
+        </>
+      )}
+      {/* Government Layer */}
+      {Array.isArray(governmentData?.features) && governmentData.features.length > 0 && (
+        <>
+          {governmentData.features.map((feature, index) => (
+            <GeoJSON
+              key={`government-${index}`}
+              data={feature}
+              style={() => governmentStyles.getStyle(feature)}
+              eventHandlers={{
+                add: (e) => {
+                  layerRefs.current.push(e.target);
+                },
+                click: (e) => {
+                  const clickedLayer = e.target as L.Path;
+
+                  layerRefs.current.forEach((layer) => {
+                    (layer as L.Path).setStyle({ fillOpacity: 0.1, opacity: 0.1 });
+                  });
+
+                  clickedLayer.setStyle({ fillOpacity: 0.6, opacity: 1.0 });
+
+                  clickedLayer
+                    .bindPopup(createGovernmentPopup(feature))
                     .openPopup();
 
                   clickedLayer.on('popupclose', () => {
