@@ -193,8 +193,6 @@ export function createBoundMunPopup(feature: Feature<Geometry, any>) {
   const baseColor = display_name ? stringToColor(display_name) : '#ddd';
   const lightColor = lightenColor(baseColor, 0.2);
 
-  console.log(display_name);
-
   return `
     <div style="font-family: Arial, sans-serif; min-width: 250px;">
       <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
@@ -510,7 +508,6 @@ export function createRecreatEnvPopup(feature: Feature<Geometry, any>) {
   `;
 }
 
-
 export function createArtCultPopup(feature: Feature<Geometry, any>) {
   const props = feature.properties || {};
   const display_data = props.display_data;
@@ -584,6 +581,38 @@ export function createMedDenseResAreaPopup(feature: Feature<Geometry, any>): str
       </div>
       <div style="font-size: 12px; color: #333; margin-top: 6px;">
         <div><strong>ระดับ:</strong> ${elevation}</div>
+      </div>
+    </div>
+  `;
+}
+
+export function createEducationPopup(feature: Feature<Geometry, any>): string {
+  const props = feature.properties || {};
+  const display_data = props.display_data || 'ไม่ระบุ';
+  const elevation = props.elevation ?? 'ไม่ทราบระดับชั้น';
+
+  const baseColor = stringToColor('การศึกษา');
+  const lightColor = lightenColor(baseColor, 0.8);
+
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 250px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        ผังเมือง: สถานศึกษา
+      </h4>
+      <div style="margin: 10px 0;">
+        ${display_data ? `<p style="
+          margin: 5px 0;
+          font-size: 14px;
+          font-weight: bold;
+          background-color: ${lightColor};
+          padding: 6px 10px;
+          border-radius: 6px;
+        ">
+          ${display_data}
+        </p>` : ''}
+        <p style="margin: 5px 0; font-size: 12px; color: #333;">
+          <strong>ระดับ:</strong> ${elevation}
+        </p>
       </div>
     </div>
   `;

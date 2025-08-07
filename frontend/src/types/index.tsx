@@ -40,6 +40,7 @@ export interface MapLayersProps {
   artcultData?: ArtCultGeoJSON | null;
   lowdenseresareaData?: LowDenseResAreaGeoJSON | null;
   meddenseresareaData?: MedDenseResAreaGeoJSON | null;
+  educationData?: EducationGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }
@@ -468,6 +469,25 @@ export interface ArtCultFeature {
 export interface ArtCultGeoJSON {
   type: 'FeatureCollection';
   features: ArtCultFeature[];
+}
+
+export interface EducationGeoJSON {
+  type: 'FeatureCollection';
+  features: EducationFeature[];
+}
+
+export interface EducationData {
+  elevation: number;
+  display_data: string;
+}
+
+export interface EducationFeature {
+  type: 'Feature';
+  geometry: {
+    type: 'Polygon';
+    coordinates: number[][][];
+  };
+  properties: EducationData;
 }
 
 export interface LowDenseResAreaData {

@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import L, { Layer } from 'leaflet';
 import type { BusRouteFeature } from '@/types';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup, createLowDenseResAreaPopup, createMedDenseResAreaPopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup, createLowDenseResAreaPopup, createMedDenseResAreaPopup, createEducationPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -24,10 +24,10 @@ import { recreatenvStyles } from '@/styles/CNX/recreatenvStyles';
 import { artcultStyles } from '@/styles/CNX/artcultStyles';
 import { lowdenseresareaStyles } from '@/styles/CNX/lowdenseresareaStyles';
 import { meddenseresareaStyles } from '@/styles/CNX/meddenseresareaStyles';
+import { educationStyles } from '@/styles/CNX/educationStyles';
 import { MapLayersProps } from '@/types/index';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
-
 
 export function MapLayers({
   osmData,
@@ -51,6 +51,7 @@ export function MapLayers({
   artcultData,
   lowdenseresareaData,
   meddenseresareaData,
+  educationData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -221,7 +222,7 @@ export function MapLayers({
         </>
       )}
 
-      {/* LRTRout Layer */}
+      {/* LRTRoute Layer */}
       {Array.isArray(LRTrouteData?.features) && LRTrouteData.features.length > 0 && (
         <>
           {LRTrouteData.features.map((feature, index) => (
@@ -342,8 +343,7 @@ export function MapLayers({
         </>
       )}
 
-
-      {/* Rural & Argicultural Layer */}
+      {/* Rural & Agricultural Layer */}
       {Array.isArray(ruralargiData?.features) && ruralargiData.features.length > 0 && (
         <>
           {ruralargiData.features.map((feature, index) => (
@@ -464,6 +464,43 @@ export function MapLayers({
 
                   clickedLayer
                     .bindPopup(createMedDenseResAreaPopup(feature))
+                    .openPopup();
+
+                  clickedLayer.on('popupclose', () => {
+                    layerRefs.current.forEach((layer) => {
+                      (layer as L.Path).setStyle({ fillOpacity: 0.5, opacity: 0.9 });
+                    });
+                  });
+                },
+              }}
+            />
+          ))}
+        </>
+      )}
+
+      {/* Education Layer */}
+      {Array.isArray(educationData?.features) && educationData.features.length > 0 && (
+        <>
+          {educationData.features.map((feature, index) => (
+            <GeoJSON
+              key={`education-${index}`}
+              data={feature}
+              style={() => educationStyles.getStyle(feature)}
+              eventHandlers={{
+                add: (e) => {
+                  layerRefs.current.push(e.target);
+                },
+                click: (e) => {
+                  const clickedLayer = e.target as L.Path;
+
+                  layerRefs.current.forEach((layer) => {
+                    (layer as L.Path).setStyle({ fillOpacity: 0.1, opacity: 0.1 });
+                  });
+
+                  clickedLayer.setStyle({ fillOpacity: 0.6, opacity: 1.0 });
+
+                  clickedLayer
+                    .bindPopup(createEducationPopup(feature))
                     .openPopup();
 
                   clickedLayer.on('popupclose', () => {
