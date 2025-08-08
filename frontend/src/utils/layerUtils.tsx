@@ -29,7 +29,7 @@ export const layerOptions: LayerOptionData[] = [
   { value: 'lowdenseresarea', label: 'ที่อยู่อาศัยหนาแน่นน้อย', description: 'แสดงพื้นที่ที่อยู่อาศัยหนาแน่นน้อย', center: 'chiangmai' },
   { value: 'meddenseresarea', label: 'ที่อยู่อาศัยหนาแน่นปานกลาง', description: 'แสดงพื้นที่ที่อยู่อาศัยหนาแน่นปานกลาง', center: 'chiangmai' },
   { value: 'highdenseresarea', label: 'ที่อยู่อาศัยหนาแน่นมากและพาณิชยกรรม', description: 'แสดงพื้นที่ที่อยู่อาศัยหนาแน่นมากและพาณิชยกรรม', center: 'chiangmai' },
-  { value: 'pop5564', label: 'จำนวนประชากร และครัวเรือน ปี 2555-2564', description: 'แสดงจำนวนประชากรและครัวเรือนตามทะเบียน ระดับตำบล ปี 2555-2564', center: 'chiangmai' }
+  { value: 'pop5564', label: 'จำนวนประชากร และครัวเรือน ปี 2555-2564', description: 'แสดงจำนวนประชากรและครัวเรือนตามทะเบียน ระดับตำบล ปี 2555-2564', center: 'chiangmai' },
 ];
 
 // กำหนด global layers ที่ไม่ติดพื้นที่

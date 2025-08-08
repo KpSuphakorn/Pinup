@@ -35,7 +35,7 @@ export function createLayerConfigs(rangeData: RangeDataCollection): LayerConfig[
   if (rangeData.pop5564RangeData) {
     configs.push({
       key: 'pop5564',
-      displayName: 'จำนวนประชากร (ปีที่เลือก)',
+      displayName: 'จำนวนประชากร (คน)',
       style: pop5564Styles,
       rangeData: rangeData.pop5564RangeData
     });

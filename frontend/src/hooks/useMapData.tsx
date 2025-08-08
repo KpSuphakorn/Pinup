@@ -25,7 +25,7 @@ import { getHighDenseResAreaData } from '@/libs/CNX/getHighDenseResArea';
 import { getMedDenseResAreaData } from '@/libs/CNX/getMedDenseResAreaData';
 import { getPop5564Data } from '@/libs/CNX/getPop5564Data';
 import { getPop5564Range } from '@/libs/CNX/getPop5564Range';
-export function useMapData(landId: number, isClient: boolean) {
+export function useMapData(landId: number, isClient: boolean, popYear: number) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
   const [osmData, setOsmData] = useState<FeatureCollection<Geometry, any> | null>(null);
   const [populationData, setPopulationData] = useState<PopulationGeoJSON | null>(null);
@@ -82,8 +82,8 @@ export function useMapData(landId: number, isClient: boolean) {
           getLowDenseResAreaData(),
           getMedDenseResAreaData(),
           getHighDenseResAreaData(),
-          getPop5564Data(),
-          getPop5564Range(),
+          getPop5564Data(popYear),
+          getPop5564Range(popYear),
         ]);
 
         // Handle zoning data
@@ -292,7 +292,7 @@ export function useMapData(landId: number, isClient: boolean) {
     };
 
     fetchData();
-  }, [landId, isClient]);
+  }, [landId, isClient, popYear]);
 
   return {
     zoningData,

@@ -38,7 +38,6 @@ function getPop5564RangeIndex(population: number, ranges: Pop5564Range[]): numbe
 // ฟังก์ชันสำหรับสร้าง style ตามจำนวนประชากร
 function getStyle(feature?: Feature, rangeData?: Pop5564RangeData) {
   const population = feature?.properties?.population || 0;
-  console.log('ranges in CNX Population getStyle:', rangeData?.ranges);
   
   if (!rangeData || !rangeData.ranges || rangeData.ranges.length === 0) {
     return {

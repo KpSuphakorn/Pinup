@@ -32,7 +32,7 @@ export default function Map({ landId }: MapProps) {
     ruralargiData, recreatenvData, artcultData, lowdenseresareaData, meddenseresareaData, highdenseresareaData,
     pop5564Data, pop5564RangeData,
     isLoading
-  } = useMapData(landId, isClient && shouldFetchData);
+  } = useMapData(landId, isClient && shouldFetchData, popYear);
 
   useEffect(() => {
     setIsClient(true);

@@ -631,18 +631,11 @@ export function createPop5564Popup(feature: Feature<Geometry, any>) {
         ข้อมูลประชากร ปี ${year + 2500} <!-- แปลง พ.ศ. ถ้าต้องการ -->
       </h4>
       <div style="margin: 10px 0;">
-        <p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: #2563eb;">
+        <p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: #9c25ebff;">
           <strong>จำนวนประชากร:</strong> ${
             population ? formatNumber(population) : "ไม่ระบุ"
           } คน
         </p>
-        ${
-          validLabel
-            ? `<p style="margin: 5px 0; font-size: 14px; color: #059669; font-weight: 500;">
-                <strong>Label:</strong> ${validLabel}
-               </p>`
-            : ""
-        }
       </div>
       <div style="margin: 10px 0; padding-top: 8px; border-top: 1px solid #eee;">
         <h5 style="margin: 0 0 5px 0; font-size: 14px; color: #555;">ที่อยู่:</h5>

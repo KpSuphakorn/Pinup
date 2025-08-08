@@ -146,6 +146,7 @@ export interface RangeLegendProps {
   selectedLayerKeys?: string[];
   populationRangeData?: any;
   landpricesubdRangeData?: any;
+  pop5564RangeData?: any;
   // สำหรับเพิ่ม layer ใหม่ในอนาคต
   [key: string]: any;
 }
