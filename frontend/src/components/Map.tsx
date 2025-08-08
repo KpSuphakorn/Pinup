@@ -7,6 +7,7 @@ import { useMapData } from '@/hooks/useMapData';
 import { MapProps } from '@/types/map';
 import { LayerOption, getMapCenterByLayers } from '@/utils/layerUtils';
 import LayerSelector from './LayerSelector';
+import CNXPopYearSelector from '@/components/CNXPopYearSelector';
 import { MapLoading } from './MapLoading';
 import { MapLayers } from './MapLayers';
 import RangeLegend from './RangeLegend';
@@ -19,6 +20,7 @@ export default function Map({ landId }: MapProps) {
   const [isClient, setIsClient] = useState(false);
   const [selectedLayers, setSelectedLayers] = useState<LayerOption[]>(['none']);
   const [isLoadingLayers, setIsLoadingLayers] = useState(false);
+  const [popYear, setPopYear] = useState<number>(64);
 
   const shouldFetchData = selectedLayers.some(layer => layer !== 'none');
 
@@ -28,6 +30,7 @@ export default function Map({ landId }: MapProps) {
     boundmunData, boundtambonData, boundamphoeData, boundprovinceData,
     gatecountData, busstopData, busrouteData, LRTRouteData, roadData, parkinglotData,
     ruralargiData, recreatenvData, artcultData, lowdenseresareaData, meddenseresareaData, highdenseresareaData,
+    pop5564Data, pop5564RangeData,
     isLoading
   } = useMapData(landId, isClient && shouldFetchData);
 
@@ -60,10 +63,16 @@ export default function Map({ landId }: MapProps) {
             setTimeout(() => setIsLoadingLayers(false), 1000);
           }}
         />
+
+        {selectedLayers.includes('pop5564') && (
+          <CNXPopYearSelector year={popYear} setYear={setPopYear} />
+        )}
+
         <RangeLegend
           selectedLayerKeys={selectedLayerKeys}
           populationRangeData={selectedLayers.includes('population') ? populationRangeData : undefined}
           landpricesubdRangeData={selectedLayers.includes('landprice') ? landpricesubdRangeData : undefined}
+          pop5564RangeData={selectedLayers.includes('pop5564') ? pop5564RangeData : undefined}
         />
       </div>
 
@@ -101,6 +110,9 @@ export default function Map({ landId }: MapProps) {
           lowdenseresareaData={selectedLayers.includes('lowdenseresarea') ? lowdenseresareaData : null}
           meddenseresareaData={selectedLayers.includes('meddenseresarea') ? meddenseresareaData : null}
           highdenseresareaData={selectedLayers.includes('highdenseresarea') ? highdenseresareaData : null}
+          pop5564Data={selectedLayers.includes('pop5564') ? pop5564Data : null}
+          pop5564RangeData={selectedLayers.includes('pop5564') ? pop5564RangeData : null}
+          pop5564Year={popYear}
           landId={landId.toString()}
           isLoading={false}
         />

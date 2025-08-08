@@ -41,6 +41,9 @@ export interface MapLayersProps {
   lowdenseresareaData?: LowDenseResAreaGeoJSON | null;
   meddenseresareaData?: MedDenseResAreaGeoJSON | null;
   highdenseresareaData?: HighDenseResAreaGeoJSON | null;
+  pop5564Data?: Pop5564GeoJSON | null;
+  pop5564RangeData?: Pop5564RangeData | null;
+  pop5564Year?: number;
   landId?: string;
   isLoading: boolean;
 }
@@ -540,4 +543,44 @@ export interface HighDenseResAreaFeature {
 export interface HighDenseResAreaGeoJSON {
   type: 'FeatureCollection';
   features: HighDenseResAreaFeature[];
+}
+
+export interface Pop5564Data {
+  id: number;
+  year: number;
+  population: number;
+  label: string;
+  province: string;
+  district: string;
+  subdistrict: string;
+}
+
+export interface Pop5564Feature {
+  type: 'Feature';
+  geometry: {
+    type: 'Polygon';
+    coordinates: number[][][];
+  };
+  properties: Pop5564Data;
+}
+
+export interface Pop5564GeoJSON {
+  type: 'FeatureCollection';
+  features: Pop5564Feature[];
+}
+
+export interface Pop5564Range {
+  range: number;
+  min: number;
+  max: number;
+  label: string;
+}
+
+export interface Pop5564RangeData {
+  year: number;
+  min: number;
+  max: number;
+  avg: number;
+  ranges: Pop5564Range[];
+  total_ranges: number;
 }

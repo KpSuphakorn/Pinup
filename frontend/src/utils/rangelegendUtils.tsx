@@ -1,10 +1,12 @@
 import { LayerConfig } from '@/types/index';
 import { populationStyles } from '@/styles/populationStyles';
 import { landpricesubdStyles } from '@/styles/landpricesubdStyles';
+import { pop5564Styles } from '@/styles/CNX/pop5564Styles';
 
 interface RangeDataCollection {
   populationRangeData?: any;
   landpricesubdRangeData?: any;
+  pop5564RangeData?: any;
   incomeRangeData?: any;
   // เพิ่ม range data อื่นๆ ได้ที่นี่
 }
@@ -27,6 +29,15 @@ export function createLayerConfigs(rangeData: RangeDataCollection): LayerConfig[
       displayName: 'ราคาที่ดินตามแขวง (บาท/ตร.ว.)',
       style: landpricesubdStyles,
       rangeData: rangeData.landpricesubdRangeData
+    });
+  }
+
+  if (rangeData.pop5564RangeData) {
+    configs.push({
+      key: 'pop5564',
+      displayName: 'จำนวนประชากร (ปีที่เลือก)',
+      style: pop5564Styles,
+      rangeData: rangeData.pop5564RangeData
     });
   }
   

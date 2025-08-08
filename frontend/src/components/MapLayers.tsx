@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import L, { Layer } from 'leaflet';
 import type { BusRouteFeature } from '@/types';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup, createLowDenseResAreaPopup, createMedDenseResAreaPopup, createHighDenseResAreaPopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup, createLowDenseResAreaPopup, createMedDenseResAreaPopup, createHighDenseResAreaPopup, createPop5564Popup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -25,6 +25,7 @@ import { artcultStyles } from '@/styles/CNX/artcultStyles';
 import { lowdenseresareaStyles } from '@/styles/CNX/lowdenseresareaStyles';
 import { meddenseresareaStyles } from '@/styles/CNX/meddenseresareaStyles';
 import { highdenseresareaStyles } from '@/styles/CNX/highdenseresareaStyles';
+import { pop5564Styles } from '@/styles/CNX/pop5564Styles';
 import { MapLayersProps } from '@/types/index';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
@@ -53,6 +54,8 @@ export function MapLayers({
   lowdenseresareaData,
   meddenseresareaData,
   highdenseresareaData,
+  pop5564Data,
+  pop5564RangeData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -344,7 +347,6 @@ export function MapLayers({
         </>
       )}
 
-
       {/* Rural & Argicultural Layer */}
       {Array.isArray(ruralargiData?.features) && ruralargiData.features.length > 0 && (
         <>
@@ -516,6 +518,20 @@ export function MapLayers({
           ))}
         </>
       )}
+
+      {/* Pop_55_64 Layer */}
+      {pop5564Data?.features.length && pop5564RangeData && (
+        <GeoJSON
+          key="pop-55-64-layer"
+          data={pop5564Data}
+          style={pop5564Styles.createStyleFunction(pop5564RangeData)}
+          onEachFeature={(feature, layer) => {
+            const popupContent = createPop5564Popup(feature);
+            layer.bindPopup(popupContent);
+          }}
+        />
+      )}
+
     </>
   );
 }

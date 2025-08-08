@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FeatureCollection, Geometry } from 'geojson';
-import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON, RoadGeoJSON, ParkingLotGeoJSON, RuralArgiGeoJSON, RecreatEnvGeoJSON, ArtCultGeoJSON, LowDenseResAreaGeoJSON, MedDenseResAreaGeoJSON, HighDenseResAreaGeoJSON } from '@/types';
+import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON, RoadGeoJSON, ParkingLotGeoJSON, RuralArgiGeoJSON, RecreatEnvGeoJSON, ArtCultGeoJSON, LowDenseResAreaGeoJSON, MedDenseResAreaGeoJSON, HighDenseResAreaGeoJSON, Pop5564GeoJSON, Pop5564RangeData } from '@/types';
 import { getZoning } from '@/libs/zoning';
 import { getOsmData } from '@/libs/osm';
 import { getPopulationMapData } from '@/libs/getPopulationData';
@@ -23,6 +23,8 @@ import { getArtCultData } from '@/libs/CNX/getArtCultData';
 import { getLowDenseResAreaData } from '@/libs/CNX/getLowDenseResAreaData';
 import { getHighDenseResAreaData } from '@/libs/CNX/getHighDenseResArea';
 import { getMedDenseResAreaData } from '@/libs/CNX/getMedDenseResAreaData';
+import { getPop5564Data } from '@/libs/CNX/getPop5564Data';
+import { getPop5564Range } from '@/libs/CNX/getPop5564Range';
 export function useMapData(landId: number, isClient: boolean) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
   const [osmData, setOsmData] = useState<FeatureCollection<Geometry, any> | null>(null);
@@ -46,6 +48,8 @@ export function useMapData(landId: number, isClient: boolean) {
   const [lowdenseresareaData, setLowDenseResAreaData] = useState<LowDenseResAreaGeoJSON | null>(null);
   const [meddenseresareaData, setMedDenseResAreaData] = useState<MedDenseResAreaGeoJSON | null>(null);
   const [highdenseresareaData, setHighDenseResAreaData] = useState<HighDenseResAreaGeoJSON | null>(null);
+  const [pop5564Data, setPop5564Data] = useState<Pop5564GeoJSON | null>(null);
+  const [pop5564RangeData, setPop5564RangeData] = useState<Pop5564RangeData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -55,7 +59,7 @@ export function useMapData(landId: number, isClient: boolean) {
       setIsLoading(true);
 
       try {
-        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse, roadResponse, parkinglotResponse, ruralargiResponse, recreatenvResponse, artcultResponse, lowdenseresareaResponse, meddenseresareaResponse, highdenseresareaResponse] = await Promise.allSettled([
+        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse, roadResponse, parkinglotResponse, ruralargiResponse, recreatenvResponse, artcultResponse, lowdenseresareaResponse, meddenseresareaResponse, highdenseresareaResponse, pop5564Response, pop5564RangeResponse] = await Promise.allSettled([
           getZoning(landId),
           getOsmData(),
           getPopulationMapData(),
@@ -78,6 +82,8 @@ export function useMapData(landId: number, isClient: boolean) {
           getLowDenseResAreaData(),
           getMedDenseResAreaData(),
           getHighDenseResAreaData(),
+          getPop5564Data(),
+          getPop5564Range(),
         ]);
 
         // Handle zoning data
@@ -262,6 +268,22 @@ export function useMapData(landId: number, isClient: boolean) {
           console.log('Failed to fetch High-density residential area data: ' ,highdenseresareaResponse.reason);
         }
 
+        // Handle cnx population map data
+        if (pop5564Response.status === 'fulfilled') {
+          const data = pop5564Response.value;
+          setPop5564Data(data);
+        } else {
+          console.error('Failed to fetch cnx population map data:', pop5564Response.reason);
+        }
+
+        // Handle cnx population range data
+        if (pop5564RangeResponse.status === 'fulfilled') {
+          const data = pop5564RangeResponse.value;
+          setPop5564RangeData(data);
+        } else {
+          console.error('Failed to fetch cnx population range data:', pop5564RangeResponse.reason);
+        }
+
       } catch (error) {
         console.error('Error fetching map data:', error);
       } finally {
@@ -295,6 +317,8 @@ export function useMapData(landId: number, isClient: boolean) {
     lowdenseresareaData,
     meddenseresareaData,
     highdenseresareaData,
+    pop5564Data,
+    pop5564RangeData,
     isLoading
   };
 }
