@@ -1,6 +1,7 @@
 import { Feature, Geometry } from 'geojson';
 import { stringToColor, addOpacityToHexColor, lightenColor, getParkingLotPopupColor } from '@/utils/labelColorUtils';
 import { LRT_LINE_COLORS, LRT_DEFAULT_COLOR, hexToRgba } from '@/utils/lineColorUtils';
+import { TreasuryAreaFeatureProperty, VacantAreaFeatureProperty } from '@/types';
 
 const FEATURE_LABELS = {
   highway: 'ถนน',
@@ -143,7 +144,7 @@ export function createPopulationPopup(feature: Feature<Geometry, any>) {
         <p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: #2563eb;">
           <strong>ความหนาแน่นประชากร:</strong> ${population ? formatNumber(population) : 'ไม่ระบุ'} คน
         </p>
-        ${validLabel ? `<p style="margin: 5px 0; font-size: 14px; color: #059669; font-weight: 500;"><strong>จำนวนประชากร:</strong> ${validLabel}</p>` : ''}
+        ${validLabel ? `<p style="margin: 5px 0; font-size: 14px; font-weight: 500;"><strong>จำนวนประชากร:</strong> ${validLabel}</p>` : ''}
       </div>
       <div style="margin: 10px 0; padding-top: 8px; border-top: 1px solid #eee;">
         <h5 style="margin: 0 0 5px 0; font-size: 14px; color: #555;">ที่อยู่:</h5>
@@ -174,7 +175,7 @@ export function createLandPriceSubdPopup(feature: Feature<Geometry, any>) {
         <p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: #2563eb;">
           <strong>ราคาที่ดิน:</strong> ${land_price ? formatNumber(land_price) : 'ไม่ระบุ'} บาท/ตร.ว.
         </p>
-        ${validLabel ? `<p style="margin: 5px 0; font-size: 14px; color: #059669; font-weight: 500;"><strong>พื้นที่:</strong> ${validLabel}</p>` : ''}
+        ${validLabel ? `<p style="margin: 5px 0; font-size: 14px; font-weight: 500;"><strong>พื้นที่:</strong> ${validLabel}</p>` : ''}
       </div>
       <div style="margin: 10px 0; padding-top: 8px; border-top: 1px solid #eee;">
         <h5 style="margin: 0 0 5px 0; font-size: 14px; color: #555;">ที่อยู่:</h5>
@@ -584,6 +585,57 @@ export function createMedDenseResAreaPopup(feature: Feature<Geometry, any>): str
       </div>
       <div style="font-size: 12px; color: #333; margin-top: 6px;">
         <div><strong>ระดับ:</strong> ${elevation}</div>
+      </div>
+    </div>
+  `;
+}
+
+export function createTreasuryAreaPopup(feature: Feature<Geometry, TreasuryAreaFeatureProperty>): string {
+  const {reg_name, reg_id, tumbon_name, amphoe_name, province_name, remark, area } = feature.properties || {};
+
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 250px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        ข้อมูลที่ดินกรมธนารักษ์
+      </h4>
+      <div style="margin: 10px 0;">
+        <p style="margin: 5px 0; font-size: 14px; font-weight: bold; color: #2563eb;">
+          <strong>ชื่อเขต:</strong> ${reg_name || 'ไม่ระบุ'}
+        </p>
+        <p style="margin: 5px 0; font-size: 14px;">
+          <strong>รหัสเขต:</strong> ${reg_id || 'ไม่ระบุ'}
+        </p>
+        <p style="margin: 5px 0; font-size: 14px;">
+          <strong>ตำบล:</strong> ${tumbon_name || 'ไม่ระบุ'}
+        </p>
+        <p style="margin: 5px 0; font-size: 14px;">
+          <strong>อำเภอ:</strong> ${amphoe_name || 'ไม่ระบุ'}
+        </p>
+        <p style="margin: 5px 0; font-size: 14px;">
+          <strong>จังหวัด:</strong> ${province_name || 'ไม่ระบุ'}
+        </p>
+        <p style="margin: 5px 0; font-size: 14px;">
+          <strong>หมายเหตุ:</strong> ${remark || 'ไม่ระบุ'}
+        </p>
+        <p style="margin: 5px 0; font-size: 14px;">
+          <strong>พื้นที่:</strong> ${area.ngan} งาน ${area.rai} ไร่ ${area.square_area} ตารางเมตร
+        </p>
+      </div>
+    </div>
+  `;
+}
+
+export function createVacantAreaPopup(feature: Feature<Geometry, VacantAreaFeatureProperty>): string {
+  const {name} = feature.properties || {};
+  return `
+    <div style="font-family: Arial, sans-serif; min-width: 250px;">
+      <h4 style="margin: 0 0 10px 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+        พื้นที่ว่างเปล่า
+      </h4>
+      <div style="margin: 10px 0;">
+        <p style="margin: 5px 0; font-size: 14px; font-weight: bold; color: #2563eb;">
+          <strong>ชื่อพื้นที่:</strong> ${name || 'ไม่ระบุ'}
+        </p>
       </div>
     </div>
   `;

@@ -34,7 +34,7 @@ async def get_treasury_area():
                 "area": {
                     "ngan": props.get("NGAN", 0),
                     "rai": props.get("RAI", 0),
-                    "sqwa": props.get("SQWA", 0),
+                    "square_area": props.get("SQWA", 0),
                 }
             }
 

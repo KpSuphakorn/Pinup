@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FeatureCollection, Geometry } from 'geojson';
-import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON, RoadGeoJSON, ParkingLotGeoJSON, RuralArgiGeoJSON, RecreatEnvGeoJSON, ArtCultGeoJSON, LowDenseResAreaGeoJSON, MedDenseResAreaGeoJSON } from '@/types';
+import { PopulationGeoJSON, PopulationRangeData, ZoningData, LandPriceSubdGeoJSON, LandPriceSubdRangeData, BoundMunGeoJSON, BoundTambonGeoJSON, BoundAmphoeGeoJSON, BoundProvinceGeoJSON, GateCountGeoJSON, BusStopGeoJSON, BusRouteGeoJSON, LRTRouteGeoJSON, RoadGeoJSON, ParkingLotGeoJSON, RuralArgiGeoJSON, RecreatEnvGeoJSON, ArtCultGeoJSON, LowDenseResAreaGeoJSON, MedDenseResAreaGeoJSON, TreasuryAreaGeoJSON, VacantAreaGeoJSON } from '@/types';
 import { getZoning } from '@/libs/zoning';
 import { getOsmData } from '@/libs/osm';
 import { getPopulationMapData } from '@/libs/getPopulationData';
@@ -22,6 +22,9 @@ import { getRecreatEnvData } from '@/libs/CNX/getRecreatEnvData';
 import { getArtCultData } from '@/libs/CNX/getArtCultData';
 import { getLowDenseResAreaData } from '@/libs/CNX/getLowDenseResAreaData';
 import { getMedDenseResAreaData } from '@/libs/CNX/getMedDenseResAreaData';
+import { getTreasureAreaData } from '@/libs/CNX/getTreasuryAreaData';
+import { getVacantAreaData } from '@/libs/CNX/getVacantAreaData';
+
 export function useMapData(landId: number, isClient: boolean) {
   const [zoningData, setZoningData] = useState<ZoningData | null>(null);
   const [osmData, setOsmData] = useState<FeatureCollection<Geometry, any> | null>(null);
@@ -44,6 +47,8 @@ export function useMapData(landId: number, isClient: boolean) {
   const [artcultData, setArtCultData] = useState<ArtCultGeoJSON | null>(null);
   const [lowdenseresareaData, setLowDenseResAreaData] = useState<LowDenseResAreaGeoJSON | null>(null);
   const [meddenseresareaData, setMedDenseResAreaData] = useState<MedDenseResAreaGeoJSON | null>(null);
+  const [treasuryAreaData, setTreasuryAreaData] = useState<TreasuryAreaGeoJSON | null>(null);
+  const [vacantAreaData, setVacantAreaData] = useState<VacantAreaGeoJSON | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -53,7 +58,7 @@ export function useMapData(landId: number, isClient: boolean) {
       setIsLoading(true);
 
       try {
-        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse, roadResponse, parkinglotResponse, ruralargiResponse, recreatenvResponse, artcultResponse, lowdenseresareaResponse, meddenseresareaResponse] = await Promise.allSettled([
+        const [zoningResponse, osmResponse, populationResponse, populationRangeResponse, landpricesubdResponse, landpricesubdRangeResponse, boundmunResponse, boundtambonResponse, boundamphoeResponse, boundprovinceResponse, gatecountResponse, busstopResponse, busrouteResponse, LRTrouteResponse, roadResponse, parkinglotResponse, ruralargiResponse, recreatenvResponse, artcultResponse, lowdenseresareaResponse, meddenseresareaResponse, treasuryAreaResponse, vacantAreaResponse] = await Promise.allSettled([
           getZoning(landId),
           getOsmData(),
           getPopulationMapData(),
@@ -75,6 +80,8 @@ export function useMapData(landId: number, isClient: boolean) {
           getArtCultData(),
           getLowDenseResAreaData(),
           getMedDenseResAreaData(),
+          getTreasureAreaData(),
+          getVacantAreaData()
         ]);
 
         // Handle zoning data
@@ -251,6 +258,16 @@ export function useMapData(landId: number, isClient: boolean) {
           console.log('Failed to fetch Med-density residential area data: ' ,meddenseresareaResponse.reason);
         }
 
+        if (treasuryAreaResponse.status === 'fulfilled') {
+          const data = treasuryAreaResponse.value;
+          setTreasuryAreaData(data);
+        }
+
+        if (vacantAreaResponse.status === 'fulfilled') {
+          const data = vacantAreaResponse.value;
+          setVacantAreaData(data);
+        }
+
       } catch (error) {
         console.error('Error fetching map data:', error);
       } finally {
@@ -283,6 +300,8 @@ export function useMapData(landId: number, isClient: boolean) {
     artcultData,
     lowdenseresareaData,
     meddenseresareaData,
+    treasuryAreaData,
+    vacantAreaData,
     isLoading
   };
 }

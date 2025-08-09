@@ -40,6 +40,8 @@ export interface MapLayersProps {
   artcultData?: ArtCultGeoJSON | null;
   lowdenseresareaData?: LowDenseResAreaGeoJSON | null;
   meddenseresareaData?: MedDenseResAreaGeoJSON | null;
+  treasuryAreaData?: TreasuryAreaGeoJSON | null;
+  vacantAreaData?: VacantAreaGeoJSON | null;
   landId?: string;
   isLoading: boolean;
 }
@@ -514,3 +516,36 @@ export interface MedDenseResAreaGeoJSON {
   type: 'FeatureCollection';
   features: MedDenseResAreaFeature[];
 }
+
+export type TreasuryAreaFeatureProperty = {
+  reg_id: string;
+  reg_type: string;
+  reg_num: string;
+  reg_name: string;
+  remark: string;
+  tumbon_id: string | null;
+  tumbon_name: string;
+  amphoe_id: string | null;
+  amphoe_name: string;
+  province_id: string | null;
+  province_name: string;
+  area: {
+    ngan: number;
+    rai: number;
+    square_area: number;
+  };
+};
+
+export type TreasuryAreaGeoJSON = FeatureCollection<
+  Geometry,
+  TreasuryAreaFeatureProperty
+>;
+
+export type VacantAreaFeatureProperty = {
+  name: string;
+}
+
+export type VacantAreaGeoJSON = FeatureCollection<
+  Geometry,
+  VacantAreaFeatureProperty
+>;

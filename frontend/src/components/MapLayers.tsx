@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import L, { Layer } from 'leaflet';
 import type { BusRouteFeature } from '@/types';
-import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup, createLowDenseResAreaPopup, createMedDenseResAreaPopup } from '@/utils/popupUtils';
+import { createOsmPopup, createZoningPopup, createPopulationPopup, createLandPriceSubdPopup, createBoundMunPopup, createBoundTambonPopup, createBoundAmphoePopup, createBoundProvincePopup, createGateCountPopup, createBusStopPopup, createBusRoutePopup, createLRTRoutePopup, createRoadPopup, createParkingLotPopup, createRuralArgiPopup, createRecreatEnvPopup, createArtCultPopup, createLowDenseResAreaPopup, createMedDenseResAreaPopup, createTreasuryAreaPopup, createVacantAreaPopup } from '@/utils/popupUtils';
 import { osmStyles } from '@/styles/osmStyles';
 import { zoningStyles } from '@/styles/zoningStyles';
 import { populationStyles } from '@/styles/populationStyles';
@@ -25,6 +25,8 @@ import { artcultStyles } from '@/styles/CNX/artcultStyles';
 import { lowdenseresareaStyles } from '@/styles/CNX/lowdenseresareaStyles';
 import { meddenseresareaStyles } from '@/styles/CNX/meddenseresareaStyles';
 import { MapLayersProps } from '@/types/index';
+import { treasuryAreaStyles } from '@/styles/CNX/treasuryAreaStyles';
+import { vacantAreaStyles } from '@/styles/CNX/vacantAreaStyles';
 
 const GeoJSON = dynamic(() => import('react-leaflet').then(mod => mod.GeoJSON), { ssr: false });
 
@@ -51,6 +53,8 @@ export function MapLayers({
   artcultData,
   lowdenseresareaData,
   meddenseresareaData,
+  treasuryAreaData,
+  vacantAreaData,
   landId,
   isLoading
 }: MapLayersProps) {
@@ -476,6 +480,30 @@ export function MapLayers({
             />
           ))}
         </>
+      )}
+
+      {/* Treasury Area Layer */}
+      {treasuryAreaData?.features.length && (
+        <GeoJSON
+          data={treasuryAreaData}
+          style={treasuryAreaStyles.getStyle}
+          onEachFeature={(feature, layer) => {
+            const popupContent = createTreasuryAreaPopup(feature);
+            layer.bindPopup(popupContent);
+          }}
+        />
+      )}
+
+      {/* Vacant area layer */}
+      {vacantAreaData?.features.length && (
+        <GeoJSON
+          data={vacantAreaData}
+          style={vacantAreaStyles.getStyle}
+          onEachFeature={(feature, layer) => {
+            const popupContent = createVacantAreaPopup(feature);
+            layer.bindPopup(popupContent);
+          }}
+        />
       )}
     </>
   );
